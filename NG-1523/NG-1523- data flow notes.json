@@ -1,0 +1,1118 @@
+
+
+    // Data flow  from Item to templateLine
+
+    // objTemp.receivingnotes = result.getValue({name: 'custcol_wms_recvnotes'});
+    // objTemp --> itemLinesHash[ctr +1] (line: 205)
+    // itemObjTemp --> itemHash[result.id] 
+    // allFields --> item (line 364) filledItem (520)  ---> (hasOwnProperty: docdId) attrArrayer --> templateLine
+
+    // log debugs for customscript_wms_selectreceivingline
+    {
+        "custrecord_g2_category_usedprodatt_refs": [
+            {
+                "value": "611",
+                "text": "Club Color"
+            },
+            {
+                "value": "115",
+                "text": "Club Length"
+            },
+            {
+                "value": "117",
+                "text": "Club Loft"
+            },
+            {
+                "value": "122",
+                "text": "Club ShaftMatl"
+            },
+            {
+                "value": "123",
+                "text": "Condition"
+            },
+            {
+                "value": "131",
+                "text": "Dexterity"
+            },
+            {
+                "value": "133",
+                "text": "Ebay Title"
+            },
+            {
+                "value": "135",
+                "text": "FreeNotes"
+            },
+            {
+                "value": "136",
+                "text": "Is Ecommerce Item"
+            },
+            {
+                "value": "138",
+                "text": "List On 2S Only"
+            },
+            {
+                "value": "141",
+                "text": "Online Title"
+            },
+            {
+                "value": "143",
+                "text": "Parent Item Brand"
+            },
+            {
+                "value": "146",
+                "text": "Parent Item Category"
+            },
+            {
+                "value": "155",
+                "text": "Parent Item Model"
+            },
+            {
+                "value": "198",
+                "text": "Price Discount Amt"
+            },
+            {
+                "value": "210",
+                "text": "Price Discount Pct"
+            },
+            {
+                "value": "213",
+                "text": "Price Premium Amt"
+            },
+            {
+                "value": "223",
+                "text": "Price Premium Percent"
+            },
+            {
+                "value": "255",
+                "text": "Rare Unique"
+            },
+            {
+                "value": "261",
+                "text": "Serial Number"
+            },
+            {
+                "value": "266",
+                "text": "Shaft Flex"
+            },
+            {
+                "value": "275",
+                "text": "Shaft Type"
+            },
+            {
+                "value": "477",
+                "text": "ShaftOtherInfo"
+            },
+            {
+                "value": "599",
+                "text": "Sub Category"
+            },
+            {
+                "value": "612",
+                "text": "Tour Issue"
+            }
+        ],
+        "custrecord_wms_field_display_order": "",
+        "custrecord_bidpriceattribute_refs": [
+            {
+                "value": "2",
+                "text": "Condition"
+            },
+            {
+                "value": "6",
+                "text": "Shaft Material"
+            }
+        ],
+        "custrecord_sellpriceattribute_refs": [
+            {
+                "value": "2",
+                "text": "Condition"
+            },
+            {
+                "value": "6",
+                "text": "Shaft Material"
+            }
+        ]
+    }
+    // log.debug("objTemp", JSON.stringify(objTemp));
+    {
+        "name": "M6 NEW DVR",
+        "description": null,
+        "parent": "",
+        "category": "5",
+        "itemType": "1",
+        "class": "",
+        "condition": "",
+        "lineid": "1",
+        "lineuniquekey": "9814568",
+        "linesequencenumber": "1",
+        "quantity": "0",
+        "wmsexception": "",
+        "itemrate": "225.00",
+        "quantityfulfilled": "0",
+        "expectedquantity": "10",
+        "amount": ".00",
+        "item_id": "1020585",
+        "hideinwms": true,
+        "receivingnotes": "tj's receiving notes"
+    }
+
+{
+        "name": "G400 MAX NEW DVR : D276811510-19",
+        "description": null,
+        "parent": "37351",
+        "category": "5",
+        "itemType": "1",
+        "class": "2",
+        "condition": "15",
+        "lineid": "203",
+        "lineuniquekey": "9815563",
+        "linesequencenumber": "203",
+        "quantity": "1",
+        "wmsexception": "",
+        "itemrate": "105.00",
+        "quantityfulfilled": "0",
+        "expectedquantity": "1",
+        "amount": "105.00",
+        "item_id": "2768115",
+        "hideinwms": false,
+        "receivingnotes": ""
+    }
+    // log.debug('VF all fieldMetadata fields for category ' + allFields.categoryId, JSON.stringify(allFields.fieldData));
+    {
+        "id": "422",
+        "custrecord_fmd_field": {
+            "id": "198",
+            "text": "Club Color"
+        },
+        "custrecord_fmd_fieldscriptid": {
+            "id": "custitem_g2_club_color_ref",
+            "text": null
+        },
+        "custrecord_fmd_listrecscriptid": {
+            "id": "customrecord_g2_club_color",
+            "text": null
+        },
+        "custrecord_fmd_column": {
+            "id": "",
+            "text": ""
+        },
+        "custrecord_fmd_columnscriptid": {
+            "id": "",
+            "text": null
+        },
+        "custrecord_fmd_fieldtype": {
+            "id": "select",
+            "text": null
+        },
+        "custrecord_fmd_readonly": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_bidpriceattribute": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_sellpriceattribute": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_po_column_id": {
+            "id": "",
+            "text": ""
+        },
+        "custrecord_fmd_po_col_scriptid": {
+            "id": "",
+            "text": null
+        },
+        "custrecord_fmd_price_field": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_listrec": {
+            "id": "27",
+            "text": "Club Color"
+        }
+    },
+    {
+        "id": "425",
+        "custrecord_fmd_field": {
+            "id": "261",
+            "text": "Club Length"
+        },
+        "custrecord_fmd_fieldscriptid": {
+            "id": "custitem_g2_club_length_ref",
+            "text": null
+        },
+        "custrecord_fmd_listrecscriptid": {
+            "id": "customrecord_g2_shaft_length",
+            "text": null
+        },
+        "custrecord_fmd_column": {
+            "id": "",
+            "text": ""
+        },
+        "custrecord_fmd_columnscriptid": {
+            "id": "",
+            "text": null
+        },
+        "custrecord_fmd_fieldtype": {
+            "id": "select",
+            "text": null
+        },
+        "custrecord_fmd_readonly": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_bidpriceattribute": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_sellpriceattribute": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_po_column_id": {
+            "id": "",
+            "text": ""
+        },
+        "custrecord_fmd_po_col_scriptid": {
+            "id": "",
+            "text": null
+        },
+        "custrecord_fmd_price_field": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_listrec": {
+            "id": "57",
+            "text": "Club/Shaft Length"
+        }
+    },
+    {
+        "id": "426",
+        "custrecord_fmd_field": {
+            "id": "477",
+            "text": "Club Loft"
+        },
+        "custrecord_fmd_fieldscriptid": {
+            "id": "custitem_g2_club_loft_ref",
+            "text": null
+        },
+        "custrecord_fmd_listrecscriptid": {
+            "id": "customrecord_g2_club_loft",
+            "text": null
+        },
+        "custrecord_fmd_column": {
+            "id": "",
+            "text": ""
+        },
+        "custrecord_fmd_columnscriptid": {
+            "id": "",
+            "text": null
+        },
+        "custrecord_fmd_fieldtype": {
+            "id": "select",
+            "text": null
+        },
+        "custrecord_fmd_readonly": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_bidpriceattribute": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_sellpriceattribute": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_po_column_id": {
+            "id": "",
+            "text": ""
+        },
+        "custrecord_fmd_po_col_scriptid": {
+            "id": "",
+            "text": null
+        },
+        "custrecord_fmd_price_field": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_listrec": {
+            "id": "138",
+            "text": "Club Loft"
+        }
+    },
+    {
+        "id": "428",
+        "custrecord_fmd_field": {
+            "id": "210",
+            "text": "Club ShaftMatl"
+        },
+        "custrecord_fmd_fieldscriptid": {
+            "id": "custitem_g2_club_shaftmatl_ref",
+            "text": null
+        },
+        "custrecord_fmd_listrecscriptid": {
+            "id": "customrecord_g2_club_shaftmatl",
+            "text": null
+        },
+        "custrecord_fmd_column": {
+            "id": "689",
+            "text": "Shaft Material (2)"
+        },
+        "custrecord_fmd_columnscriptid": {
+            "id": "custcol_po_shaft_material_ref",
+            "text": null
+        },
+        "custrecord_fmd_fieldtype": {
+            "id": "select",
+            "text": null
+        },
+        "custrecord_fmd_readonly": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_bidpriceattribute": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_sellpriceattribute": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_po_column_id": {
+            "id": "1651",
+            "text": "Actual Club Shaft Material"
+        },
+        "custrecord_fmd_po_col_scriptid": {
+            "id": "custcol_wipfli_club_shaftmatl_actual",
+            "text": null
+        },
+        "custrecord_fmd_price_field": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_listrec": {
+            "id": "37",
+            "text": "Club ShaftMatl"
+        }
+    },
+    {
+        "id": "430",
+        "custrecord_fmd_field": {
+            "id": "213",
+            "text": "Condition"
+        },
+        "custrecord_fmd_fieldscriptid": {
+            "id": "custitem_g2_condition_ref",
+            "text": null
+        },
+        "custrecord_fmd_listrecscriptid": {
+            "id": "customrecord_g2_condition",
+            "text": null
+        },
+        "custrecord_fmd_column": {
+            "id": "431",
+            "text": "Condition"
+        },
+        "custrecord_fmd_columnscriptid": {
+            "id": "custcol_g2_condition_ref",
+            "text": null
+        },
+        "custrecord_fmd_fieldtype": {
+            "id": "select",
+            "text": null
+        },
+        "custrecord_fmd_readonly": {
+            "id": false,
+            "text": null
+        },
+        "custrecord_fmd_bidpriceattribute": {
+            "id": true,
+            "text": null
+        },
+        "custrecord_fmd_sellpriceattribute": {
+            "id": true,
+            "text": null
+        },
+        "custrecord_fmd_po_column_id": {
+            "id": "1652",
+            "text": "Actual Condition"
+        },
+        "custrecord_fmd_po_col_scriptid": {
+            "id": "custcol_wipfli_condition_actual",
+            "text": null
+        },
+        "custrecord_fmd_price_field": {
+            "id":fal
+        }
+    }
+
+    [
+        {
+            "id": "422",
+            "custrecord_fmd_field": {
+                "id": "198",
+                "text": "Club Color"
+            },
+            "custrecord_fmd_fieldscriptid": {
+                "id": "custitem_g2_club_color_ref",
+                "text": null
+            },
+            "custrecord_fmd_listrecscriptid": {
+                "id": "customrecord_g2_club_color",
+                "text": null
+            },
+            "custrecord_fmd_column": {
+                "id": "",
+                "text": ""
+            },
+            "custrecord_fmd_columnscriptid": {
+                "id": "",
+                "text": null
+            },
+            "custrecord_fmd_fieldtype": {
+                "id": "select",
+                "text": null
+            },
+            "custrecord_fmd_readonly": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_bidpriceattribute": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_sellpriceattribute": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_po_column_id": {
+                "id": "",
+                "text": ""
+            },
+            "custrecord_fmd_po_col_scriptid": {
+                "id": "",
+                "text": null
+            },
+            "custrecord_fmd_price_field": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_listrec": {
+                "id": "27",
+                "text": "Club Color"
+            }
+        },
+        {
+            "id": "425",
+            "custrecord_fmd_field": {
+                "id": "261",
+                "text": "Club Length"
+            },
+            "custrecord_fmd_fieldscriptid": {
+                "id": "custitem_g2_club_length_ref",
+                "text": null
+            },
+            "custrecord_fmd_listrecscriptid": {
+                "id": "customrecord_g2_shaft_length",
+                "text": null
+            },
+            "custrecord_fmd_column": {
+                "id": "",
+                "text": ""
+            },
+            "custrecord_fmd_columnscriptid": {
+                "id": "",
+                "text": null
+            },
+            "custrecord_fmd_fieldtype": {
+                "id": "select",
+                "text": null
+            },
+            "custrecord_fmd_readonly": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_bidpriceattribute": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_sellpriceattribute": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_po_column_id": {
+                "id": "",
+                "text": ""
+            },
+            "custrecord_fmd_po_col_scriptid": {
+                "id": "",
+                "text": null
+            },
+            "custrecord_fmd_price_field": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_listrec": {
+                "id": "57",
+                "text": "Club/Shaft Length"
+            }
+        },
+        {
+            "id": "426",
+            "custrecord_fmd_field": {
+                "id": "477",
+                "text": "Club Loft"
+            },
+            "custrecord_fmd_fieldscriptid": {
+                "id": "custitem_g2_club_loft_ref",
+                "text": null
+            },
+            "custrecord_fmd_listrecscriptid": {
+                "id": "customrecord_g2_club_loft",
+                "text": null
+            },
+            "custrecord_fmd_column": {
+                "id": "",
+                "text": ""
+            },
+            "custrecord_fmd_columnscriptid": {
+                "id": "",
+                "text": null
+            },
+            "custrecord_fmd_fieldtype": {
+                "id": "select",
+                "text": null
+            },
+            "custrecord_fmd_readonly": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_bidpriceattribute": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_sellpriceattribute": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_po_column_id": {
+                "id": "",
+                "text": ""
+            },
+            "custrecord_fmd_po_col_scriptid": {
+                "id": "",
+                "text": null
+            },
+            "custrecord_fmd_price_field": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_listrec": {
+                "id": "138",
+                "text": "Club Loft"
+            }
+        },
+        {
+            "id": "428",
+            "custrecord_fmd_field": {
+                "id": "210",
+                "text": "Club ShaftMatl"
+            },
+            "custrecord_fmd_fieldscriptid": {
+                "id": "custitem_g2_club_shaftmatl_ref",
+                "text": null
+            },
+            "custrecord_fmd_listrecscriptid": {
+                "id": "customrecord_g2_club_shaftmatl",
+                "text": null
+            },
+            "custrecord_fmd_column": {
+                "id": "689",
+                "text": "Shaft Material (2)"
+            },
+            "custrecord_fmd_columnscriptid": {
+                "id": "custcol_po_shaft_material_ref",
+                "text": null
+            },
+            "custrecord_fmd_fieldtype": {
+                "id": "select",
+                "text": null
+            },
+            "custrecord_fmd_readonly": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_bidpriceattribute": {
+                "id": true,
+                "text": null
+            },
+            "custrecord_fmd_sellpriceattribute": {
+                "id": true,
+                "text": null
+            },
+            "custrecord_fmd_po_column_id": {
+                "id": "1651",
+                "text": "Actual Club Shaft Material"
+            },
+            "custrecord_fmd_po_col_scriptid": {
+                "id": "custcol_wipfli_club_shaftmatl_actual",
+                "text": null
+            },
+            "custrecord_fmd_price_field": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_listrec": {
+                "id": "37",
+                "text": "Club ShaftMatl"
+            }
+        },
+        {
+            "id": "430",
+            "custrecord_fmd_field": {
+                "id": "213",
+                "text": "Condition"
+            },
+            "custrecord_fmd_fieldscriptid": {
+                "id": "custitem_g2_condition_ref",
+                "text": null
+            },
+            "custrecord_fmd_listrecscriptid": {
+                "id": "customrecord_g2_condition",
+                "text": null
+            },
+            "custrecord_fmd_column": {
+                "id": "431",
+                "text": "Condition"
+            },
+            "custrecord_fmd_columnscriptid": {
+                "id": "custcol_g2_condition_ref",
+                "text": null
+            },
+            "custrecord_fmd_fieldtype": {
+                "id": "select",
+                "text": null
+            },
+            "custrecord_fmd_readonly": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_bidpriceattribute": {
+                "id": true,
+                "text": null
+            },
+            "custrecord_fmd_sellpriceattribute": {
+                "id": true,
+                "text": null
+            },
+            "custrecord_fmd_po_column_id": {
+                "id": "1652",
+                "text": "Actual Condition"
+            },
+            "custrecord_fmd_po_col_scriptid": {
+                "id": "custcol_wipfli_condition_actual",
+                "text": null
+            },
+            "custrecord_fmd_price_field": {
+                "id": false
+            }
+        }
+        // log.debug ("right")
+        {
+            "origItemId": "2768119",
+            "itemId": "2768119",
+            "itemType": "inventoryitem",
+            "fieldData": [
+                {
+                    "id": "422",
+                    "custrecord_fmd_field": {
+                        "id": "198",
+                        "text": "Club Color"
+                    },
+                    "custrecord_fmd_fieldscriptid": {
+                        "id": "custitem_g2_club_color_ref",
+                        "text": null
+                    },
+                    "custrecord_fmd_listrecscriptid": {
+                        "id": "customrecord_g2_club_color",
+                        "text": null
+                    },
+                    "custrecord_fmd_column": {
+                        "id": "",
+                        "text": ""
+                    },
+                    "custrecord_fmd_columnscriptid": {
+                        "id": "",
+                        "text": null
+                    },
+                    "custrecord_fmd_fieldtype": {
+                        "id": "select",
+                        "text": null
+                    },
+                    "custrecord_fmd_readonly": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_bidpriceattribute": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_sellpriceattribute": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_po_column_id": {
+                        "id": "",
+                        "text": ""
+                    },
+                    "custrecord_fmd_po_col_scriptid": {
+                        "id": "",
+                        "text": null
+                    },
+                    "custrecord_fmd_price_field": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_listrec": {
+                        "id": "27",
+                        "text": "Club Color"
+                    },
+                    "itemValue": [],
+                    "itemText": []
+                },
+                {
+                    "id": "425",
+                    "custrecord_fmd_field": {
+                        "id": "261",
+                        "text": "Club Length"
+                    },
+                    "custrecord_fmd_fieldscriptid": {
+                        "id": "custitem_g2_club_length_ref",
+                        "text": null
+                    },
+                    "custrecord_fmd_listrecscriptid": {
+                        "id": "customrecord_g2_shaft_length",
+                        "text": null
+                    },
+                    "custrecord_fmd_column": {
+                        "id": "",
+                        "text": ""
+                    },
+                    "custrecord_fmd_columnscriptid": {
+                        "id": "",
+                        "text": null
+                    },
+                    "custrecord_fmd_fieldtype": {
+                        "id": "select",
+                        "text": null
+                    },
+                    "custrecord_fmd_readonly": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_bidpriceattribute": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_sellpriceattribute": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_po_column_id": {
+                        "id": "",
+                        "text": ""
+                    },
+                    "custrecord_fmd_po_col_scriptid": {
+                        "id": "",
+                        "text": null
+                    },
+                    "custrecord_fmd_price_field": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_listrec": {
+                        "id": "57",
+                        "text": "Club/Shaft Length"
+                    },
+                    "itemValue": [],
+                    "itemText": []
+                },
+                {
+                    "id": "426",
+                    "custrecord_fmd_field": {
+                        "id": "477",
+                        "text": "Club Loft"
+                    },
+                    "custrecord_fmd_fieldscriptid": {
+                        "id": "custitem_g2_club_loft_ref",
+                        "text": null
+                    },
+                    "custrecord_fmd_listrecscriptid": {
+                        "id": "customrecord_g2_club_loft",
+                        "text": null
+                    },
+                    "custrecord_fmd_column": {
+                        "id": "",
+                        "text": ""
+                    },
+                    "custrecord_fmd_columnscriptid": {
+                        "id": "",
+                        "text": null
+                    },
+                    "custrecord_fmd_fieldtype": {
+                        "id": "select",
+                        "text": null
+                    },
+                    "custrecord_fmd_readonly": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_bidpriceattribute": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_sellpriceattribute": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_po_column_id": {
+                        "id": "",
+                        "text": ""
+                    },
+                    "custrecord_fmd_po_col_scriptid": {
+                        "id": "",
+                        "text": null
+                    },
+                    "custrecord_fmd_price_field": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_listrec": {
+                        "id": "138",
+                        "text": "Club Loft"
+                    },
+                    "itemValue": [],
+                    "itemText": []
+                },
+                {
+                    "id": "428",
+                    "custrecord_fmd_field": {
+                        "id": "210",
+                        "text": "Club ShaftMatl"
+                    },
+                    "custrecord_fmd_fieldscriptid": {
+                        "id": "custitem_g2_club_shaftmatl_ref",
+                        "text": null
+                    },
+                    "custrecord_fmd_listrecscriptid": {
+                        "id": "customrecord_g2_club_shaftmatl",
+                        "text": null
+                    },
+                    "custrecord_fmd_column": {
+                        "id": "689",
+                        "text": "Shaft Material (2)"
+                    },
+                    "custrecord_fmd_columnscriptid": {
+                        "id": "custcol_po_shaft_material_ref",
+                        "text": null
+                    },
+                    "custrecord_fmd_fieldtype": {
+                        "id": "select",
+                        "text": null
+                    },
+                    "custrecord_fmd_readonly": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_bidpriceattribute": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_sellpriceattribute": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_po_column_id": {
+                        "id": "1651",
+                        "text": "Actual Club Shaft Material"
+                    },
+                    "custrecord_fmd_po_col_scriptid": {
+                        "id": "custcol_wipfli_club_shaftmatl_actual",
+                        "text": null
+                    },
+                    "custrecord_fmd_price_field": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_listrec": {
+                        "id": "37",
+                        "text": "Club ShaftMatl"
+                    },
+                    "value": "",
+                    "valueText": "",
+                    "actualValue": "",
+                    "actualText": "",
+                    "itemValue": [],
+                    "itemText": []
+                },
+                {
+                    "id": "430",
+                    "custrecord_fmd_field": {
+                        "id": "213",
+                        "text": "Condition"
+                    },
+                    "custrecord_fmd_fieldscriptid": {
+                        "id": "custitem_g2_condition_ref",
+                        "text": null
+                    },
+                    "custrecord_fmd_listrecscriptid": {
+                        "id": "customrecord_g2_condition",
+                        "text": null
+                    },
+                    "custrecord_fmd_column": {
+                        "id": "431",
+                        "text": "Condition"
+                    },
+                    "custrecord_fmd_columnscriptid": {
+                        "id": "custcol_g2_condition_ref",
+                        "text": null
+                    },
+                    "custrecord_fmd_fieldtype": {
+                        "id": "select",
+                        "text": null
+                    },
+                    "custrecord_fmd_readonly": {
+                        "id": false,
+                        "text": null
+                    },
+                    "custrecord_fmd_bidpriceattribute": {
+                        "id": true,
+                        "text": null
+                    }
+                }
+            ]
+        }
+        // log.debug("check field obj in bpa loop)
+        {
+            "id": "430",
+            "custrecord_fmd_field": {
+                "id": "213",
+                "text": "Condition"
+            },
+            "custrecord_fmd_fieldscriptid": {
+                "id": "custitem_g2_condition_ref",
+                "text": null
+            },
+            "custrecord_fmd_listrecscriptid": {
+                "id": "customrecord_g2_condition",
+                "text": null
+            },
+            "custrecord_fmd_column": {
+                "id": "431",
+                "text": "Condition"
+            },
+            "custrecord_fmd_columnscriptid": {
+                "id": "custcol_g2_condition_ref",
+                "text": null
+            },
+            "custrecord_fmd_fieldtype": {
+                "id": "select",
+                "text": null
+            },
+            "custrecord_fmd_readonly": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_bidpriceattribute": {
+                "id": true,
+                "text": null
+            },
+            "custrecord_fmd_sellpriceattribute": {
+                "id": true,
+                "text": null
+            },
+            "custrecord_fmd_po_column_id": {
+                "id": "1652",
+                "text": "Actual Condition"
+            },
+            "custrecord_fmd_po_col_scriptid": {
+                "id": "custcol_wipfli_condition_actual",
+                "text": null
+            },
+            "custrecord_fmd_price_field": {
+                "id": false,
+                "text": null
+            },
+            "custrecord_fmd_listrec": {
+                "id": "40",
+                "text": "Condition"
+            },
+            "value": "15",
+            "valueText": "Average",
+            "actualValue": "",
+            "actualText": "",
+            "itemValue": "15",
+            "itemText": "Average"
+        }
+        // log.debug("aa TJ, templateLine.bpaFields")
+        [
+            {
+                "name": "Shaft Material (2)",
+                "scriptid": "customrecord_g2_club_shaftmatl",
+                "value": "",
+                "itemValue": [],
+                "itemText": [],
+                "actualValue": "1",
+                "actualText": "Graphite"
+            },
+            {
+                "name": "Condition",
+                "scriptid": "customrecord_g2_condition",
+                "value": "",
+                "itemValue": "6",
+                "itemText": "Below Average",
+                "actualValue": "6",
+                "actualText": "Below Average"
+            }
+        ]
+
+    {
+            "sku": " D2769983O-19",
+            "parentSku": "G30 NEW FWG",
+            "parentId": "37383",
+            "image": "https://imgs.2ndswing.com/images/clean-product/small/G30%20NEW%20FWG.jpg",
+            "receivingNotes": "",
+            "itemId": "2769983",
+            "name": "G30 NEW FWG : D2769983O-19",
+            "salesDesc": "Ping G30 ",
+            "isClosed": false,
+            "qtyExp": 1,
+            "qtyRecv": "0",
+            "qty": 1,
+            "cacheKey": "purchaseorder:3313298:inventoryitem:2769983:9820022",
+            "editLine": "/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cache=purchaseorder&cacheKey=purchaseorder:3313298:inventoryitem:2769983:9820022&template=customdeploy_wms_selectreceivingline",
+            "lineItemAdder": "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=3313298&custpage_itemtype=2&custpage_category=6&custpage_parent=2769983&custpage_cachekey=purchaseorder:3313298:inventoryitem:2769983:9820022','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
+            "bpaFields": [
+                {
+                    "name": "Shaft Material (2)",
+                    "scriptid": "customrecord_g2_club_shaftmatl",
+                    "value": "",
+                    "itemValue": [],
+                    "itemText": [],
+                    "actualValue": "",
+                    "actualText": ""
+                },
+                {
+                    "name": "Condition",
+                    "scriptid": "customrecord_g2_condition",
+                    "value": "",
+                    "itemValue": [],
+                    "itemText": [],
+                    "actualValue": "",
+                    "actualText": ""
+                }
+            ]
+        }

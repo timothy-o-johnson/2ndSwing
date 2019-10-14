@@ -1,0 +1,68 @@
+<div style="width: 500;margin: 0 auto;padding: 10px;text-align: center;color: #FF3364;font-size: 20px;">WMS Notes: {{wmsNotes}}</div>
+<div class="entry" style="background: white; font-size: 20px; margin: 0 auto; text-align: center;padding-bottom: 10px; display: flex">
+	<table width="100%">
+		<thead>
+			<tr>
+				<th style="text-align: center; font-weight: bold;">Parent Sku</th>
+				<th style="text-align: center; font-weight: bold;">Image</th>
+				<th style="text-align: center; font-weight: bold;">Receive</th>
+				<th style="text-align: center; font-weight: bold;">Sku</th>
+				{{#each bpaHeaders}}
+					<th style="text-align: center; font-weight: bold;">{{this.name}}</th>
+					<!--property name here-->
+				{{/each}}
+				<th style="text-align: center; font-weight: bold; max-width: 150px; overflow-wrap: break-word">Receiving Notes</th>
+				<th style="text-align: center; font-weight: bold;">Bin</th>
+				<th style="text-align: center; font-weight: bold;">Exp Qty</th>
+				<th style="text-align: center; font-weight: bold;">&nbsp; </th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each data as |line|}}
+				{{#if (lt line.qtyRecv line.qtyExp)}}
+					{{#if (eq line.isClosed false) }}
+						<tr id={{line.cacheKey}}>
+							<td>{{line.parentSku}}</td>
+							<td><img src={{line.image}}></td>
+							<td><input type=checkbox style onclick="editLine(this)" data-editor="{{editLine}}"></td>
+							<td>{{line.sku}}</td>
+							{{#each ../bpaHeaders}}
+								<td>{{bpaValuer scriptid line.bpaFields}}</td>
+							{{/each}}
+							<td style="text-align: center; max-width: 150px; overflow-wrap: break-word">{{line.receivingNotes}}</td>
+							<td>?</td>
+							<!-- <td><a href='{{../print}}&items=["{{line.cacheKey}}"]' target="_blank">Print</a></td>
+                                 <td><a href='{{../attribute}}&cacheKey={{line.cacheKey}}' target="_blank">Attribute</a></td> 
+                            -->
+							<td>{{line.qtyExp}}</td>
+						</tr>
+					{{/if}}
+				{{/if}}
+			{{/each}}
+			<tr id="lastrow">
+				<td>{{{addItem}}}</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align: center; padding-top: 20px;">Received Lines</td>
+			</tr>
+			{{#each data as |line|}}
+				{{#if (gt line.qtyRecv 0) }}
+					<tr id={{line.cacheKey}}>
+						<td>{{line.parentSku}}</td>
+						<td><img src={{line.image}}></td>
+						<td></td>
+						<td>{{line.qtyRecv}}</td>
+						<td>{{line.sku}}</td>
+						{{#each ../bpaHeaders}}
+							<td>{{bpaValuerItem scriptid line.bpaFields}}</td>
+						{{/each}}
+						<td style="text-align: center; max-width: 150px; overflow-wrap: break-word">{{line.receivingNotes}}</td>
+						<td>?</td>
+						<td><a href='{{../print}}&items=["{{line.cacheKey}}"]' target="_blank">Print</a></td>
+						<td><a href='{{../attribute}}&cacheKey={{line.cacheKey}}' target="_blank">Attribute</a></td>
+					</tr>
+				{{/if}}
+			{{/each}}
+		</tbody>
+	</table>
+</div>

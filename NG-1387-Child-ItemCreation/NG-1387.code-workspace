@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "/Users/timjohnson/Documents/2ndSwing"
+		},
+		{
+			"path": "/Users/timjohnson/netsuite-workspace/WMS"
+		}
+	],
+	"settings": {
+		"git.alwaysShowStagedChangesResourceGroup": true,
+		"git.branchSortOrder": "alphabetically"
+	}
+}

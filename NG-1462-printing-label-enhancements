@@ -1,0 +1,30 @@
+JIRA ticket: https://2ndswing.atlassian.net/browse/NG-1462
+
+**3 ways to print:**
+  1. purchase order: https://4537321-sb1.app.netsuite.com/app/site/hosting/scriptlet.nl?script=48&deploy=2&compid=4537321_SB1&custpage_rf_orderid=3322229
+   
+      - print: https://4537321-sb1.app.netsuite.com/app/site/hosting/scriptlet.nl?script=265&deploy=1&compid=4537321_SB1&items=[%22purchaseorder:3322229:inventoryitem:2799392:9835937%22
+  
+  2. inventory item: https://4537321-sb1.app.netsuite.com/app/common/item/item.nl?id=2800196&whence=
+   
+  3. attribution: https://4537321-sb1.app.netsuite.com/app/site/hosting/scriptlet.nl?script=43&deploy=1&compid=4537321_SB1&cacheKey=inventoryitem%3A2799392&whence=
+
+
+**Purchase Order**
+Script: Label Printer: https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=265
+Script id: customscript_wms_labelprinter
+
+
+**Attribution** 
+Script: EditItemAttributes.js 
+Script html: https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=43
+calls/references: https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=265
+ 
+Observations 
+create a form via serverWidget module
+add a file of functions to the form via clientScriptModulePath
+
+
+Action
+Determine how data gets passed via Attribution
+1. Print button has an onClick() function

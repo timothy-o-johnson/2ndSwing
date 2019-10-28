@@ -14,17 +14,49 @@ JIRA ticket: https://2ndswing.atlassian.net/browse/NG-1462
 Script: Label Printer: https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=265
 Script id: customscript_wms_labelprinter
 
+website page: https://4537321-sb1.app.netsuite.com/app/site/hosting/scriptlet.nl?script=48&deploy=2&compid=4537321_SB1&custpage_rf_orderid=3322229
 
-**Attribution** 
+print link: https://4537321-sb1.app.netsuite.com/app/site/hosting/scriptlet.nl?script=265&deploy=1&compid=4537321_SB1&items=[%22purchaseorder:3322229:inventoryitem:2799392:9835937%22]
+
+
+-----------
+Attribution
+-----------
+
 Script: EditItemAttributes.js 
 Script html: https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=43
-calls/references: https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=265
- 
+calls/references: 
+1) customscript_wms_labelprinter, Label Printer
+   link: https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=265
+2) attribution-Client.js 
 Observations 
 create a form via serverWidget module
 add a file of functions to the form via clientScriptModulePath
 
 
+-------
 Action
+-------
+
 Determine how data gets passed via Attribution
 1. Print button has an onClick() function
+
+Use Labelfier
+
+10/22/19
+replace the Print/Submit button on label with a button with a function that uses the logic from attribute to skip the print dialogs
+
+10/23
+create a Label Printer client
+take only the essential fields from the EditItemAttributes, include the logic
+
+classes are said to possibly be an issue: https://4537321-sb1.app.netsuite.com/app/common/otherlists/classlist.nl
+
+10/24
+
+
+issue
+x field is not showing up on the form
+  + need to create a real field to capture the data
+o need to 
+

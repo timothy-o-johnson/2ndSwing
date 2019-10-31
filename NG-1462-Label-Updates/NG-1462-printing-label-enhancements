@@ -33,6 +33,13 @@ Observations
 create a form via serverWidget module
 add a file of functions to the form via clientScriptModulePath
 
+--------------
+inventory Item
+--------------
+name: UE Display Print Label Button
+id: customscript_wms_ue_print_item_label
+url: https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=349
+
 
 -------
 Action
@@ -42,6 +49,7 @@ Determine how data gets passed via Attribution
 1. Print button has an onClick() function
 
 Use Labelfier
+http://labelary.com/viewer.html
 
 10/22/19
 replace the Print/Submit button on label with a button with a function that uses the logic from attribute to skip the print dialogs
@@ -54,9 +62,14 @@ classes are said to possibly be an issue: https://4537321-sb1.app.netsuite.com/a
 
 10/24
 
-
 issue
 x field is not showing up on the form
   + need to create a real field to capture the data
 o need to 
 
+10/29
+x tie "fast print:" code to items 
+o add SKU
+o remove standard print
+o add 'quick print'
+o keep 'print new label'

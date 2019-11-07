@@ -1,102 +1,1034 @@
-define(['N/record', 'N/search', 'N/format'], function (record, search, format) {
-  /**
-   *  More robust version of default 2.0 search, returns data in a user-friendly way
-   * @param {*} type A search type enumeration in NS (i.e search.Type.CUSTOMER)
-   * @param {*} searchId (optional)
-   * @param {*} filters
-   * @param {*} columns
-   */
-  function fullSearch (type, searchId, filters, columns) {
-    var searchObj = getSearchObj(type, searchId, filters, columns)
-    var formattedSerachResults = getFormattedSearchResults(searchObj)
+require(['N/record', 'N/search', '/SuiteScripts/WMS/shared/SavedSearchLibrary'], function (
+  record,
+  search,
+  ssLib
+) {
+  //   var customSearchObj = ssLib.customsearch1871
+  //   var customerSearchResults = ssLib.fullSearch(
+  //     'purchaseorder',
+  //     'customsearch_wms_receivingsearch_3'
+  //   )
 
-    return formattedSerachResults
-
-    function getSearchObj (type, searchId, filters, columns) {
-      var searchObj = null
-      // if no saved search create a new search
-      if (searchId == null) {
-        searchObj = search.create({
-          type: type,
-          columns: columns,
-          filters: filters
-        })
-      } else {
-        // load a pre existing search
-        searchObj = search.load({
-          type: type,
-          id: searchId
-        })
-        columns = searchObj.columns
-      }
-
-      log.debug('searchObj:', searchObj)
-      return searchObj
-    }
-
-    function getFormattedSearchResults (searchObj) {
-      var totalResults = []
-
-      // use paged search to handle more than 4000 results
-      var pagedData = searchObj.runPaged()
-
-      pagedData.pageRanges.forEach(function (pageRange) {
-        // for each page of results
-        var page = pagedData.fetch({
-          index: pageRange.index
-        })
-        page.data.forEach(function (result) {
-          var resultData = {
-            id: result.id
-          }
-          columns.forEach(function (column) {
-            // build getValue/getText object
-            var getObj = {
-              name: column.name
-            }
-
-            // if join exists, add to object
-            if (column.join) {
-              getObj.join = column.join
-            }
-            if (column.summary) {
-              getObj.summary = column.summary
-            }
-
-            // Get data for both value and text
-            var resultValue = result.getValue(getObj)
-            var resultText = result.getText(getObj)
-
-            // standardize boolean values;
-            // oddly, NS will sometimes use string T and F for booleans
-            // ("Thank you, NS..." * womp, womp *)
-
-            if (resultValue === 'T') {
-              resultValue = true
-            } else if (resultValue === 'F') {
-              resultValue = false
-            }
-
-            if (typeof resultValue === 'string' && resultValue.indexOf('more..') > -1) {
-              resultValue = search.lookupFields({
-                type: type,
-                id: result.id,
-                columns: [column.name]
-              })[column.name]
-            }
-            resultData[column.name] = {
-              value: resultValue,
-              text: resultText
-            }
-          })
-          totalResults.push(resultData)
-        })
-      })
-      return totalResults
-    }
+  function Items () {
+    this.itemid = null
+    this.itemname = null
+    this.category = null
+    this.categorytext = null
+    this.class = null
+    this.salesdescription = null
+    this.condition = null
+    this.conditiontext = null
+    this.sku = null
+    this.itemtype = null
+    this.parent = null
+    this.parentcategory = null
+    this.parentcategorytext = null
+    this.parentclass = null
+    this.parentsalesdescription = null
+    this.parentcondition = null
+    this.parentconditiontext = null
+    this.parentsku = null
+    this.parentitemtype = null
+    this.parentitemid = null
   }
 
-  return {
-    fullSearch: fullSearch
-  }
+  var itemSearch = search.load({
+    id: 'customsearch1899'
+  })
+
+  var customsearch1899 = ssLib.customsearch1899
+
+  var itemsToSearch = [1306727, 81924, 49183, 226756, 319727]
+
+  itemSearch.filters.push(
+    search.createFilter({
+      name: 'internalid',
+      operator: search.Operator.ANYOF,
+      values: itemsToSearch
+    })
+  )
+
+  customsearch1899.filters.push(
+    search.createFilter({
+      name: 'internalid',
+      operator: search.Operator.ANYOF,
+      values: itemsToSearch
+    })
+  )
+
+  var itemHash1 = []
+  var itemHash2 = []
+
+  itemSearch.run().each(function (result) {
+    // log.debug("aaRESULT ITEM: ", JSON.stringify(result));
+
+    var itemObjTemp = new Items()
+    var id = result.id
+    itemObjTemp.itemid = result.getValue({ name: 'itemid' })
+    itemObjTemp.itemname = result.getValue({ name: 'custitem_g2_name' })
+    itemObjTemp.category = result.getValue({ name: 'custitem_g2_category_ref' })
+    itemObjTemp.categorytext = result.getText({ name: 'custitem_g2_category_ref' })
+    itemObjTemp.class = result.getValue({ name: 'class' })
+    itemObjTemp.salesdescription = result.getValue({ name: 'custitem_sales_description' })
+    itemObjTemp.condition = result.getValue({ name: 'custitem_g2_condition_ref' })
+    itemObjTemp.conditiontext = result.getText({ name: 'custitem_g2_condition_ref' })
+    // the correct SKU field is itemid, not the custitem_g2_sku
+    // itemid in search returns parent:child, so need to do a split
+    var tempSku = result.getValue({ name: 'itemid' })
+    var splitSku = tempSku.split(':')
+    if (splitSku.length == 1) {
+      itemObjTemp.sku = splitSku[0]
+    } else {
+      itemObjTemp.sku = splitSku[1]
+    }
+
+    itemObjTemp.itemtype = result.getValue({ name: 'custitem_g2_itemtype_ref' })
+    itemObjTemp.parent = result.getValue({ name: 'parent' })
+    itemObjTemp.parentcategory = result.getValue({
+      name: 'custitem_g2_category_ref',
+      join: 'parent'
+    })
+    itemObjTemp.parentcategorytext = result.getText({
+      name: 'custitem_g2_category_ref',
+      join: 'parent'
+    })
+    itemObjTemp.parentsalesdescription = result.getValue({
+      name: 'custitem_sales_description',
+      join: 'parent'
+    })
+    itemObjTemp.parentcondition = result.getValue({
+      name: 'custitem_g2_condition_ref',
+      join: 'parent'
+    })
+    itemObjTemp.parentconditiontext = result.getText({
+      name: 'custitem_g2_condition_ref',
+      join: 'parent'
+    })
+    itemObjTemp.parentsku = result.getValue({ name: 'custitem_g2_sku', join: 'parent' })
+    itemObjTemp.parentitemtype = result.getValue({
+      name: 'custitem_g2_itemtype_ref',
+      join: 'parent'
+    })
+    itemObjTemp.parentitemid = result.getValue({ name: 'itemid', join: 'parent' })
+
+    // log.debug("ID", id);
+    itemHash1[id] = itemObjTemp
+    return true
+  })
+
+  customsearch1899.run().each(function (result) {
+    // log.debug("aaRESULT ITEM: ", JSON.stringify(result));
+
+    var itemObjTemp = new Items()
+    var id = result.id
+    itemObjTemp.itemid = result.getValue({ name: 'itemid' })
+    itemObjTemp.itemname = result.getValue({ name: 'custitem_g2_name' })
+    itemObjTemp.category = result.getValue({ name: 'custitem_g2_category_ref' })
+    itemObjTemp.categorytext = result.getText({ name: 'custitem_g2_category_ref' })
+    itemObjTemp.class = result.getValue({ name: 'class' })
+    itemObjTemp.salesdescription = result.getValue({ name: 'custitem_sales_description' })
+    itemObjTemp.condition = result.getValue({ name: 'custitem_g2_condition_ref' })
+    itemObjTemp.conditiontext = result.getText({ name: 'custitem_g2_condition_ref' })
+    // the correct SKU field is itemid, not the custitem_g2_sku
+    // itemid in search returns parent:child, so need to do a split
+    var tempSku = result.getValue({ name: 'itemid' })
+    var splitSku = tempSku.split(':')
+    if (splitSku.length == 1) {
+      itemObjTemp.sku = splitSku[0]
+    } else {
+      itemObjTemp.sku = splitSku[1]
+    }
+
+    itemObjTemp.itemtype = result.getValue({ name: 'custitem_g2_itemtype_ref' })
+    itemObjTemp.parent = result.getValue({ name: 'parent' })
+    itemObjTemp.parentcategory = result.getValue({
+      name: 'custitem_g2_category_ref',
+      join: 'parent'
+    })
+    itemObjTemp.parentcategorytext = result.getText({
+      name: 'custitem_g2_category_ref',
+      join: 'parent'
+    })
+    itemObjTemp.parentsalesdescription = result.getValue({
+      name: 'custitem_sales_description',
+      join: 'parent'
+    })
+    itemObjTemp.parentcondition = result.getValue({
+      name: 'custitem_g2_condition_ref',
+      join: 'parent'
+    })
+    itemObjTemp.parentconditiontext = result.getText({
+      name: 'custitem_g2_condition_ref',
+      join: 'parent'
+    })
+    itemObjTemp.parentsku = result.getValue({ name: 'custitem_g2_sku', join: 'parent' })
+    itemObjTemp.parentitemtype = result.getValue({
+      name: 'custitem_g2_itemtype_ref',
+      join: 'parent'
+    })
+    itemObjTemp.parentitemid = result.getValue({ name: 'itemid', join: 'parent' })
+
+    // log.debug("ID", id);
+    itemHash2[id] = itemObjTemp
+    return true
+  })
+
+  log.debug('customerSearchResults', JSON.stringify(customerSearchResults))
 })
+
+//   return {
+//     fullSearch: fullSearch
+//   }
+
+var customerSearchResults = [
+  {
+    id: '3343178',
+    trandate: { value: '10/30/2019', text: null },
+    tranid: { value: '541', text: null },
+    class: { value: '3', text: '403 Opportunity' },
+    statusref: {
+      value: 'pendingBillPartReceived',
+      text: 'Pending Billing/Partially Received'
+    },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '23', text: null },
+    custbody_wms_total_received_2: { value: '1', text: null },
+    total: { value: '4300.00', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: {
+      value: 'Please review Receiving Notes as you are receiving. ck',
+      text: null
+    },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3342078',
+    trandate: { value: '10/29/2019', text: null },
+    tranid: { value: 'mag-gsv-dev-po-32', text: null },
+    class: { value: '', text: '' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '1206', text: 'Minnetonka (02)' },
+    entity: { value: '1266774', text: 'John Doe (2s 44906)' },
+    custbody_bf_totalquantity2: { value: '1', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '45.00', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3336563',
+    trandate: { value: '10/25/2019', text: null },
+    tranid: { value: 'mag-gsv-dev-po-29', text: null },
+    class: { value: '', text: '' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '1205', text: 'Minneapolis (01)' },
+    entity: { value: '1268784', text: 'Erik Lemieux (2s 58240)' },
+    custbody_bf_totalquantity2: { value: '1', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '75.00', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3336662',
+    trandate: { value: '10/25/2019', text: null },
+    tranid: { value: 'mag-gsv-dev-po-30', text: null },
+    class: { value: '', text: '' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '1205', text: 'Minneapolis (01)' },
+    entity: { value: '1266270', text: 'Zach Kuszz (2s 44971)' },
+    custbody_bf_totalquantity2: { value: '1', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '35.70', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3336762',
+    trandate: { value: '10/25/2019', text: null },
+    tranid: { value: 'mag-gsv-dev-po-31', text: null },
+    class: { value: '', text: '' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '1205', text: 'Minneapolis (01)' },
+    entity: { value: '1283489', text: 'Johnny Appleseed (2s 77803)' },
+    custbody_bf_totalquantity2: { value: '1', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '35.70', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3336463',
+    trandate: { value: '10/24/2019', text: null },
+    tranid: { value: 'PO-M9900027', text: null },
+    class: { value: '6', text: '400 Used : 400-01 - Club Trade' },
+    statusref: {
+      value: 'pendingBillPartReceived',
+      text: 'Pending Billing/Partially Received'
+    },
+    custbody_gsvsite_ref: { value: '', text: '' },
+    entity: { value: '1284692', text: 'Brian Flanagan (G990021)' },
+    custbody_bf_totalquantity2: { value: '35', text: null },
+    custbody_wms_total_received_2: { value: '1', text: null },
+    total: { value: '1610.00', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3334628',
+    trandate: { value: '10/23/2019', text: null },
+    tranid: { value: '539', text: null },
+    class: { value: '3', text: '403 Opportunity' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '', text: '' },
+    entity: { value: '966702', text: 'Titleist (100103)' },
+    custbody_bf_totalquantity2: { value: '25', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '1200.00', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '402510/1243', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3332607',
+    trandate: { value: '10/21/2019', text: null },
+    tranid: { value: 'mag-gsv-dev-po-25', text: null },
+    class: { value: '', text: '' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '95006', text: 'Erik T Lemieux' },
+    custbody_bf_totalquantity2: { value: '1', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '63.75', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3332707',
+    trandate: { value: '10/21/2019', text: null },
+    tranid: { value: 'mag-gsv-dev-po-26', text: null },
+    class: { value: '', text: '' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '1268784', text: 'Erik Lemieux (2s 58240)' },
+    custbody_bf_totalquantity2: { value: '1', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '32.00', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3330189',
+    trandate: { value: '10/18/2019', text: null },
+    tranid: { value: '535', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: {
+      value: 'pendingBillPartReceived',
+      text: 'Pending Billing/Partially Received'
+    },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '10', text: null },
+    custbody_wms_total_received_2: { value: '3', text: null },
+    total: { value: '.00', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3330192',
+    trandate: { value: '10/18/2019', text: null },
+    tranid: { value: '536', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: {
+      value: 'pendingBillPartReceived',
+      text: 'Pending Billing/Partially Received'
+    },
+    custbody_gsvsite_ref: { value: '9', text: 'Bushnell Golf Trade-In Program' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '5', text: null },
+    custbody_wms_total_received_2: { value: '4', text: null },
+    total: { value: '396.75', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3330193',
+    trandate: { value: '10/18/2019', text: null },
+    tranid: { value: '537', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: {
+      value: 'pendingBillPartReceived',
+      text: 'Pending Billing/Partially Received'
+    },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '8', text: null },
+    custbody_wms_total_received_2: { value: '8', text: null },
+    total: { value: '.00', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3330201',
+    trandate: { value: '10/18/2019', text: null },
+    tranid: { value: '538', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: {
+      value: 'pendingBillPartReceived',
+      text: 'Pending Billing/Partially Received'
+    },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '7', text: null },
+    custbody_wms_total_received_2: { value: '4', text: null },
+    total: { value: '658.21', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3323243',
+    trandate: { value: '10/16/2019', text: null },
+    tranid: { value: '532', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: {
+      value: 'pendingBillPartReceived',
+      text: 'Pending Billing/Partially Received'
+    },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '11', text: null },
+    custbody_wms_total_received_2: { value: '4', text: null },
+    total: { value: '1298.94', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3323246',
+    trandate: { value: '10/16/2019', text: null },
+    tranid: { value: '533', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: {
+      value: 'pendingBillPartReceived',
+      text: 'Pending Billing/Partially Received'
+    },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '114187', text: 'Christopher Kalthoff (G19178)' },
+    custbody_bf_totalquantity2: { value: '9', text: null },
+    custbody_wms_total_received_2: { value: '4', text: null },
+    total: { value: '1003.11', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3323247',
+    trandate: { value: '10/16/2019', text: null },
+    tranid: { value: '534', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: {
+      value: 'pendingBillPartReceived',
+      text: 'Pending Billing/Partially Received'
+    },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '114187', text: 'Christopher Kalthoff (G19178)' },
+    custbody_bf_totalquantity2: { value: '16', text: null },
+    custbody_wms_total_received_2: { value: '3', text: null },
+    total: { value: '1723.04', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3323328',
+    trandate: { value: '10/16/2019', text: null },
+    tranid: { value: 'mag-gsv-dev-po-23', text: null },
+    class: { value: '', text: '' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '1263668', text: "Who's Kusz, Inc. (gsv 39527)" },
+    custbody_bf_totalquantity2: { value: '1', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '16.36', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3323330',
+    trandate: { value: '10/16/2019', text: null },
+    tranid: { value: 'mag-gsv-dev-po-24', text: null },
+    class: { value: '', text: '' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '1263668', text: "Who's Kusz, Inc. (gsv 39527)" },
+    custbody_bf_totalquantity2: { value: '1', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '35.70', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3322229',
+    trandate: { value: '10/15/2019', text: null },
+    tranid: { value: '531', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: {
+      value: 'pendingBillPartReceived',
+      text: 'Pending Billing/Partially Received'
+    },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '12', text: null },
+    custbody_wms_total_received_2: { value: '5', text: null },
+    total: { value: '429.98', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3322245',
+    trandate: { value: '10/15/2019', text: null },
+    tranid: { value: 'PO-G9900127', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '95006', text: 'Erik T Lemieux' },
+    custbody_bf_totalquantity2: { value: '1', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '130.64', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3322246',
+    trandate: { value: '10/15/2019', text: null },
+    tranid: { value: 'PO-G9900126', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '95006', text: 'Erik T Lemieux' },
+    custbody_bf_totalquantity2: { value: '3', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '69.02', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3322247',
+    trandate: { value: '10/15/2019', text: null },
+    tranid: { value: 'PO-G9900132', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '96539', text: 'Denver Country Club (G01670)' },
+    custbody_bf_totalquantity2: { value: '4', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '211.00', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3322248',
+    trandate: { value: '10/15/2019', text: null },
+    tranid: { value: 'PO-G9900128', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '95006', text: 'Erik T Lemieux' },
+    custbody_bf_totalquantity2: { value: '1', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '30.00', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3322249',
+    trandate: { value: '10/15/2019', text: null },
+    tranid: { value: 'PO-G9900129', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '95006', text: 'Erik T Lemieux' },
+    custbody_bf_totalquantity2: { value: '18', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '480.06', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3323143',
+    trandate: { value: '10/15/2019', text: null },
+    tranid: { value: 'PO-G9900136', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '95006', text: 'Erik T Lemieux' },
+    custbody_bf_totalquantity2: { value: '1', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '235.00', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3323144',
+    trandate: { value: '10/15/2019', text: null },
+    tranid: { value: 'PO-G9900137', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '95006', text: 'Erik T Lemieux' },
+    custbody_bf_totalquantity2: { value: '4', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '514.00', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3323145',
+    trandate: { value: '10/15/2019', text: null },
+    tranid: { value: 'PO-G9900134', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '95006', text: 'Erik T Lemieux' },
+    custbody_bf_totalquantity2: { value: '1', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '115.01', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3323146',
+    trandate: { value: '10/15/2019', text: null },
+    tranid: { value: 'PO-G9900135', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '95012', text: 'Erik Lemieux (G00233)' },
+    custbody_bf_totalquantity2: { value: '1', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '230.01', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3323147',
+    trandate: { value: '10/15/2019', text: null },
+    tranid: { value: 'PO-G9900133', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '95006', text: 'Erik T Lemieux' },
+    custbody_bf_totalquantity2: { value: '2', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '132.01', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3321313',
+    trandate: { value: '10/14/2019', text: null },
+    tranid: { value: '527', text: null },
+    class: { value: '', text: '' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '', text: '' },
+    entity: { value: '319466', text: 'Erik Lemieux (G61565)' },
+    custbody_bf_totalquantity2: { value: '1', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '380.02', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3321319',
+    trandate: { value: '10/14/2019', text: null },
+    tranid: { value: '530', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '3', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '1109.97', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318191',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '511', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: {
+      value: 'pendingBillPartReceived',
+      text: 'Pending Billing/Partially Received'
+    },
+    custbody_gsvsite_ref: { value: '3', text: 'Golf Stix Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '3', text: null },
+    custbody_wms_total_received_2: { value: '1', text: null },
+    total: { value: '203.00', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318194',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '512', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: {
+      value: 'pendingBillPartReceived',
+      text: 'Pending Billing/Partially Received'
+    },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '400', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '50000.00', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318196',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '513', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '410', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '65172.90', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318197',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '514', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '420', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '65872.90', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318198',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '515', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '430', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '66672.80', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318199',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '516', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '440', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '68972.70', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318200',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '517', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '450', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '70342.99', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318201',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '518', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '460', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '74542.60', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318202',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '519', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '470', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '76842.50', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318203',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '520', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '480', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '81042.40', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318204',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '521', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '490', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '81542.40', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318205',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '522', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: {
+      value: 'pendingBillPartReceived',
+      text: 'Pending Billing/Partially Received'
+    },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '500', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '81732.40', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318207',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '523', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: { value: 'pendingReceipt', text: 'Pending Receipt' },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '525', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '82359.40', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318208',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '524', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: {
+      value: 'pendingReceipt',
+      text: 'Pending Receipt'
+    },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '550', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '84359.15', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318209',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '525', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: {
+      value: 'pendingReceipt',
+      text: 'Pending Receipt'
+    },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '575', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '86858.90', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  },
+  {
+    id: '3318210',
+    trandate: { value: '10/10/2019', text: null },
+    tranid: { value: '526', text: null },
+    class: { value: '2', text: '400 Used' },
+    statusref: {
+      value: 'pendingReceipt',
+      text: 'Pending Receipt'
+    },
+    custbody_gsvsite_ref: { value: '14', text: '2nd Swing Value Guide' },
+    entity: { value: '98726', text: 'ABC Vendor (G03839)' },
+    custbody_bf_totalquantity2: { value: '600', text: null },
+    custbody_wms_total_received_2: { value: '0', text: null },
+    total: { value: '91108.90', text: null },
+    custbody_bf_prepaidpo: { value: false, text: null },
+    custbody_wipfli_wms_notes: { value: '', text: null },
+    custcol_numshippinglabels: { value: '', text: null },
+    custbody5: { value: '', text: null },
+    shippackage: { value: '', text: '' }
+  }
+]

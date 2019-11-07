@@ -1,0 +1,21 @@
+To Do
+o test full-search 
+o load search into file cabinet
+o practice access file
+o document process 
+    - create saved search in sandbox/live 
+        - ensure it's behaving as you would like 
+        - use the saved search tool to download it
+            - erase the extraneous bits 
+            """ var searchResultCount = purchaseorderSearchObj.runPaged().count;
+            """ log.debug("purchaseorderSearchObj result count",searchResultCount);
+            """ purchaseorderSearchObj.run().each(function(result){
+            """ // .run().each has a limit of 4,000 results
+            """ return true;
+            """ });" 
+        - update/add it to the library ('/SuiteScripts/WMS/shared/SavedSearchLibrary.js')
+        - name the search by id (i.e. 'customsearch_wms_receivingsearch_3' )
+            - easier for finding the actual search in NS
+        - save the search title in the comments
+        - add the name of the search to the return object
+    - going forward transition over to system as you need to make changes 

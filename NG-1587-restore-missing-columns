@@ -3,39 +3,14 @@ require(['N/record', 'N/search', '/SuiteScripts/WMS/shared/SavedSearchLibrary'],
   search,
   ssLib
 ) {
-  //   var customSearchObj = ssLib.customsearch1871
-  //   var customerSearchResults = ssLib.fullSearch(
-  //     'purchaseorder',
-  //     'customsearch_wms_receivingsearch_3'
-  //   )
 
-  function Items () {
-    this.itemid = null
-    this.itemname = null
-    this.category = null
-    this.categorytext = null
-    this.class = null
-    this.salesdescription = null
-    this.condition = null
-    this.conditiontext = null
-    this.sku = null
-    this.itemtype = null
-    this.parent = null
-    this.parentcategory = null
-    this.parentcategorytext = null
-    this.parentclass = null
-    this.parentsalesdescription = null
-    this.parentcondition = null
-    this.parentconditiontext = null
-    this.parentsku = null
-    this.parentitemtype = null
-    this.parentitemid = null
-  }
 
+  // BEFORE saved search
   var itemSearch = search.load({
     id: 'customsearch1899'
   })
 
+  // AFTER saved search
   var customsearch1899 = ssLib.customsearch1899
 
   var itemsToSearch = [1306727, 81924, 49183, 226756, 319727]

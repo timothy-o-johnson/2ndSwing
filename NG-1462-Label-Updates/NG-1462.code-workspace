@@ -1,17 +1,20 @@
 {
-	"folders": [
-		{
-			"path": "/Users/timjohnson/Documents/2ndSwing"
-		},
-		{
-			"path": "/Users/timjohnson/netsuite-workspace/WMS"
-		},
-		{
-			"path": "/Users/timjohnson/netsuite-workspace/WarehouseMobileApp"
-		}
-	],
-	"settings": {
-		"git.alwaysShowStagedChangesResourceGroup": true,
-		"git.branchSortOrder": "alphabetically"
-	}
+    "folders": [
+        {
+            "name": "2nd Swing Tickets",
+            "path": "/Users/timjohnson/Google Drive/Work/2nd Swing/2nd Swing Tickets"
+        },
+        {
+            "name": "WMS",
+            "path": "/Users/timjohnson/netsuite-workspace/WMS"
+        },
+        {
+            "name": "WarehouseMobileApp",
+            "path": "/Users/timjohnson/netsuite-workspace/WarehouseMobileApp"
+        },
+        {
+            "name": "TransferOrder",
+            "path": "/Users/timjohnson/netsuite-workspace/TransferOrder"
+        }
+    ]
 }

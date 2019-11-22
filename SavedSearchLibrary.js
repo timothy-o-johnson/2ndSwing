@@ -105,7 +105,6 @@ define(['N/record', 'N/search', 'N/format'], function (record, search, format) {
 
   // ACS | Transaction | SelectReceivingLine
   // customsearch1871
-
   var customsearch1871 = {
     type: 'purchaseorder',
     filters: [

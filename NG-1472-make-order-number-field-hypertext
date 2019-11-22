@@ -1,0 +1,25 @@
+Sales Orders Pending Fulfillment page
+    Transactions -> Custom -> Pick Sales Orders
+
+Script for SO Pend Fulfill page
+    /app/common/scripting/script.nl?id=67
+Relevant deployment: app/common/scripting/scriptrecord.nl?id=205
+
+How Form Works
+form is called 'form'
+
+'titler' seems to be mispelling of titler
+parameters from deployments are accessed via 
+    runtime.getCurrentScript()
+		    .getParameter({
+				name : "custscript_wms_find_nextstep_so"
+					})
+
+    where name equals fieldId
+
+field group for the filters?
+orderList = all the Sales Orders = a sublist created by form.addSublist()
+addField() creates the field (column headings)
+setSublistValue() populates each line
+
+form.clientScriptModulePath = './TransferOrderPickLineHelperPromise.js'

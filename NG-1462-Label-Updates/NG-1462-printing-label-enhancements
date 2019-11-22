@@ -73,3 +73,17 @@ o add SKU
 o remove standard print
 o add 'quick print'
 o keep 'print new label'
+
+11/20: bug not working in production says script doesn't exist
+
+  "SSS_INVALID_SCRIPTLET_ID: That Suitelet is invalid, disabled, or no longer exists."
+compare sandbox to production
+scripted record looks the same
+  both have the same UE script
+LabelPrinter.js (suitelet) /app/common/scripting/script.nl?id=265
+  both appear to be the same
+  maybe the accessiblity settings are diffferent?
+LabelPrinter-Client Script 
+  makes a reference to a suitescript that doesn't exist production # 384: SS Item Search
+
+solution: create function that identified whether in sandbox or not and then point to right location of the SS Item Search suitelet based on the environment

@@ -1,0 +1,36 @@
+title NG-1469: Oppportunity PO
+
+Receiving For Opportunity Order -> Items: click + button
+note right of Receiving For Opportunity Order: items have been recieved
+note right of Items: 
+team can reuse a pre-existing SKU 
+if the recieving item is a match
+end note
+
+Items -> Receiving For Opportunity Order: 
+opt
+    Items -> *Create Opportunity (confirm receipt): [Create Opportunity]  
+       note right of Create Opportunity (confirm receipt): 
+     creates a sku
+     add many items as you want to sku
+     end note 
+     note right of Create Opportunity (confirm receipt) 
+     cannot add skus individually 
+     cannot prepopulate item attributes  
+     end note
+     
+end
+    
+     Create Opportunity (confirm receipt) --> Receiving For Opportunity Order : Save
+ 
+
+opt 
+Create Opportunity (confirm receipt) -> *Attribute Sku : [Attribute Sku]
+Attribute Sku -> Create Opportunity (confirm receipt) :
+
+end
+
+
+note over Create Opportunity (confirm receipt) : Exit
+
+

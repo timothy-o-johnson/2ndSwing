@@ -1,9 +1,9 @@
 ticket: NG - 1469 - opportunity - po - enhancements
 
 
-Receiving For Opportunity Order page:
-/app/site/hosting/scriptlet.nl?script=48&deploy=2&compid=4537321&custpage_rf_orderid=3834677
-/app/site/hosting/scriptlet.nl?script=48&deploy=2&compid=4537321_SB1&custpage_rf_orderid=3370582
+Receiving For Opportunity Order page: ''
+production: /app/site/hosting/scriptlet.nl?script=48&deploy=2&compid=4537321&custpage_rf_orderid=3834677
+sandbox: /app/site/hosting/scriptlet.nl?script=48&deploy=2&compid=4537321_SB1&custpage_rf_orderid=3370582
 
 
 Recieving team clicks the + button to indicate items have been received. This launches the Items page.
@@ -46,3 +46,29 @@ https://debugger.na0.netsuite.com/app/common/scripting/script.nl?id=44
 --- 
 
 A good way to test suitelets must be via the execution log.
+
+--- 
+
+12/3/19
+Attribute Sku Button
+https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=43
+
+make sure the count is 1 for Recieved 
+
+-- 
+item Reciept example:
+https://4537321-sb1.app.netsuite.com/app/accounting/transactions/itemrcpt.nl?id=3392247&whence=
+
+    quantity on hand
+    quantity available (quantity)
+
+-- 
+Lyle's kickstarter script
+
+https://4537321-sb1.app.netsuite.com/app/common/scripting/scriptrecord.nl?id=640&whence=
+
+--
+
+MR Create Multiple Skus
+
+ https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=411&id=411&whence=

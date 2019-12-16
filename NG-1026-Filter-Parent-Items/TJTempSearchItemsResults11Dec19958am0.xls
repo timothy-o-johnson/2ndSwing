@@ -1,0 +1,1128 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+<DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+<Author>NetSuite</Author>
+<LastAuthor>NetSuite</LastAuthor>
+<Company>NetSuite</Company>
+</DocumentProperties>
+<Styles>
+<Style ss:ID="company">
+<Alignment ss:Horizontal="Center"/>
+<Font ss:Bold="1"/>
+</Style> <Style ss:ID="error">
+<Alignment ss:Horizontal="Center"/>
+<Interior ss:Color="#d04040" ss:Pattern="Solid"/>
+<Font ss:Bold="1"/>
+</Style> <Style ss:ID="header">
+<Alignment ss:Horizontal="Center"/>
+<Font ss:Size="7" ss:Bold="1"/>
+<Interior ss:Color="#d0d0d0" ss:Pattern="Solid"/>
+</Style> <Style ss:ID="Default" ss:Name="Normal">
+<Alignment ss:Vertical="Bottom"/>
+<Borders/>
+<Font ss:FontName="Arial" ss:Size="8"/>
+<Interior/>
+<NumberFormat/>
+<Protection/>
+</Style>
+<Style ss:ID="s__TIMEOFDAY"><NumberFormat ss:Format="Medium Time"/></Style>
+<Style ss:ID="s__DATETIME"><NumberFormat ss:Format="General Date"/></Style>
+<Style ss:ID="s__DATETIMETZ"><NumberFormat ss:Format="General Date"/></Style>
+<Style ss:ID="s__DATE"><NumberFormat ss:Format="Short Date"/>
+</Style><Style ss:ID="s__text"></Style><Style ss:ID="s__currency"><NumberFormat ss:Format="Currency"/></Style>
+<Style ss:ID="s__percent"><NumberFormat ss:Format="Percent"/></Style>
+<Style ss:ID="s1_b_text"><Alignment ss:Indent="1"/><Font ss:FontName="Verdana" x:Family="Swiss" ss:Size="8" ss:Color="#000000" ss:Bold="1"/></Style>
+<Style ss:ID="s_b_text"><Font ss:FontName="Verdana" x:Family="Swiss" ss:Size="8" ss:Color="#000000" ss:Bold="1"/></Style>
+<Style ss:ID="s2__text"><Alignment ss:Indent="2"/></Style>
+<Style ss:ID="s_b_currency"><Font ss:FontName="Verdana" x:Family="Swiss" ss:Size="8" ss:Color="#000000" ss:Bold="1"/><NumberFormat ss:Format="Currency"/></Style>
+<Style ss:ID="s_currency_nosymbol"><Font ss:FontName="Verdana" x:Family="Swiss" ss:Size="8" ss:Color="#000000" /><NumberFormat ss:Format="#,##0.00_);[Red]\(#,##0.00\)"/></Style>
+<Style ss:ID="s1__text"><Alignment ss:Indent="1"/></Style>
+<Style ss:ID="s_b_currency_X"><Font ss:FontName="Verdana" x:Family="Swiss" ss:Size="8" ss:Color="#000000" ss:Bold="1"/><Interior ss:Color="#f0e0e0" ss:Pattern="Solid"/><NumberFormat ss:Format="Currency"/></Style>
+<Style ss:ID="s__currency_en_CA"><Alignment ss:Vertical="Center" ss:Horizontal="Right"/><NumberFormat ss:Format="&quot;Can$&quot;#,##0.00_);(&quot;Can$&quot;#,##0.00)"/></Style>
+<Style ss:ID="s__currency_en_US"><Alignment ss:Vertical="Center" ss:Horizontal="Right"/><NumberFormat ss:Format="&quot;$&quot;#,##0.00_);(&quot;$&quot;#,##0.00)"/></Style>
+<Style ss:ID="s__currency_fr_FR_EURO"><Alignment ss:Vertical="Center" ss:Horizontal="Right"/><NumberFormat ss:Format="&quot;€&quot;#,##0.00_);(&quot;€&quot;#,##0.00)"/></Style>
+<Style ss:ID="s__currency_en_GB"><Alignment ss:Vertical="Center" ss:Horizontal="Right"/><NumberFormat ss:Format="&quot;£&quot;#,##0.00_);(&quot;£&quot;#,##0.00)"/></Style>
+</Styles>
+<Worksheet ss:Name="TJTempSearchItemsResults">
+<Table><Row>
+<Cell ss:StyleID="header"><Data ss:Type="String">Internal ID</Data></Cell>
+<Cell ss:StyleID="header"><Data ss:Type="String">Display In Parent Item Lookup</Data></Cell>
+<Cell ss:StyleID="header"><Data ss:Type="String">Base Price</Data></Cell>
+<Cell ss:StyleID="header"><Data ss:Type="String">Bid Price</Data></Cell>
+<Cell ss:StyleID="header"><Data ss:Type="String">MSRP</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29329</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">10.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29386</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">59.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">19.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">299.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29339</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">42.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">10.75</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29343</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">1.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">62.50</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29351</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">19.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">2.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">49.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29357</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">3.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29363</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">3.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29381</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">59.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">6.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">299.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29382</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">3.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">299.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29387</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">1.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">299.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29388</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">3.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">299.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29347</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">6.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29327</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">59.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">16.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">299.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29336</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">4.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">179.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29340</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">39.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">11.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29352</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">74.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">7.50</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29358</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">40.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29362</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">1.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">49.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29368</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">39.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">4.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29328</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">49.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">10.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">199.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29334</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">19.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">2.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29359</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">1.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29341</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">39.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">11.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29348</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">1.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">62.50</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29353</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">3.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">64.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29365</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">49.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">2.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29383</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">4.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">299.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29389</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">1.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">299.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29338</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">49.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">10.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">129.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29325</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">39.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">6.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29331</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">4.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">169.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29345</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">69.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">3.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29349</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">3.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29355</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">59.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">4.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29361</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">3.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29379</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">1.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">299.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29385</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">79.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">16.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">199.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29346</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">1.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">49.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29330</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">19.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">2.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">179.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29335</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">49.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">13.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29342</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">42.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">10.75</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29354</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">109.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">40.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29360</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">64.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">7.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">85.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29366</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">39.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">4.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29377</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">39.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">2.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">299.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29384</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">1.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">299.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29326</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">5.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29332</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">39.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">13.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">299.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29337</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">42.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">10.75</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29344</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">49.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">2.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">62.50</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29350</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">39.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">4.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29356</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">69.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">10.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29364</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">34.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">4.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">99.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29380</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">1.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">299.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29333</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Yes</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">29.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">1.00</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">149.99</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">No</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29370</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">No</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">999.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">.01</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29375</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">No</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">999.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">.01</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29376</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">No</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">999.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">.01</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">No</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29372</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">No</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">999.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">.01</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29378</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">No</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">999.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">.01</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29367</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">No</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">999.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">.01</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29373</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">No</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">999.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">.01</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29371</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">No</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">999.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">.01</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29369</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">No</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">999.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">.01</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29374</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">No</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">999.99</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number">.01</Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29444</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29447</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29473</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29454</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29461</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29466</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29479</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29485</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29489</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29495</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29393</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29397</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29421</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29404</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29409</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29415</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29427</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29434</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29439</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29448</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29452</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29458</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29464</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29470</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29475</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29482</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29488</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29494</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29500</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29468</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29450</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29456</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29462</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29474</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29480</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29486</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29492</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29498</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29449</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29455</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29477</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29460</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29467</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29471</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29483</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29490</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29496</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29392</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29394</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29412</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29399</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29400</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29406</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29418</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29424</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29430</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29436</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29423</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29405</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29411</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29417</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29429</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29435</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29442</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29441</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29396</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29402</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29408</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29414</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29437</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29419</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29425</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29431</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29443</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29446</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29453</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29459</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29465</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29472</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29478</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29484</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29491</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29403</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29391</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29398</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29410</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29416</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29422</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29428</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29433</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29440</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29497</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29445</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29451</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29457</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29463</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29469</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29476</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29481</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29487</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29493</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29499</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29390</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29395</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29401</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29407</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29413</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29420</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29426</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29432</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29438</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+<Cell ss:StyleID="s_currency_nosymbol"><Data ss:Type="Number"></Data></Cell>
+</Row>
+</Table>
+</Worksheet>
+</Workbook>

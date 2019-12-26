@@ -7,7 +7,7 @@ Technical requirements:
 2. When a kit item (ie: service matrix parent or child) is updated/created/deleted
 
 3. find the SERVICE PARENT of the matrix parent, and set kit_needs_refresh to true.
-
+---
 4. create a MR job which finds service parent’s with kit_needs_refresh = true
 
 5. map phase should emit item ids based on 2 further searches
@@ -22,3 +22,8 @@ Technical requirements:
 
 7. setup this MR job to run on a schedule per  choosing (probably a few times per day is best…
 
+
+====;
+12 / 20
+inventory balance;
+NS webpage: 'https://netsuite.custhelp.com/app/answers/detail/a_id/10242';

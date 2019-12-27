@@ -1,8 +1,25 @@
-require(['N/search', 'N/record', '/SuiteScripts/WMS/shared/SavedSearchLibrary'], function (search, record, ssLib) {
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary'
+], function (search, record, ssLib) {
+  // create an array that will hold fieldObjects
+  var fieldObjs = []
+
+  // define fieldObj
+  function fieldObj (fieldTitle, originalValue, fieldType, selections) {
+    this.fieldTitle = fieldTitle
+    this.originalValue = originalValue
+    this.fieldType = fieldType
+    this.selections = selections
+  }
+
   // load item record, note must be set to true in order to get select options
+  var recordInternalId = 41285
+
   var replacementItemRecord = record.load({
     type: record.Type.INVENTORY_ITEM,
-    id: 41285,
+    id: recordInternalId,
     isDynamic: true
   })
 
@@ -10,6 +27,49 @@ require(['N/search', 'N/record', '/SuiteScripts/WMS/shared/SavedSearchLibrary'],
   var categoryTypeValue = replacementItemRecord.getValue({
     fieldId: 'custitem_g2_category_ref'
   })
+
+  // get relevant category fields () // function getCategoryAttributes (category)
+
+  var relevantCatFieldsData = getCategoryAttributes(categoryTypeValue)
+
+  var relevantCatFields = relevantCatFieldsData.attrFields
+  var relevantCatFieldSearchColumns =
+    relevantCatFieldsData.origItemSearchColumns
+
+  // get originalValues from records
+  var originalValues = getOriginalItemAttr(
+    relevantCatFieldSearchColumns,
+    recordInternalId
+  )
+
+  var fieldTitle, originalValue, fieldType, selections
+
+  // return to primary purpose: populate field object
+  relevantCatFields.forEach(function (field) {
+    fieldTitle = field.custrecord_fmd_field.text
+    fieldId = field.custrecord_fmd_fieldscriptid.id
+
+    // retrieve original field values
+    originalValue = originalValues[fieldId]
+
+    // get field type
+    field = replacementItemRecord.getField({
+      fieldId: fieldId
+    })
+
+    fieldType = field.type
+
+    // gather field selections
+    selections = fieldType === 'select' ? field.getSelectOptions() : []
+
+    // save field objects array
+    fieldObjs.push(
+      new fieldObj(fieldTitle, originalValue, fieldType, selections)
+    )
+  })
+
+  // create the field on the form
+  // loop through array of field objects
 
   var categoryTypeText = replacementItemRecord.getText({
     fieldId: 'custitem_g2_category_ref'
@@ -39,24 +99,21 @@ require(['N/search', 'N/record', '/SuiteScripts/WMS/shared/SavedSearchLibrary'],
 
   log.debug('much stuff:newProductAttributes', newProductAttributesText)
 
-  var clubColorFieldSelections = clubColorField.getSelectOptions({
-    filter: 's',
-    operator: 'contains'
-  })
+  var clubColorFieldSelections = clubColorField.getSelectOptions()
 
   // get custitem_g2_club_color_ref
 
-  log.debug('much stuff:newProductAttributes', newProductAttributesText)
-
-  var relevantAttributeFields = getCategoryAttributes(22) // 6 = Fairway Wood
+  log.debug(
+    'getSelectOptions(): clubColorFieldSelections',
+    clubColorFieldSelections
+  )
 
   log.debug('relevantAttributeFields', relevantAttributeFields)
 
-  var originalItemAttr = getOriginalItemAttr(relevantAttributeFields,29702)
+  var originalItemAttr = getOriginalItemAttr(relevantAttributeFields, 29702)
 
   log.debug('originalItemAttr', originalItemAttr)
-  
-  
+
   // helper function to get attributes and values from original item
   function getOriginalItemAttr (origItemSearchColumns, origItemId) {
     var origSkuSearch = search.create({
@@ -97,7 +154,7 @@ require(['N/search', 'N/record', '/SuiteScripts/WMS/shared/SavedSearchLibrary'],
 
   // helper function to get relevantAttribute fields based on category
   // returns the field, the field metadata record internalid, and the internalid of the field on the item
-  // 
+  //
   function getCategoryAttributes (category) {
     var origItemSearchColumns = []
     var attrFields = []
@@ -198,7 +255,10 @@ require(['N/search', 'N/record', '/SuiteScripts/WMS/shared/SavedSearchLibrary'],
       origItemSearchColumns.push(attrSearchCol)
     }
 
-    return origItemSearchColumns
-  } // end getRelevant attribute function
-  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    return {
+      origItemSearchColumns: origItemSearchColumns,
+      attrFields: attrFields
+    } // end getRelevant attribute function
+    // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  }
 })

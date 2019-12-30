@@ -27,3 +27,9 @@ Technical requirements:
 12 / 20
 inventory balance;
 NS webpage: 'https://netsuite.custhelp.com/app/answers/detail/a_id/10242';
+
+----;
+
+12 / 27
+current usage: 5019
+    

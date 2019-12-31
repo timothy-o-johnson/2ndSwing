@@ -1,5 +1,7 @@
 // NG-1669 debugger 
 
+// test service item https://debugger.na0.netsuite.com/app/common/item/item.nl?id=2813982&e=T
+
 require([
   'N/search',
   'N/record',

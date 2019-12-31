@@ -7,14 +7,14 @@ require([
   var fieldObjs = []
 
   // define fieldObj
-  function fieldObj (fieldTitle, originalValue, fieldType, selections) {
-    this.fieldTitle = fieldTitle
+  function fieldObj (fieldLabel, originalValue, fieldType, selections) {
+    this.fieldLabel = fieldLabel
     this.originalValue = originalValue
     this.fieldType = fieldType
     this.selections = selections
   }
 
-  // load item record, note must be set to true in order to get select options
+  // load item record; note: must be set to true in order to get select options
   var recordInternalId = 41285
 
   var replacementItemRecord = record.load({
@@ -28,8 +28,7 @@ require([
     fieldId: 'custitem_g2_category_ref'
   })
 
-  // get relevant category fields () // function getCategoryAttributes (category)
-
+  // get relevant category fields ()
   var relevantCatFieldsData = getCategoryAttributes(categoryTypeValue)
 
   var relevantCatFields = relevantCatFieldsData.attrFields
@@ -42,11 +41,11 @@ require([
     recordInternalId
   )
 
-  var fieldTitle, originalValue, fieldType, selections
+  var fieldLabel, originalValue, fieldType, selections
 
   // return to primary purpose: populate field object
   relevantCatFields.forEach(function (field) {
-    fieldTitle = field.custrecord_fmd_field.text
+    fieldLabel = field.custrecord_fmd_field.text
     fieldId = field.custrecord_fmd_fieldscriptid.id
 
     // retrieve original field values
@@ -64,55 +63,80 @@ require([
 
     // save field objects array
     fieldObjs.push(
-      new fieldObj(fieldTitle, originalValue, fieldType, selections)
+      new fieldObj(fieldLabel, originalValue, fieldType, selections)
     )
   })
 
-  // create the field on the form
+  // now, create the attribute/category fields on the form
+  var formField
+
   // loop through array of field objects
+  fieldObjs.forEach(function (attributeField) {
+    // NG-1469: split into multiple SKUs
+    formField = form.addField({
+      id: 'attr_field_' + attributeField.id,
+      label: attributeField.fieldLabel,
+      type: sw.attributeField.type,
+      container: 'custpage_fg_attribute'
+    })
 
-  var categoryTypeText = replacementItemRecord.getText({
-    fieldId: 'custitem_g2_category_ref'
+    formField.defaultValue = attributeField.originalValue
+
+    // if this field has selections, add them
+    if (formField.type === 'select') {
+      var selections = attributeField.selections
+
+      selections.forEach(function (selection) {
+        formField.addSelectOption({
+          value: selection.value,
+          text: selection.text
+        })
+      })
+    }
   })
 
-  // load category record from category data
-  var categoryRecord = record.load({
-    type: 'customrecord_g2_category',
-    id: categoryTypeValue
-  })
+  // var categoryTypeText = replacementItemRecord.getText({
+  //   fieldId: 'custitem_g2_category_ref'
+  // })
 
-  // get attribute field data from category record
-  var newProductAttributesValue = categoryRecord.getValue({
-    fieldId: 'custrecord_g2_category_newprodatt_refs'
-  })
+  // // load category record from category data
+  // var categoryRecord = record.load({
+  //   type: 'customrecord_g2_category',
+  //   id: categoryTypeValue
+  // })
 
-  var newProductAttributesText = categoryRecord.getText({
-    fieldId: 'custrecord_g2_category_newprodatt_refs'
-  })
+  // // get attribute field data from category record
+  // var newProductAttributesValue = categoryRecord.getValue({
+  //   fieldId: 'custrecord_g2_category_newprodatt_refs'
+  // })
 
-  // get all fields from replacement item (maybe loop through later)
-  var replacementItemRecordFields = replacementItemRecord.getFields()
+  // var newProductAttributesText = categoryRecord.getText({
+  //   fieldId: 'custrecord_g2_category_newprodatt_refs'
+  // })
 
-  var clubColorField = replacementItemRecord.getField({
-    fieldId: 'custitem_g2_club_color_ref'
-  })
+  // // get all fields from replacement item (maybe loop through later)
+  // var replacementItemRecordFields = replacementItemRecord.getFields()
 
-  log.debug('much stuff:newProductAttributes', newProductAttributesText)
+  // var clubColorField = replacementItemRecord.getField({
+  //   fieldId: 'custitem_g2_club_color_ref'
+  // })
 
-  var clubColorFieldSelections = clubColorField.getSelectOptions()
+  // log.debug('much stuff:newProductAttributes', newProductAttributesText)
 
-  // get custitem_g2_club_color_ref
+  // var clubColorFieldSelections = clubColorField.getSelectOptions()
 
-  log.debug(
-    'getSelectOptions(): clubColorFieldSelections',
-    clubColorFieldSelections
-  )
+  // // get custitem_g2_club_color_ref
 
-  log.debug('relevantAttributeFields', relevantAttributeFields)
+  // log.debug(
+  //   'getSelectOptions(): clubColorFieldSelections',
+  //   clubColorFieldSelections
+  // )
 
-  var originalItemAttr = getOriginalItemAttr(relevantAttributeFields, 29702)
+  // log.debug('relevantAttributeFields', relevantAttributeFields)
 
-  log.debug('originalItemAttr', originalItemAttr)
+  // var originalItemAttr = getOriginalItemAttr(relevantAttributeFields, 29702)
+
+  // log.debug('originalItemAttr', originalItemAttr)
 
   // helper function to get attributes and values from original item
   function getOriginalItemAttr (origItemSearchColumns, origItemId) {

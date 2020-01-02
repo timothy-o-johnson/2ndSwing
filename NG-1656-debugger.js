@@ -4,7 +4,8 @@ require([
   '/SuiteScripts/WMS/shared/SavedSearchLibrary'
 ], function (search, record, ssLib) {
   // create an array that will hold fieldObjects
-  var fieldObjs = []
+    var fieldObjs = []
+    var fieldTypes = []
 
   // define fieldObj
   function fieldObj (fieldLabel, originalValue, fieldType, selections) {
@@ -57,6 +58,7 @@ require([
     })
 
     fieldType = field.type
+    fieldTypes.push(fieldTypes)
 
     // gather field selections
     selections = fieldType === 'select' ? field.getSelectOptions() : []
@@ -74,7 +76,7 @@ require([
   fieldObjs.forEach(function (attributeField) {
     // NG-1469: split into multiple SKUs
     formField = form.addField({
-      id: 'attr_field_' + attributeField.id,
+      id: 'custpage_attr_field_' + attributeField.id,
       label: attributeField.fieldLabel,
       type: sw.attributeField.type,
       container: 'custpage_fg_attribute'

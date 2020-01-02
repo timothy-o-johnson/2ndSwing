@@ -27,6 +27,7 @@ url: https://4537321.app.netsuite.com/app/common/scripting/script.nl?id=44
 Edit Line
 id: customscript_wms_editline
 url: https://4537321.app.netsuite.com/app/common/scripting/script.nl?id=39
+url generic: app/common/scripting/script.nl?id=39
 
 ---
 

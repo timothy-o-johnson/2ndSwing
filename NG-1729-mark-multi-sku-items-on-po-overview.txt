@@ -1,0 +1,21 @@
+ticket: https://2ndswing.atlassian.net/browse/NG-1729
+
+-------
+ To Do
+-------
+
+1. add field on item called multi-sku creation -- DONE
+2. mark this field when saving records via multi-sku -- DONE
+    a- name: custitem_multi_sku_created
+3. when loading the recieving po pass this field along  (SelectReceivingLine.js)
+    a - itemObjTemp   line ~240
+    b - templateLine  line ~580 
+
+----------
+ 1/21/120
+----------
+what are the list of used attribute fields? (I swear i explained this to Katie.... and now i can't remember)
+
+look at Category 
+look at item
+look at one (or two) other thing(s) to make the connection between the two. i thnk it's in the code

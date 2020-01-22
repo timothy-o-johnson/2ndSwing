@@ -3,7 +3,8 @@
 
 require(['N/record', 'N/search', '/SuiteScripts/WMS/shared/SavedSearchLibrary','N/task'], /**
  * @param {record} record
- */ function (record, search, ssLib,task) {
+ */
+  function (record, search, ssLib, task) {
     var mrTask = task.create({ taskType: task.TaskType.MAP_REDUCE })
     mrTask.scriptId = 'customscript_mr_create_multiple_skus'
     mrTask.deploymentId = 1

@@ -1,4 +1,8 @@
 // NG-1656: On Create Opp Pege, add attribute fields that can preopopulate the item recordsof the skus being created
 Custom Record -> Category -> Fields -> Used Product Attributes (custrecord_g2_category_usedprodatt_refs)
 
-use metaData records to map fields between record
+use metaData records to map fields between record;
+
+Items URL: https://debugger.na0.netsuite.com/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=3370582&custpage_itemtype=3&custpage_category=5&custpage_parent=41287&custpage_cachekey=purchaseorder:3370582:inventoryitem:41287:9931547
+
+Create Opportunity URL: https://debugger.na0.netsuite.com/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cacheKey=purchaseorder:3370582:inventoryitem:41287:9931547&custpage_repitem=2886464

@@ -1,0 +1,707 @@
+{
+	"info": {
+		"_postman_id": "3da931bb-6a0d-48b1-80cc-6f4ffaa40073",
+		"name": "NetSuite RestLet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ServiceItem - Matrix",
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "realm",
+							"value": "{{realm}}",
+							"type": "string"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "{{token_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "{{consumer_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "{{consumer_key}}",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": false,
+							"type": "boolean"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}?script={{script_id}}&deploy=1&customizationInternalId=504",
+					"host": [
+						"{{base_url}}"
+					],
+					"query": [
+						{
+							"key": "script",
+							"value": "{{script_id}}"
+						},
+						{
+							"key": "deploy",
+							"value": "1"
+						},
+						{
+							"key": "customizationInternalId",
+							"value": "504"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ServiceItems",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee09c881-276b-4501-90b5-b6e6bffb63e5",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set(\"result\", jsonData.length);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "realm",
+							"value": "{{realm}}",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "{{token_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "{{consumer_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "{{consumer_key}}",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}?script={{script_id}}&deploy=1",
+					"host": [
+						"{{base_url}}"
+					],
+					"query": [
+						{
+							"key": "script",
+							"value": "{{script_id}}"
+						},
+						{
+							"key": "deploy",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Skus with Inventory - generate CSV",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee09c881-276b-4501-90b5-b6e6bffb63e5",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set(\"searchId\", jsonData.result.taskId);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "realm",
+							"value": "{{realm}}",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "{{token_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "{{consumer_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "{{consumer_key}}",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}?script={{skus_with_inventory}}&deploy=1&savedSearchId=1288&generateCSV=true",
+					"host": [
+						"{{base_url}}"
+					],
+					"query": [
+						{
+							"key": "script",
+							"value": "{{skus_with_inventory}}"
+						},
+						{
+							"key": "deploy",
+							"value": "1"
+						},
+						{
+							"key": "savedSearchId",
+							"value": "1288"
+						},
+						{
+							"key": "generateCSV",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Skus with Inventory - checkStatus",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee09c881-276b-4501-90b5-b6e6bffb63e5",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "realm",
+							"value": "{{realm}}",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "{{token_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "{{consumer_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "{{consumer_key}}",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}?script={{skus_with_inventory}}&deploy=1&checkCSVStatus=true&taskId={{searchId}}&savedSearchId=1288",
+					"host": [
+						"{{base_url}}"
+					],
+					"query": [
+						{
+							"key": "script",
+							"value": "{{skus_with_inventory}}"
+						},
+						{
+							"key": "deploy",
+							"value": "1"
+						},
+						{
+							"key": "checkCSVStatus",
+							"value": "true"
+						},
+						{
+							"key": "taskId",
+							"value": "{{searchId}}"
+						},
+						{
+							"key": "savedSearchId",
+							"value": "1288"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Skus with Inventory - Load CSV",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee09c881-276b-4501-90b5-b6e6bffb63e5",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "realm",
+							"value": "{{realm}}",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "{{token_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "{{consumer_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "{{consumer_key}}",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}?script={{skus_with_inventory}}&deploy=1&loadCSV=true&savedSearchId=1288",
+					"host": [
+						"{{base_url}}"
+					],
+					"query": [
+						{
+							"key": "script",
+							"value": "{{skus_with_inventory}}"
+						},
+						{
+							"key": "deploy",
+							"value": "1"
+						},
+						{
+							"key": "loadCSV",
+							"value": "true"
+						},
+						{
+							"key": "savedSearchId",
+							"value": "1288"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PO raw Pdfs",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee09c881-276b-4501-90b5-b6e6bffb63e5",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set(\"result\", jsonData.results.length);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "realm",
+							"value": "{{realm}}",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "{{token_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "{{consumer_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "{{consumer_key}}",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}?script={{po_pdf_restlet}}&deploy=1&pageNumber=23&pageSize=10000",
+					"host": [
+						"{{base_url}}"
+					],
+					"query": [
+						{
+							"key": "script",
+							"value": "{{po_pdf_restlet}}"
+						},
+						{
+							"key": "deploy",
+							"value": "1"
+						},
+						{
+							"key": "pageNumber",
+							"value": "23"
+						},
+						{
+							"key": "pageSize",
+							"value": "10000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ItemUpdate Restlet",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ee09c881-276b-4501-90b5-b6e6bffb63e5",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth1",
+					"oauth1": [
+						{
+							"key": "realm",
+							"value": "{{realm}}",
+							"type": "string"
+						},
+						{
+							"key": "addEmptyParamsToSign",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "tokenSecret",
+							"value": "{{token_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerSecret",
+							"value": "{{consumer_secret}}",
+							"type": "string"
+						},
+						{
+							"key": "consumerKey",
+							"value": "{{consumer_key}}",
+							"type": "string"
+						},
+						{
+							"key": "addParamsToHeader",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "signatureMethod",
+							"value": "HMAC-SHA1",
+							"type": "string"
+						},
+						{
+							"key": "version",
+							"value": "1.0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"parent\": \"G400 NEW STS\",\n    \"recordType\": \"inventoryitem\",\n    \"process\": \"priceSync\",\n    \"source\": \"magento\",\n    \"error\": \"success\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}?deploy=1&script={{item_update_restlet}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"query": [
+						{
+							"key": "deploy",
+							"value": "1"
+						},
+						{
+							"key": "parent",
+							"value": "G400 NEW STS",
+							"disabled": true
+						},
+						{
+							"key": "process",
+							"value": "priceSync",
+							"disabled": true
+						},
+						{
+							"key": "source",
+							"value": "magento",
+							"disabled": true
+						},
+						{
+							"key": "recordType",
+							"value": "inventoryitem",
+							"disabled": true
+						},
+						{
+							"key": "error",
+							"value": "success",
+							"disabled": true
+						},
+						{
+							"key": "script",
+							"value": "{{item_update_restlet}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -32,4 +32,17 @@ NS webpage: 'https://netsuite.custhelp.com/app/answers/detail/a_id/10242';
 
 12 / 27
 current usage: 5019
+
+1/8/20
+usage: 10, 049
     
+1/9/ 20
+
+- testing yesterday was successful
+    - found and fixed usage error
+
+ToDo
+    - erase needless logs
+    - test with Raj one more time
+    - update ticket
+    - submit

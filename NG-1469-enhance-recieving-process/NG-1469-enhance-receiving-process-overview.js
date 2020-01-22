@@ -1,5 +1,5 @@
 ticket: NG - 1469 - opportunity - po - enhancements
-
+Related tickets: 1388
 
 Receiving For Opportunity Order page: ''
 production: /app/site/hosting/scriptlet.nl?script=48&deploy=2&compid=4537321&custpage_rf_orderid=3834677
@@ -18,13 +18,24 @@ when selected, separate skus will be created for the number of items created
 
 2. add attributes fields that can prepopulate the item record of the skus being created
 
+______
+Information Flow
+1. List of receiving POs(Transactions -> Custom -> Receive POs)
+2. select PO
+3. Page: Receiving For Opportunity Order# <selected PO>  (SelectReceivingLine.js: https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=48; html page: usedreceiving.txt)
+4. user selects '+' -> Items Page; params are sent to  Items Page (see below)
+5. Item Page buttons: Create Single Opportunity, Create Multi-Sku Opportunity (both from Edit Line script below)
+
+
 ---
 Page: "Items" (form) 
 script: ItemSelector2.0
 id: customscript_wms_itemselector
 url: https://4537321.app.netsuite.com/app/common/scripting/script.nl?id=44
 
-Edit Line
+
+Page: " " (Changed to "Multi-SKU Opp" when appropriate)
+script: Edit Line
 id: customscript_wms_editline
 url: https://4537321.app.netsuite.com/app/common/scripting/script.nl?id=39
 url generic: app/common/scripting/script.nl?id=39
@@ -39,9 +50,7 @@ https://debugger.na0.netsuite.com/app/site/hosting/scriptlet.nl?script=40&deploy
 ---
 
 Select Receiving script
-https://debugger.na0.netsuite.com/app/common/scripting/script.nl?id=48
-
-https://debugger.na0.netsuite.com/app/common/scripting/script.nl?id=44
+https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=48
 
 
 --- 
@@ -73,3 +82,9 @@ https://4537321-sb1.app.netsuite.com/app/common/scripting/scriptrecord.nl?id=640
 MR Create Multiple Skus
 
  https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=411&id=411&whence=
+
+ ---
+
+Attribute Fields Mismatch
+Item: Puma W Pant  (id: 38914)
+Field: PARENT ITEM MODEL (custitem_wms_parentitemtype)

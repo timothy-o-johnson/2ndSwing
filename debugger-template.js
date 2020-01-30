@@ -7,23 +7,54 @@ require([
   'N/record',
   '/SuiteScripts/WMS/shared/SavedSearchLibrary'
 ], function (search, record, ssLib) {
-  log.debug(updateCreatedByMultiSkuField(2892891))
+  // enter functions here
+  //
+  //
+})
 
-  function updateCreatedByMultiSkuField (itemId) {
-    var id = record.submitFields({
-      type: 'inventoryitem',
-      id: itemId,
-      values: {
-        custitem_multi_sku_created: 'T'
-      },
-      options: {
-        enableSourcing: false,
-        ignoreMandatoryFields: true
-      }
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary'
+], function (search, record, ssLib) {
+  // enter functions here
+
+  var type = 'salesorder'
+  var searchId = null
+  var filters = ['internalid', 'is', 3468625]
+  var columns = ['custbody_customfitting_eventnotes']
+
+  var results = ssLib.fullSearch(type, searchId, filters, columns)
+
+  var eventRecord = record.load({
+    type: 'calendarevent',
+    id: 47768
+  })
+
+  formMap = {
+    location: 'custevent_fittinginfolocation',
+    firstName: 'custevent_fittinginfofirstname',
+    lastName: 'custevent_fittinginfolastname',
+    email: 'custevent_fittinginfoemail',
+    phone: 'custevent_fittinginfophone'
+  }
+
+  var sharedData = {}
+  var fieldId, value
+
+  var formFields = Object.keys(formMap)
+
+  formFields.forEach(function (field) {
+    fieldId = formMap[field]
+
+    value = eventRecord.getValue({
+      fieldId: fieldId
     })
 
-    return id
-  }
+    sharedData[field] = value
+  })
+
+  log.debug('sharedData', sharedData)
 })
 
 // NG-1669 debugger

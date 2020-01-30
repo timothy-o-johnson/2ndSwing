@@ -1,0 +1,27 @@
+NG - 1682
+
+1. Pull in Customer,  Location, and Fitting Type from Fitting Event
+2. On the Sales Order, pull in all the above and save to avoid creating a dummy sku to launch itemSelector
+3. Once the new Sales Order is created, on the originating calender event update the transaction field ('transaction') with the Sales Order number   
+
+Does 'Create Order' create a new Sales Order?
+
+New Transaction Fields 
+	Customer First Name (custbody_customer_first_name)
+    Customer Last Name (custbody_customer_last_name)
+
+- description: customer first name; meant to be a temporary holding place for found on created in fitting event
+- applied to Fitting Sales Order form only 
+
+moved their location on the fitting custom form
+    first applied to the form
+    then opened up the form, moved it primary info, and placed under customer info
+
+
+
+-------
+To-Do
+-------
+o create after submit logic to populate event 
+x determine why the text isn't saving to the notes section
+x create parameter for hard-coded value in client for the fitting Sales Order custom form

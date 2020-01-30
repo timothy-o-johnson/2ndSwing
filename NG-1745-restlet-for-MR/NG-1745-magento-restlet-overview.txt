@@ -1,0 +1,39 @@
+Ticket: NG-1745 
+
+Files & URLs
+deployment: https://debugger.na0.netsuite.com/app/common/scripting/scriptrecord.nl?id=692
+
+
+--------------------------------------------------------------------------------------------
+Restlet Requirements 
+https://debugger.na0.netsuite.com/app/help/helpcenter.nl?fid=section_4636473568.html
+--------------------------------------------------------------------------------------------
+
+x  follow the same guidelines as you would with an entry point script deployed at the record level: create a script record and a deployment record based on the RESTlet script file
+
+x  generate a URL that can be used to call the RESTlet (automatic)
+
+o  to call a RESTlet that you have deployed, you can use one of four supported HTTP methods: delete, get, post, or put. 
+    - embed input for the RESTlet in the URL, or you may be required to submit arguments in a request body. 
+    - make entry point that corresponds with the method you use to make the call. 
+
+o  authenticate RESTlet call. If a RESTlet call originates from a client that does not have an existing session in the NetSuite account where the RESTlet is deployed, NetSuite requires the call to include an authorization header. For details about adding an authentication header to a RESTlet, see RESTlet Authentication.
+
+o For most RESTlet calls, you must also include a content-type header, which tells NetSuite how your request body will be formatted and how NetSuite should format its response. For details, see Creating a Content–Type Header.
+
+
+--------------------------------------------------------------------------------------------
+ACCESS TOKENS
+--------------------------------------------------------------------------------------------
+Role: 2nd Swing Developer
+Set Up -> Users/Roles -> Access Tokens
+
+
+
+----------
+QUESTIONS
+----------
+
+1. is postman set up right?
+2. what's the difference between access token, token secret, consumer key, and consumer secret?
+3. did i set up the access tokens right (see above)

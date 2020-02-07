@@ -5,11 +5,73 @@
 require([
   'N/search',
   'N/record',
-  '/SuiteScripts/WMS/shared/SavedSearchLibrary'
-], function (search, record, ssLib) {
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers'
+], function (search, record, ssLib, searchHelpers) {
   // enter functions here
   //
   //
+})
+
+// NG-1682
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers'
+], function (search, record, ssLib, searchHelpers) {
+  
+    var fittingTypeId = 14
+
+var fittingTypeData = search.lookupFields({
+			type: 'customrecord_fittingtype',
+			id: fittingTypeId,
+			columns: ['custrecord_fittingtype_service_item', 'custrecord_fittingcost', 'name']
+		});
+
+		var serviceItemInternalId =  fittingTypeData['custrecord_fittingtype_service_item'][0].value
+
+		var serviceItemData = search.lookupFields({
+			type: search.Type.SERVICE_ITEM,
+			id: serviceItemInternalId,
+			columns: ['salesdescription', 'custitem_base_price_copy']
+		});
+
+	
+		serviceItemObj = {
+			fittingCost: fittingTypeData['custrecord_fittingcost'],
+			fittingTypeName: fittingTypeData['name'],
+			serviceItemId: fittingTypeData['custrecord_fittingtype_service_item'][0].text,
+			serviceItemInternalId: serviceItemInternalId,
+			serviceItemDescription: serviceItemData['salesdescription'],
+			serviceItemPrice: serviceItemData['custitem_base_price_copy'],
+		}
+
+		return serviceItemObj
+})
+
+// NG-1757
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers'
+], function (search, record, ssLib, searchHelpers) {
+  var validCategoryIds = []
+  var type = 'customrecord_g2_category'
+  var searchId = null
+  var filters = ['custrecord_category_shorten_ebay_title', 'is', 'true']
+  var columns = ['custrecord_category_shorten_ebay_title']
+
+  var searchResults = searchHelpers.fullSearch(type, searchId, filters, columns)
+
+  searchResults.forEach(function (result) {
+    validCategoryIds.push(result.id)
+  })
+
+  validCategoryIds
+
+  log.debug('validCategoryIds', validCategoryIds)
 })
 
 require([

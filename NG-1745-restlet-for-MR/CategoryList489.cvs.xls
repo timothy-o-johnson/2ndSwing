@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+<DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+<Author>NetSuite</Author>
+<LastAuthor>NetSuite</LastAuthor>
+<Company>NetSuite</Company>
+</DocumentProperties>
+<Styles>
+<Style ss:ID="company">
+<Alignment ss:Horizontal="Center"/>
+<Font ss:Bold="1"/>
+</Style> <Style ss:ID="error">
+<Alignment ss:Horizontal="Center"/>
+<Interior ss:Color="#d04040" ss:Pattern="Solid"/>
+<Font ss:Bold="1"/>
+</Style> <Style ss:ID="header">
+<Alignment ss:Horizontal="Center"/>
+<Font ss:Size="7" ss:Bold="1"/>
+<Interior ss:Color="#d0d0d0" ss:Pattern="Solid"/>
+</Style> <Style ss:ID="Default" ss:Name="Normal">
+<Alignment ss:Vertical="Bottom"/>
+<Borders/>
+<Font ss:FontName="Arial" ss:Size="8"/>
+<Interior/>
+<NumberFormat/>
+<Protection/>
+</Style>
+<Style ss:ID="s__TIMEOFDAY"><NumberFormat ss:Format="Medium Time"/></Style>
+<Style ss:ID="s__DATETIME"><NumberFormat ss:Format="General Date"/></Style>
+<Style ss:ID="s__DATETIMETZ"><NumberFormat ss:Format="General Date"/></Style>
+<Style ss:ID="s__DATE"><NumberFormat ss:Format="Short Date"/>
+</Style><Style ss:ID="s__text"></Style><Style ss:ID="s__currency"><NumberFormat ss:Format="Currency"/></Style>
+<Style ss:ID="s__percent"><NumberFormat ss:Format="Percent"/></Style>
+<Style ss:ID="s1_b_text"><Alignment ss:Indent="1"/><Font ss:FontName="Verdana" x:Family="Swiss" ss:Size="8" ss:Color="#000000" ss:Bold="1"/></Style>
+<Style ss:ID="s_b_text"><Font ss:FontName="Verdana" x:Family="Swiss" ss:Size="8" ss:Color="#000000" ss:Bold="1"/></Style>
+<Style ss:ID="s2__text"><Alignment ss:Indent="2"/></Style>
+<Style ss:ID="s_b_currency"><Font ss:FontName="Verdana" x:Family="Swiss" ss:Size="8" ss:Color="#000000" ss:Bold="1"/><NumberFormat ss:Format="Currency"/></Style>
+<Style ss:ID="s_currency_nosymbol"><Font ss:FontName="Verdana" x:Family="Swiss" ss:Size="8" ss:Color="#000000" /><NumberFormat ss:Format="#,##0.00_);[Red]\(#,##0.00\)"/></Style>
+<Style ss:ID="s1__text"><Alignment ss:Indent="1"/></Style>
+<Style ss:ID="s_b_currency_X"><Font ss:FontName="Verdana" x:Family="Swiss" ss:Size="8" ss:Color="#000000" ss:Bold="1"/><Interior ss:Color="#f0e0e0" ss:Pattern="Solid"/><NumberFormat ss:Format="Currency"/></Style>
+<Style ss:ID="s__currency_en_CA"><Alignment ss:Vertical="Center" ss:Horizontal="Right"/><NumberFormat ss:Format="&quot;Can$&quot;#,##0.00_);(&quot;Can$&quot;#,##0.00)"/></Style>
+<Style ss:ID="s__currency_en_US"><Alignment ss:Vertical="Center" ss:Horizontal="Right"/><NumberFormat ss:Format="&quot;$&quot;#,##0.00_);(&quot;$&quot;#,##0.00)"/></Style>
+<Style ss:ID="s__currency_fr_FR_EURO"><Alignment ss:Vertical="Center" ss:Horizontal="Right"/><NumberFormat ss:Format="&quot;€&quot;#,##0.00_);(&quot;€&quot;#,##0.00)"/></Style>
+<Style ss:ID="s__currency_en_GB"><Alignment ss:Vertical="Center" ss:Horizontal="Right"/><NumberFormat ss:Format="&quot;£&quot;#,##0.00_);(&quot;£&quot;#,##0.00)"/></Style>
+</Styles>
+<Worksheet ss:Name="CategoryList">
+<Table><Row>
+<Cell ss:StyleID="header"><Data ss:Type="String">Internal ID</Data></Cell>
+<Cell ss:StyleID="header"><Data ss:Type="String">Name</Data></Cell>
+<Cell ss:StyleID="header"><Data ss:Type="String">Code</Data></Cell>
+<Cell ss:StyleID="header"><Data ss:Type="String">Value</Data></Cell>
+<Cell ss:StyleID="header"><Data ss:Type="String">Product Group</Data></Cell>
+<Cell ss:StyleID="header"><Data ss:Type="String">Conditions</Data></Cell>
+<Cell ss:StyleID="header"><Data ss:Type="String">Shorten Ebay Title</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">1</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessories</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">ACCESSORIE</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessories</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Below Average 7.0,Brand New 10.0,Mint 9.5,New,New W/ Logo,Open Box 9.9</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">No</Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">32</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Backpack</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">BACKPACK</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Backpack</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">2</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">BAG</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Brand New 10.0,Mint 9.5,New,New W/ Logo,Shop Worn</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">80</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Belts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">BELTS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Belts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">117</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Book</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">BOOK</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Book</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">65</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Box Set</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">BOX SET</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Box Set</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">29</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Box Sets</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">BOX SETS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Box Sets</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">New,Open Box 9.9</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">33</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Carry Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">CARRYBAG</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Carry Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Brand New 10.0,Mint 9.5,New,New W/ Logo,Shop Worn</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">34</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Cart Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">CARTBAG</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Cart Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Brand New 10.0,Mint 9.5,New,New W/ Logo,Shop Worn</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">30</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Chipper</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">CHIPPER</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Chipper</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average,Average 8.0,Below Average,Below Average 7.0,Mint 9.5,New,Poor 6.0</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">302</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Clearance</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">CLEARANCE</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Clearance</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">35</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Clip</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">CLIP</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Clip</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">31</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Complete Golf Club Set</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">COMPLETE</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Complete Golf Club Set</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,Open Box 9.9</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">203</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Den Caddy</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">DENCADDY</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Den Caddy</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">5</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Driver</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">DRIVER</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Driver</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average,Average 8.0,Below Average,Below Average 7.0,Mint 9.5,New,Poor 6.0</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">75</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Driver Adapter</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">ADAPTER</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Driver Adapter</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,Shop Worn</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">59</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Driver Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">HCDRIVER</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Driver Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Brand New 10.0,Mint 9.5,New,Shop Worn</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">69</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Driver Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">DVRSHAFT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Driver Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">New Uncut,Pull,Used W/ Adapter</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">55</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Driving Iron</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">DRIVEIRON</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Driving Iron</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Below Average 7.0,Mint 9.5,Poor 6.0</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">6</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Fairway Wood</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">FAIRWAY</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Fairway Wood</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average,Average 8.0,Below Average,Below Average 7.0,Mint 9.5,New,Poor 6.0</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">60</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Fairway Wood Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">HCFAIRWAY</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Fairway Wood Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Brand New 10.0,Mint 9.5,New,Shop Worn</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">70</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Fairway Wood Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">FWGSHAFT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Fairway Wood Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">New Uncut,Pull,Used W/ Adapter</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">114</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Gift Bundle</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GIFTBUNDLE</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Gift Bundle</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">36</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Glove</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GLOVE</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Glove</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">3</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Balls</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">BALL</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Balls</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">37</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Glove</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GLOVES</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Glove</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">7</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf GPS &amp; Rangefinders</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GPS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf GPS &amp; Rangefinders</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GpsRange</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average,Average 8.0,Below Average,Below Average 7.0,Brand New 10.0,Defective,Mint 9.5,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">38</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Hat</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">HAT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Hat</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Hat</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">43</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">SHAFT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">New Uncut,Pull,Used W/ Adapter</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">502</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Show</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GOLFSHOW</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Show</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">201</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Tees</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">TEES</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Tees</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">46</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Towels</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">TOWEL</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Towels</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">47</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Umbrella</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">UMBRELLA</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Umbrella</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">48</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Visor</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">VISOR</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Golf Visor</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Hat</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">66</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GPS Watch</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GPSWATCH</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GPS Watch</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GpsRange</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Below Average 7.0,Brand New 10.0,Fully Functional,Mint 9.5,New,Non Functional</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">58</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GRIPS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GRIP</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GRIPS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">68</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Head Only</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">HEADONLY</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Head Only</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Below Average 7.0,Mint 9.5,New,Poor 6.0</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">63</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GSVHC</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Brand New 10.0,Mint 9.5,New,Shop Worn</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">8</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">HEADCOVER</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Brand New 10.0,Mint 9.5,New,Shop Worn</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">9</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Hybrid</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">HYBRID</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Hybrid</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average,Average 8.0,Below Average,Below Average 7.0,Mint 9.5,New,Poor 6.0</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">61</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Hybrid Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">HCHYBRID</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Hybrid Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Brand New 10.0,Mint 9.5,New,Shop Worn</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">71</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Hybrid Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">HYBSHAFT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Hybrid Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">New Uncut,Pull,Used W/ Adapter</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">206</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Iron Headcovers</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">HCIRON</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Iron Headcovers</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">10</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Iron Set</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">IRON SET</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Iron Set</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average,Average 8.0,Below Average,Below Average 7.0,Mint 9.5,New,Poor 6.0</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">72</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Iron Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">IRONSHAFT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Iron Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Average 8.0,Mint 9.5,New Uncut,Pull</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">11</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Junior Belt</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">JUNIORBELT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Junior Belt</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">56</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Junior Bottom</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">JUNIORBOTT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Junior Bottom</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bottom</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">12</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Junior Golf Shoe</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">JUNIORSHOE</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Junior Golf Shoe</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Shoes</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/O Box</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">64</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Junior Set</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">JUNIORSET</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Junior Set</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">57</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Junior Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">JUNIORTOP</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Junior Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">79</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Launch Monitor</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">L MONITOR</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Launch Monitor</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">41</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Bottoms</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">MENSBOTTOM</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Bottoms</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bottom</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">204</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Eyewear</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">MENEYEWEAR</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Eyewear</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">39</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Belt</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">MENS BELT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Belt</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">13</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Outerwear</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">MENS OUTER</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Outerwear</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">52</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Pants</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">MENS PANTS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Pants</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bottom</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">54</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Sandal</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">MENSSANDAL</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Sandal</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Shoes</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/O Box</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">15</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Shirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">MENS TOPS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Shirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">40</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Shoe</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">MENS SHOE</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Shoe</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Shoes</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/O Box</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">16</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Shorts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">MENSSHORTS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Shorts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bottom</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">14</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Sweater</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">MENS SWEAT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Golf Sweater</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">82</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Long Sleeve Golf Shirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">MENSLONG</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Long Sleeve Golf Shirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">83</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Short Sleeve Golf Shirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">MENSSHORT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mens Short Sleeve Golf Shirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">67</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Miscellaneous Item</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">MISC ITEM</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Miscellaneous Item</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Average,Below Average,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">81</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Online Gift Card</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GIFT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Online Gift Card</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">115</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Performance Tracking System</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">PTS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Performance Tracking System</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Below Average 7.0,Brand New 10.0,Defective,Fully Functional,Mint 9.5</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">111</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ping Golf Accessories</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">PINGACCESS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ping Golf Accessories</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">42</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Pouch</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">POUCH</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Pouch</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">113</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Promotional discounts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">PROMO</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Promotional discounts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">4</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Push and Pull Cart</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">CART</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Push and Pull Cart</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">17</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Putter</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">PUTTER</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Putter</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average,Average 8.0,Below Average,Below Average 7.0,Mint 9.5,New,Poor 6.0</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">62</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Putter Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">HCPUTTER</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Putter Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Brand New 10.0,Mint 9.5,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">18</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Rangefinder</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RANGE</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Rangefinder</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">GpsRange</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average,Average 8.0,Below Average,Below Average 7.0,Brand New 10.0,Mint 9.5,New,Non Functional</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">106</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Accessories</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCACCESS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Accessories</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">97</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Driver Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCDVRHC</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Driver Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">98</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Belt</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCMENBELT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Belt</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">99</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Hat</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCMENHAT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Hat</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Hat</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">88</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Jersey</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCJERSEY</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Jersey</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">89</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Long Sleeve</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCMENLSS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Long Sleeve</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">90</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Outerwear</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCMENOUTER</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Outerwear</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">91</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Short Sleeve</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCMENSSS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Short Sleeve</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">100</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Socks</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCMENSOCK</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Socks</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">107</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Sweaters</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCMSWEATER</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Sweaters</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">104</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Sweatshirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCMSWEAT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Sweatshirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">109</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Ties</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCMENTIE</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Mens Ties</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">92</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Poster</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCPOSTER</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Poster</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">101</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Putter Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCPUTTHC</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Putter Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Headcover</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">102</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Belt</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCWOMBELT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Belt</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">103</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Hat</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCWOMHAT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Hat</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Hat</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">93</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Long Sleeve</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCWOMLSS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Long Sleeve</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">94</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Outerwear</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCWOMOUTER</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Outerwear</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">110</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Scarf</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCWOMSCARF</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Scarf</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">96</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Short Sleeve</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCWOMSSS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Short Sleeve</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">95</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Sleeveless</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCWOMSLS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Sleeveless</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">108</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Sweaters</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCWSWEATER</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Sweaters</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">105</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Sweatshirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">RCWSWEAT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Ryder Cup Womens Sweatshirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">74</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Serivce</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">SERVICE</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Serivce</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">207</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Shag Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">SHAGBAG</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Shag Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">19</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Single Iron</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">SINGLEIRON</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Single Iron</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average,Average 8.0,Below Average,Below Average 7.0,Mint 9.5,New,Poor 6.0</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">53</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Socks</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">SOCKS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Socks</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">44</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Staff Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">STAFFBAG</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Staff Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Brand New 10.0,Mint 9.5,New,New W/ Logo,Shop Worn</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">20</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Stand Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">STANDBAG</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Stand Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Brand New 10.0,Mint 9.5,New,New W/ Logo,Shop Worn</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">301</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Sunday Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">SUNDAYBAG</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Sunday Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Brand New 10.0,Mint 9.5,New,New W/ Logo,Shop Worn</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">116</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Swing Analyzer</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">SWINGA</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Swing Analyzer</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Below Average 7.0,Brand New 10.0,Defective,Fully Functional,Mint 9.5</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">202</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Tip</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">TIP</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Tip</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">112</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Titleist Golf Accessories</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">TITLACCESS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Titleist Golf Accessories</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">45</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Tool</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">TOOL</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Tool</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,Mint 9.5,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">21</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Travel Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">TRAVEL</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Travel Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bag</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Brand New 10.0,Mint 9.5,New,New W/ Logo,Shop Worn</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">22</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Wedge</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WEDGE</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Wedge</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average,Average 8.0,Below Average,Below Average 7.0,Mint 9.5,New,Poor 6.0</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">23</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Wedge Set</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WEDGESET</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Wedge Set</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Club</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Above Average 9.0,Average 8.0,Below Average 7.0,Mint 9.5,Poor 6.0</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">73</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Wedge Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WEDGESHAFT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Wedge Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Shaft</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Average 8.0,Mint 9.5,New Uncut,Pull</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">77</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Weight Kit</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WEIGHTKIT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Weight Kit</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Mint 9.5,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">78</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Winter Gloves</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WINTERGLV</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Winter Gloves</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">50</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Bottom</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WOMENSBOTT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Bottom</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bottom</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">205</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Eyewear</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WOMEYEWEAR</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Eyewear</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">49</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Belt</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WOMENSBELT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Belt</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">24</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Outerwear</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WOMENOUTER</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Outerwear</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">25</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Pants</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WOMENPANTS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Pants</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bottom</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">27</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Shirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WOMENSTOPS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Shirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">51</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Shoe</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WOMENSSHOE</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Shoe</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Shoes</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/O Box</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">26</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Shorts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WOMENSHORT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Shorts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bottom</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">87</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Skorts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WOMENSKORT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Skorts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Bottom</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">28</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Sweater</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WOMENSWEAT</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Golf Sweater</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">84</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Long Sleeve Golf Shirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WOMENLONG</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Long Sleeve Golf Shirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">85</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Short Sleeve Golf Shirt</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WOMENSSLEV</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Short Sleeve Golf Shirt</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">86</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Sleeveless Golf Shirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WOMENSLESS</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Womens Sleeveless Golf Shirts</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Top</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,New,New W/ Logo</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">76</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Wrench</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">WRENCH</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Wrench</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Accessory</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">Brand New 10.0,Mint 9.5,New</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+<Row><Cell ss:StyleID="s__text"><Data ss:Type="Number">402</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">__SPECIAL__</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">__SPECIAL_</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String">__SPECIAL__</Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+<Cell ss:StyleID="s__text"><Data ss:Type="String"></Data></Cell>
+</Row>
+</Table>
+</Worksheet>
+</Workbook>

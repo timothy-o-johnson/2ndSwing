@@ -1,0 +1,27 @@
+NG-1757-replace-brand-new-with-new-overview
+
+Script = {
+    name: Item Attribute Editor,
+    url: https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=,
+    file:  EditItemAttributes.js
+    launch: https://4537321-sb1.app.netsuite.com/app/site/hosting/scriptlet.nl?script=46&deploy=1&compid=4537321_SB1&script=46&deploy=1&compid=4537321&whence=
+}
+
+Chris:
+"The fields of "Online Title Template" and "Ebay Title Template" are what dictate what attributes flow into the Ebay and Online Title fields.  They are set individually on the various Category records.  The titles are actually generated in the "Lookup Item for Attribution" page.  In the past, the main person I have worked with around title building is Raj.  Vince has also stepped-in to help."
+
+-------------
+Questions
+-------------
+
+1. rather than manually choosing the Category to which this applies, do we want to add a field on the category record (that way if we add a new category or if we want to make a change the user will be empowered instead of dependent on the developer )?
+    - name... Shorten Ebay Title
+
+
+-----
+To Do
+-----
+X add SHORTEN EBAY TITLE (custrecord_category_shorten_ebay_title) checkbox to Category record
+    o select all the categories 43
+
+x change the rules replacement rule for each category

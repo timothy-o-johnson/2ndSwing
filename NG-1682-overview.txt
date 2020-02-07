@@ -1,14 +1,18 @@
 NG - 1682
 
-1. Pull in Customer,  Location, and Fitting Type from Fitting Event
+1. Pull in Company, Customer, Location, and Fitting Type from Fitting Event
 2. On the Sales Order, pull in all the above and save to avoid creating a dummy sku to launch itemSelector
 3. Once the new Sales Order is created, on the originating calender event update the transaction field ('transaction') with the Sales Order number   
 
 Does 'Create Order' create a new Sales Order?
 
 New Transaction Fields 
-	Customer First Name (custbody_customer_first_name)
-    Customer Last Name (custbody_customer_last_name)
+x	 Customer First Name (custbody_customer_first_name)
+x   Customer Last Name (custbody_customer_last_name)
+!o   Fitting Type (custbody_fittinginfotype): record -> 'fitting type'
+
+New Fitting Type Field
+!o   Non-Inventory Item
 
 - description: customer first name; meant to be a temporary holding place for found on created in fitting event
 - applied to Fitting Sales Order form only 
@@ -17,11 +21,28 @@ moved their location on the fitting custom form
     first applied to the form
     then opened up the form, moved it primary info, and placed under customer info
 
-
-
 -------
 To-Do
 -------
-o create after submit logic to populate event 
+x create after submit logic to populate event 
 x determine why the text isn't saving to the notes section
 x create parameter for hard-coded value in client for the fitting Sales Order custom form
+
+-- to-dos from meeting 1/31 --
+x on sales order, create fitting type field
+x save/sync customer info onto calendar event
+x on Fitting Type, add field that corresponds to service item
+!x on sales order, add promo service item sourced from fitting type record
+o update item fields (MSRP, bid price, base price) to include service items
+o update UE script (UE Update Price Fields and Parent Lookup: customscript_ue_price_and_parent_lookup) to include additional deployment for service items
+xo remove customer name fields from Sales Order
+
+------------
+From Ticket
+------------
+1. Service Item- the amount is being set to $0. i took the description from the fitting type since it better reflected the value to the member, is this okay?
+
+2. Customer Info -- removed the first name and last name, created a 'CUSTOMER DATA FROM FITTING EVENT' field under Fitting Datra that stores customer info from the Event. the email i kept because that was there originally and populates automagically when the customer record is loaded
+
+3.  Reference to Transaction on Event-- this should already be working, let's review if not
+

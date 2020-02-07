@@ -17,9 +17,10 @@ o  to call a RESTlet that you have deployed, you can use one of four supported H
     - embed input for the RESTlet in the URL, or you may be required to submit arguments in a request body. 
     - make entry point that corresponds with the method you use to make the call. 
 
-o  authenticate RESTlet call. If a RESTlet call originates from a client that does not have an existing session in the NetSuite account where the RESTlet is deployed, NetSuite requires the call to include an authorization header. For details about adding an authentication header to a RESTlet, see RESTlet Authentication.
+o  authenticate RESTlet call.  
+    - include an authorization header
 
-o For most RESTlet calls, you must also include a content-type header, which tells NetSuite how your request body will be formatted and how NetSuite should format its response. For details, see Creating a Content–Type Header.
+o  include a content-type header (tells NetSuite how your request body will be formatted and how to format its response)    
 
 
 --------------------------------------------------------------------------------------------
@@ -37,3 +38,16 @@ QUESTIONS
 1. is postman set up right?
 2. what's the difference between access token, token secret, consumer key, and consumer secret?
 3. did i set up the access tokens right (see above)
+
+
+Maciej
+reach out to Darren Reimer
+
+var suitletUrl = itemHelper.findAction("customdeploy_imageuploadercalled_setter")[0]
+https.post({url: suiteletUrl})
+				
+
+-------------
+NEXT STEPS
+-------------
+- add error catching

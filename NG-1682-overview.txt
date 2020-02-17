@@ -37,6 +37,11 @@ o update item fields (MSRP, bid price, base price) to include service items
 o update UE script (UE Update Price Fields and Parent Lookup: customscript_ue_price_and_parent_lookup) to include additional deployment for service items
 xo remove customer name fields from Sales Order
 
+-- to-dos from 2/11/19 --
+o disable setting value on calendar event
+o hide the 'transaction' field on the calendar event
+o let team know of the change
+
 ------------
 From Ticket
 ------------

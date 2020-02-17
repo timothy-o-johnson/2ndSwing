@@ -1,0 +1,5 @@
+https://2ndswing.atlassian.net/browse/NG-1568
+
+
+Description: Having duplicate code can create complications and redudant work
+ItemHelper.createItem is very similar to the work being done in the do-while loop in the map()

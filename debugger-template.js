@@ -6,12 +6,34 @@ require([
   'N/search',
   'N/record',
   '/SuiteScripts/WMS/shared/SavedSearchLibrary',
-  'SuiteScripts/LIB_SearchHelpers'
-], function (search, record, ssLib, searchHelpers) {
+  'SuiteScripts/LIB_SearchHelpers', '/SuiteScripts/WMS/shared/ItemHelper'
+
+], function (search, record, ssLib, searchHelpers, itemHelper) {
   // enter functions here
   //
   //
 })
+
+// NG-1568
+
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper'
+], function (search, record, ssLib, searchHelpers, itemHelper) {
+    var itemData = { "custpage_parent": "30897", "custpage_tranid": "3478837", "custpage_itemtype": "2" }
+    
+    itemHelper.createItem(itemData)
+  
+  // enter functions here
+  //
+  //
+})
+
+
+
 
 // NG-1682
 require([

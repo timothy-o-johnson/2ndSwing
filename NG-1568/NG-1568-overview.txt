@@ -1,0 +1,11 @@
+Link: https://2ndswing.atlassian.net/browse/NG-1568
+
+Action
+------
+x determine which elements are unique to createItem and which are unique to childItem
+x combine all elements into one function
+o check to see if the function still functions as expected for both createItem and createChild
+    o c.log -- itemObject in before and after situations
+        o find an example of output coming out properly as it should for createItem
+        o find an example of output coming out properly as it should for createChild
+        o mock this data in debugger

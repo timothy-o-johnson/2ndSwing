@@ -1,0 +1,14 @@
+NG-1828: https://2ndswing.atlassian.net/browse/NG-1828
+
+Script: Select Receiving Line
+id: customscript_wms_selectreceivingline
+URL: https://4537321-sb1.app.netsuite.com/app/common/scripting/script.nl?id=48
+file: SelectReceivingLine.js
+
+---------
+ Action
+---------
+!x update customsearch1871 search in saved search library
+x add miscItemDescription field to itemLine portion of SelectReceivingLine script
+x update templateLine to add proper logic
+

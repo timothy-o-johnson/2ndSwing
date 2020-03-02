@@ -34,7 +34,7 @@ create a form via serverWidget module
 add a file of functions to the form via clientScriptModulePath
 
 --------------
-inventory Item
+Inventory Item
 --------------
 name: UE Display Print Label Button
 id: customscript_wms_ue_print_item_label

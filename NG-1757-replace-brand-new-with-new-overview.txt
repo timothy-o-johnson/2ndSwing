@@ -10,6 +10,19 @@ Script = {
 Chris:
 "The fields of "Online Title Template" and "Ebay Title Template" are what dictate what attributes flow into the Ebay and Online Title fields.  They are set individually on the various Category records.  The titles are actually generated in the "Lookup Item for Attribution" page.  In the past, the main person I have worked with around title building is Raj.  Vince has also stepped-in to help."
 
+PO# 678
+Examples = [
+    {
+        SKU: D-2202942789,
+        Category: Hybrid,
+        Description: Hybrid which should not be affected by the scope of this ticket.  
+        Used Recieving Order #678 for practice
+    }
+]
+
+
+
+
 -------------
 Questions
 -------------

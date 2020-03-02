@@ -1,0 +1,36 @@
+---------
+Overview
+---------
+
+Branch:  feature/NG-1744-custom-order-application-restrict-categories-fitting-item-selector
+File is FittingCustomOrders/FileCabinet/SuiteScripts/FittingCustomOrders/SL_FIttinCustomItemSelector.js
+
+
+-------------------------
+ Notes from call w/ Erik
+-------------------------
+x create initial MR script that takes all brands, finds parents with those brands, updates the vendor on those parents
+x create MR script for UE Update Preferred Vendor
+    - actually combined
+o connect with Katie on how to replace dumy logic for setting preferred vendor to actual
+
+
+------------------
+Notes for Script
+------------------
+Name: MR Save Preferred Vendor To Parent Items
+Description: take preferred vendor from brand record and save to parent Items
+
+
+-------
+Action
+-------
+2/21/20
+o refactor so that MR script is queued up immediately (this will reduce code in UE script considerably)
+o add code to Katies work
+
+
+-------------
+Deployment
+-------------
+o add [ACCOUNT_SPECIFIC_VALUE] to MR and UE script

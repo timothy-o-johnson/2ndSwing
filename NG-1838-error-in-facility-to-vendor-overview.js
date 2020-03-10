@@ -7,11 +7,8 @@ var details = {
     action: `
         1. create MR Script
             - add two params (poIds, newFacilityId)
-            
-    
+        2. add param that references MR script to UE object
+        3. set above param to 'SPECIFIC_VALUE'    
     `
-    
-    
-        
     }
 }

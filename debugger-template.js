@@ -12,6 +12,65 @@ require([
   // ADD CODE BELOW
   // ADD CODE BELOW
   // ADD CODE BELOW
+  //
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
+
+// NG-1867
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper'
+], function (search, record, ssLib, searchHelpers, itemHelper) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+
+  var form = null
+  log.debug(getItemInternalIdFromSku(form))
+
+  function getItemInternalIdFromSku (form) {
+    // var sku = getSku(form)
+
+    var sku = 'FIT0000002'
+
+    var itemSearchObj = search.create({
+      type: 'inventoryitem',
+      filters: [
+        ['externalid', 'anyof', sku],
+        'OR',
+        ['custitem_g2_sku', 'startswith', sku],
+        'OR',
+        ['itemid', 'startswith', sku],
+        'OR',
+        ['externalidstring', 'startswith', sku]
+      ],
+      columns: [
+        search.createColumn({ name: 'itemid', label: 'Name' }),
+        search.createColumn({ name: 'internalid', label: 'Internal ID' }),
+        search.createColumn({
+          name: 'custitem_sales_description',
+          label: 'Sales Description'
+        })
+      ]
+    })
+
+    var itemSearchResults = itemSearchObj.run()
+
+    var firstResult = itemSearchResults.getRange({
+      start: 0,
+      end: 1
+    })[0]
+
+    var internalid = firstResult.getValue(itemSearchResults.columns[1])
+
+    return internalid
+  }
+
   // ADD CODE ABOVE
   // ADD CODE ABOVE
   // ADD CODE ABOVE

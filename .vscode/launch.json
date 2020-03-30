@@ -15,6 +15,14 @@
             "request": "launch",
             "name": "NG-1462",
             "program": "/Users/timjohnson/Documents/2ndSwing/NG-1462-Label-Updates/NG-1462-sandbox.js"
-        }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "NG-1545",
+            "program": "${workspaceFolder}/NG-1545- splitIntoRowsTest.js"
+        },
     ]
 }
+
+/Users/timjohnson/Google Drive/Work/2nd Swing/2nd Swing Tickets/NG-1545- splitIntoRowsTest.js

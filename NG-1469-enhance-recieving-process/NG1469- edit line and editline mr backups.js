@@ -1324,7 +1324,7 @@ define(['N/record', 'N/search', 'N/file', 'N/cache', 'N/runtime', '../shared/Ite
 
 define(['N/record', 'N/cache','/SuiteScripts/WMS/shared/SavedSearchLibrary' ], function (record, cache, sslib) {
   function getInputData () {
-    return sslib.customsearch_mr_load_and_save_record
+    return sslib.customsearch_mr_load_and_save_record()
   }
 
   function reduce (context) {

@@ -1,6 +1,8 @@
 var details = {
   ticket: 'NG-1919',
   link: 'https://2ndswing.atlassian.net/browse/NG-1919',
+  linkToScript:
+    'https://debugger.na0.netsuite.com/app/common/scripting/script.nl?id=464',
   team: 'Connor Flaherty for questions with Gift Certificates',
   description: `
         Input one of:
@@ -28,19 +30,19 @@ var details = {
       'Store Credit Gift Certificate',
       'Store Credit Tax-Adj Gift Certificate'
     ],
-      search: 'TJ: NG1919 Gift Certificate Item: Results',
-    },
-    searchProcedure: `
+    search: 'TJ: NG1919 Gift Certificate Item: Results'
+  },
+  searchProcedure: `
         1. search for invoices with customer id + gift card (do we want to get purchaser or receiver?)
         2. from the invoices, get the last transaction: order the gift cards invoices by date
         3. get gift cert number to determine the details
   `,
-    improvements: `
+  improvements: `
         1. add fields to gift card (purchaser, assignee, transactions (already on it), last transaction )
         2. use UE script to invoices to fill fields
         3. as search is being performed for gift certificates, add missing data to gift certs
     `,
-    process: `
+  process: `
     goal: restles will take in a customer id and return gift certificate info
     how to get gift card info.
     -- current --
@@ -48,12 +50,19 @@ var details = {
         - filters: ['customer', IS, customerId] and [ 'giftCertificateField being used']
         - columns: [invoice.customer, giftCertificate.id, giftCerticate.type, giftCerticate.balance]
     `,
-    assistance: `
+  assistance: `
     1) clarification on gift certificates
         - record type is gift certicates
         - they aren't assigned to anyone
         - become active once they are on an invoice
         - could in theory be used (legally) by multiple people
     2) how to add fields to gift certificates
-    `
+    `,
+  goodExampleWithManyTransactions:
+    'https://4537321-sb1.app.netsuite.com/app/accounting/transactions/giftcertificaterecord.nl?id=225 (William Spaulding)',
+  customerIds: {
+    'William Spalding': [112419, 271875]
+  }
 }
+
+// https://debugger.na0.netsuite.com/app/accounting/transactions/giftcertificaterecord.nl?id=225

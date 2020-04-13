@@ -16,6 +16,72 @@ require([
   // ADD CODE ABOVE
 })
 
+// NG-1946 debugger
+
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper'
+], function (search, record, ssLib, searchHelpers, itemHelper) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+
+  var vendor
+  var rec = record.load({
+    type: 'purchaseorder',
+    id: 3520408
+  })
+
+  var lines = rec.getLineCount({
+    sublistId: 'item'
+  })
+
+  var itemId
+  for (var i = 0; i < lines; i++) {
+    itemId = rec.getSublistValue({
+      sublistId: 'item',
+      fieldId: 'item',
+      line: i
+    })
+
+    lookupFields = search.lookupFields({
+      type: 'inventoryitem',
+      id: '37344',
+      columns: ['vendor']
+    })
+
+    vendor = lookupFields.vendor[0].value
+
+    log.debug('vendor', vendor)
+
+    rec.setSublistValue({
+      sublistId: 'item',
+      fieldId: 'vendorname',
+      value: vendor,
+      line: i
+    })
+
+    // rec.setSublistValue({
+    //   sublistId: 'item',
+    //   fieldId: 'vendorname',
+    //   value: vendor,
+    //   line: i
+    // })
+  }
+
+  var confirmation = rec.save({
+    enableSourcing: true,
+    ignoreMandatoryFields: true
+  })
+
+  log.debug(confirmation)
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
 
 // NG-1919
 require([
@@ -28,9 +94,8 @@ require([
   // ADD CODE BELOW
   // ADD CODE BELOW
   // ADD CODE BELOW
-    
-   getGCNumbers(36598, {})
 
+  getGCNumbers(36598, {})
 
   function getGCNumbers (customerId, gcDataFromInvoice) {
     log.audit(

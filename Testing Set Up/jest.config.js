@@ -12,7 +12,7 @@ module.exports = SuiteCloudJestConfiguration.build({
       module:
         'SuiteScripts/CentralizeCredit/FileCabinet/SuiteScripts/RL_Get_Gift_Certificates',
       path: '<rootDir>/FileCabinet/SuiteScripts/RL_Get_Gift_Certificates.js'
-    }, // SuiteScripts/LIB_SearchHelpers
+    },
     {
       module: 'SuiteScripts/LIB_SearchHelpers',
       path: '<rootDir>/customStubs/LIB_SearchHelpers.js'

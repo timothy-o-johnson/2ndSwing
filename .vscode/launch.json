@@ -22,7 +22,12 @@
             "name": "NG-1545",
             "program": "${workspaceFolder}/NG-1545- splitIntoRowsTest.js"
         },
+        ///Users/timjohnson/Google Drive/Work/2nd Swing/2nd Swing Tickets/NG-1958/NG-1960-memo-test-item-helper-find-action.js
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "NG-1960-memo-test",
+            "program": "${workspaceFolder}/NG-1958/NG-1960-memo-test-item-helper-find-action.js"
+        },
     ]
 }
-
-/Users/timjohnson/Google Drive/Work/2nd Swing/2nd Swing Tickets/NG-1545- splitIntoRowsTest.js

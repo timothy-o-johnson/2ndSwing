@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Script Status: Map Reduce Job</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+      //var quantityObj = { closed: 11, junk: 3, multiSku: 2, traditional: 28, upc: 3 }
+      $(document).ready(function () {
+        var quantityObj = {
+          closed: 11,
+          junk: 3,
+          multiSku: 2,
+          traditional: 28,
+          upc: 3
+        }
+        var elementId
+        var rows = Object.keys(quantityObj)
+        console.log(rows)
+        rows.forEach(function (row) {
+          elementId = row + '-quantity'
+          document.getElementById(elementId).innerText = quantityObj[row]
+        })
+      })
+    </script>
+  </head>
+  <style>
+    body {
+      border: 0;
+      padding: 3%;
+    }
+
+    tbody {
+      padding: 0%;
+    }
+
+    #quantity-table-container {
+      border: 1px solid #dddddd;
+      padding: 1%;
+      width: 50%;
+    }
+
+    #quantity-table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    #th-description {
+      margin: 0;
+      width: 75%;
+    }
+
+    #th-quantity {
+      margin: 0;
+    }
+
+    .td-col-description {
+    }
+
+    .td-col-quantity {
+      text-align: center;
+    }
+
+    .bold {
+      font-weight: bold;
+    }
+
+    .receive-via,
+    .total-received {
+      margin: 10%;
+      padding: 2% 0% 0% 0%;
+    }
+
+    .receive-via-children,
+    .closed-lines {
+      text-indent: 3%;
+      font-style: italic;
+    }
+
+    .bottom-border {
+      border-bottom: 1px solid;
+    }
+  </style>
+  <body>
+    <div id="quantity-table-container">
+      <table id="quantity-table">
+        <thead>
+          <tr>
+            <th id="th-description"></th>
+            <th id="th-quantity">Quantity</th>
+          </tr>
+        </thead>
+        <tbody id="tb">
+          <tr>
+            <td class="td-col-description bold">Total Expected</td>
+            <td id="total-expected-quantity" class="td-col-quantity bold"> 20</td>
+          </tr>
+          <tr>
+            <td class="td-col-description receive-via bold " colspan="2"> Received via:</td>
+          </tr>
+          <tr>
+            <td class="td-col-description receive-via-children">Junk</td>
+            <td id="junk-quantity" class="td-col-quantity receive-via-children" value="2"> 2 </td>
+          </tr>
+          <tr>
+            <td class="td-col-description receive-via-children"> Original Child Item</td>
+            <td id="traditional-quantity" class="td-col-quantity receive-via-children" > 3 </td>
+          </tr>
+          <tr>
+            <td class="td-col-description receive-via-children">Multi-Sku</td>
+            <td id="multiSku-quantity" class="td-col-quantity receive-via-children"> 2 </td>
+          </tr>
+          <tr>
+            <td class="td-col-description receive-via-children bottom-border"> UPC Scan </td>
+            <td id="upc-quantity" class="td-col-quantity receive-via-children bottom-border"> 3</td>
+          </tr>
+          <tr>
+            <td class="td-col-description total-received bold"> Total Received
+            </td>
+            <td id="total-received-quantity" class="td-col-quantity total-received bold">3</td>
+          </tr>
+          <tr>
+            <td class="td-col-description bold " colspan="2"> &nbsp </td>
+          </tr>
+          <tr>
+            <td class="td-col-description total-received bold"> Total Remaining To Be Received</td>
+            <td id="totalRemaining-quantity" class="td-col-quantity total-received bold" > 4 </td>
+          </tr>
+          <tr>
+            <td class="td-col-description bold " colspan="2">&nbsp</td>
+          </tr>
+          <tr>
+            <td class="td-col-description closed-lines"> Closed Lines </td>
+            <td id="closed-quantity" class="td-col-quantity closed-lines"> 3 </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -84,6 +84,26 @@ var ng1958 = {
             - understand how 'make new item' works in ItemSelection.js
             - follow the UPC item through adding to the PO and see why it isn't being added (or found) `,
       2: `fix junk sku functionality`
+    },
+    we27may: {
+      // NG-2009 - quantity remaining
+      1: ` add necessary flag fields to item lines
+              - original child item (reflected on PO)
+              - upc scan (this would be reflecton the po) _upc_created
+              - junk (how is this determined?) _junk_created
+              - multi-sku (on item) _multisku_created
+              - closed (on PO)
+              `,
+      2: ` write logic:
+            0. load record
+            1. get the parentItemId
+            2. loop through item sublist summing the quantities of each of the following 
+              - original child item (reflected on PO)
+              - upc scan (this would be reflecton the po) _upc_created
+              - junk (how is this determined?) _junk_created
+              - multi-sku (on item) _multisku_created
+              - closed (on PO)`,
+      3: `link the buttons to update the sublist PO fields we just created`
     }
   },
 
@@ -91,6 +111,7 @@ var ng1958 = {
     1: `ensure notes from editLine are't passed to children`,
     2: `ensure condition on editline is set before saving`,
     3: `prevent warnings on button click`,
+    4: `add a cancel line button to Apparel form`
   },
 
   conversationWithChris: {

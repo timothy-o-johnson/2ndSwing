@@ -5,8 +5,9 @@ require([
   'N/record',
   '/SuiteScripts/WMS/shared/SavedSearchLibrary',
   'SuiteScripts/LIB_SearchHelpers',
-  '/SuiteScripts/WMS/shared/ItemHelper'
-], function (search, record, ssLib, searchHelpers, itemHelper) {
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  'N/file'
+], function (search, record, ssLib, searchHelpers, itemHelper, file) {
   // ADD CODE BELOW
   // ADD CODE BELOW
   // ADD CODE BELOW
@@ -16,8 +17,154 @@ require([
   // ADD CODE ABOVE
 })
 
-// NG-1965 debugger
+// NG-2009- remaining quantity to be received
 
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  'N/file'
+], function (search, record, ssLib, searchHelpers, itemHelper, file) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+
+  var quantityReceivedObj = {
+    closed: 0,
+    junk: 0,
+    multiSku: 0,
+    traditional: 0,
+    upc: 0
+  }
+
+  var poRecId = 3550614
+
+  var parentItemId = 'D-5203027765'
+  var isClosed, isJunk, isMultiSku, isTraditional, isUpc, isMatch, quantity
+
+  var poRec = record.load({
+    type: 'purchaseorder',
+    id: poRecId
+  })
+
+  var lineCount = poRec.getLineCount({
+    sublistId: 'item'
+  })
+
+  for (var i = 0; i < lineCount; i++) {
+    isMatch =
+      getSublistValue(poRec, 'custcol_wms_addedoff_display', i).indexOf(
+        parentItemId
+      ) !== -1
+
+    if (isMatch) {
+      quantity = getSublistValue(poRec, 'quantityreceived', i)
+      isClosed = getSublistValue(poRec, 'isclosed', i)
+      isJunk = getSublistValue(poRec, 'custcol_junk_sku_created', i)
+      isUpc = getSublistValue(poRec, 'custcol_upc_created', i)
+      isMultiSku = getSublistValue(poRec, 'custcol_multi_sku_created', i)
+
+      isTraditional = !isClosed && !isJunk && !isMultiSku && !isUpc
+
+      quantityReceivedObj['closed'] += isClosed ? quantity : 0
+      quantityReceivedObj['junk'] += isJunk ? quantity : 0
+      quantityReceivedObj['multiSku'] += isMultiSku ? quantity : 0
+      quantityReceivedObj['traditional'] += isTraditional ? quantity : 0
+      quantityReceivedObj['upc'] += isUpc ? quantity : 0
+    }
+  }
+
+  return quantityReceivedObj
+
+  function getSublistValue (poRec, fieldId, line) {
+    var value = poRec.getSublistValue({
+      sublistId: 'item',
+      fieldId: fieldId,
+      line: line
+    })
+
+    return value
+  }
+
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
+
+// NG-2008- display sku stats debugger
+
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  'N/file'
+], function (search, record, ssLib, searchHelpers, itemHelper, file) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+
+  function updateItemStatus (editLine, sku) {
+    var folderId
+    // var statusFileId = editLine.getScriptParameter( 'custscriptcustscript_wms_status_update')
+    var statusFileId = 157509
+
+    log.debug('statusFileId (START): ', statusFileId)
+    var statusText = ''
+    var number
+
+    var statusFile = file.load({
+      id: statusFileId
+    })
+
+    var statusFileContents = statusFile.getContents()
+
+    statusFileContents = JSON.parse(statusFileContents)
+
+    log.debug('statusFileContents', statusFileContents)
+    log.debug('typeof statusFileContents', typeof statusFileContents)
+
+    statusFileContents = JSON.parse(statusFileContents)
+
+    log.debug('statusFileContents', statusFileContents)
+    log.debug('typeof statusFileContents', typeof statusFileContents)
+
+    log.debug('statusFileContents.items', statusFileContents.items)
+    log.debug(
+      'typeof statusFileContents.items',
+      typeof statusFileContents.items
+    )
+
+    statusFileContents.items.push(sku)
+
+    statusFileContents.items.forEach(function (item, index) {
+      number = index + 1
+      statusText += number + ') ' + item + ' - COMPLETED \n'
+    })
+
+    statusFileContents.statusText = statusText
+    folderId = statusFileContents.folderId
+
+    log.debug('statusFileContents', statusFileContents)
+
+    statusFileId = editLine.saveDataToFile(
+      JSON.stringify(statusFileContents),
+      folderId,
+      'mr-script-data'
+    )
+
+    log.debug('statusFileId (AFTER): ', statusFileId)
+  }
+
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
+
+// NG-1965 debugger
 require([
   'N/search',
   'N/record',

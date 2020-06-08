@@ -4,8 +4,41 @@
     <title>Script Status: Map Reduce Job</title>
     <script language="javascript"></script>
   </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-    $(document).ready(function () {})
+    $(document).ready(function () {
+      var completedSkus = 
+       [
+        { sku: 'D-00000001', quantityReceived: 10 },
+        { sku: 'D-00000002', quantityReceived: 9 },
+        { sku: 'D-00000003', quantityReceived: 8 },
+        { sku: 'D-00000004', quantityReceived: 100 },
+        { sku: 'D-00000005', quantityReceived: 7 },
+        { sku: 'D-00000006', quantityReceived: 6 },
+        { sku: 'D-00000007', quantityReceived: 99 },
+        { sku: 'D-00000004', quantityReceived: 100 },
+        { sku: 'D-00000005', quantityReceived: 7 },
+        { sku: 'D-00000006', quantityReceived: 6 },
+        { sku: 'D-00000007', quantityReceived: 99 }
+      ]
+
+      if (completedSkus.length > 0) {
+        $('#completed-container').show()
+        $('#skutablebody').empty()
+
+        completedSkus.forEach(function (sku, index) {
+          index++
+          var backgroundColor = index % 2 === 0 ? '#f7f4f4' : ''
+          $('#skutable').append(`
+          <tr style="background-color:${backgroundColor};">
+            <td class="table-number-column">${index}</td>
+            <td class="table-sku-column">${sku.sku}</td>
+            <td class="table-sku-quantity-column">${sku.quantityReceived}</td>
+          </tr>
+          `)
+        })
+      }
+    })
   </script>
   <style>
     body {
@@ -25,39 +58,51 @@
       border-radius: 10px;
       padding: 5%;
       margin-top: 5%;
-      width: auto max 80%;
+      width: auto;
+    }
+
+    #span_completed {
+      margin: 0%;
+    }
+
+    #table-container {
+      border-bottom: 1px solid #dddddd;
+      border-top: 1px solid #dddddd;
+      overflow-y: auto;
+      margin: 2%;
+      width: 50%;
+      max-height: 300px;
     }
 
     #skutable {
       font-family: arial, sans-serif;
       border-collapse: collapse;
       border: 1px solid #dddddd;
-      margin: 8px;
-    }
-
-    #table-container {
-      overflow-y: auto;
-      width: 50%;
-      height: 110px;
+      width: 100%;
     }
 
     th {
       border: 1px solid #dddddd;
-      text-align: center;
-      padding: 5%;
-      width: auto;
       margin: auto;
+      text-align: center;
     }
 
     #th1 {
-      width: 30px;
+      min-width: 20%;
     }
 
-   
+    #th2 {
+      min-width: 50%;
+    }
+
+    #th3 {
+      min-width: 20%;
+    }
 
     td {
-      text-align: center;
       border: 1px solid #dddddd;
+      padding: 2.5%;
+      text-align: center;
     }
   </style>
 
@@ -67,23 +112,22 @@
       <div>Stage: <span id="span_stage"></span></div>
       <div>Status: <span id="span_status"></span></div>
       <div>Progress: <span id="span_pctComplete"></span></div>
-      <div>Completed: <span id="span_pctComplete"></span></div>
-      <div><span id="span_notes"></span></div>
-      <div id="table-container">
-        <table id="skutable">
-          <thead>
-            <tr>
-              <th id="th1">#</th>
-              <th id="th2">SKU</th>
-            </tr>
-          </thead>
-          <tbody id="skutablebody">
-            <tr>
-              <td class="table-number-column">1</td>
-              <td class="table-sku-column">D-123456789</td>
-            </tr>
-          </tbody>
-        </table>
+      <div style="display:none;" id="completed-container">
+      <br>
+        <div id="span_completed">Completed:</div>
+        <div><span id="span_notes"></span></div>
+        <div id="table-container">
+          <table id="skutable">
+            <thead>
+              <tr>
+                <th id="th1">#</th>
+                <th id="th2">SKU</th>
+                <th id="th3">Quantity</th>
+              </tr>
+            </thead>
+            <tbody id="skutablebody"></tbody>
+          </table>
+        </div>
       </div>
       <br />
       <input

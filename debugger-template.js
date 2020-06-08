@@ -17,6 +17,8 @@ require([
   // ADD CODE ABOVE
 })
 
+
+
 // NG-2009- remaining quantity to be received
 
 require([
@@ -31,61 +33,113 @@ require([
   // ADD CODE BELOW
   // ADD CODE BELOW
 
-  var quantityReceivedObj = {
-    closed: 0,
-    junk: 0,
-    multiSku: 0,
-    traditional: 0,
-    upc: 0
-  }
+  var poRecId = 3593580 // 3593580 | D-5203037365 | 10610101
+  var parentItemSku = 'D-5203037365'
+  var uniqueLine = 10610101
 
-  var poRecId = 3550614
+  getQuantityReceivedObj(poRecId, parentItemSku, uniqueLine)
 
-  var parentItemId = 'D-5203027765'
-  var isClosed, isJunk, isMultiSku, isTraditional, isUpc, isMatch, quantity
-
-  var poRec = record.load({
-    type: 'purchaseorder',
-    id: poRecId
-  })
-
-  var lineCount = poRec.getLineCount({
-    sublistId: 'item'
-  })
-
-  for (var i = 0; i < lineCount; i++) {
-    isMatch =
-      getSublistValue(poRec, 'custcol_wms_addedoff_display', i).indexOf(
-        parentItemId
-      ) !== -1
-
-    if (isMatch) {
-      quantity = getSublistValue(poRec, 'quantityreceived', i)
-      isClosed = getSublistValue(poRec, 'isclosed', i)
-      isJunk = getSublistValue(poRec, 'custcol_junk_sku_created', i)
-      isUpc = getSublistValue(poRec, 'custcol_upc_created', i)
-      isMultiSku = getSublistValue(poRec, 'custcol_multi_sku_created', i)
-
-      isTraditional = !isClosed && !isJunk && !isMultiSku && !isUpc
-
-      quantityReceivedObj['closed'] += isClosed ? quantity : 0
-      quantityReceivedObj['junk'] += isJunk ? quantity : 0
-      quantityReceivedObj['multiSku'] += isMultiSku ? quantity : 0
-      quantityReceivedObj['traditional'] += isTraditional ? quantity : 0
-      quantityReceivedObj['upc'] += isUpc ? quantity : 0
+  function getQuantityReceivedObj (poRecId, parentItemSku, uniqueLine) {
+    var quantityReceivedObj = {
+      closed: 0,
+      junk: 0,
+      multiSku: 0,
+      traditional: 0,
+      upc: 0,
+      totalExpected: 0,
+      totalReceived: 0,
+      totalRemaining: 0
     }
-  }
 
-  return quantityReceivedObj
-
-  function getSublistValue (poRec, fieldId, line) {
-    var value = poRec.getSublistValue({
-      sublistId: 'item',
-      fieldId: fieldId,
-      line: line
+    var poRec = record.load({
+      type: 'purchaseorder',
+      id: poRecId
     })
 
-    return value
+    var isClosed,
+      isJunk,
+      isMultiSku,
+      isParentCriteria1,
+      isParentCriteria2,
+      isTraditional,
+      isUpc,
+      isChildMatch,
+      quantity,
+      totalExpected,
+      totalReceived
+
+    var lineCount = poRec.getLineCount({
+      sublistId: 'item'
+    })
+
+    for (var i = 0; i < lineCount; i++) {
+      isChildMatch =
+        getSublistValue(poRec, 'custcol_wms_addedoff_display', i).indexOf(
+          parentItemSku
+        ) !== -1
+
+      isParentCriteria1 =
+        getSublistValue(poRec, 'custcol_ava_item', i).indexOf(parentItemSku) !==
+        -1
+      isParentCriteria2 =
+        getSublistValue(poRec, 'lineuniquekey', i).indexOf(uniqueLine) !== -1
+
+      isParentMatch = isParentCriteria1 && isParentCriteria2
+
+      if (isParentMatch) {
+        quantityReceivedObj['totalExpected'] = getSublistValue(
+          poRec,
+          'custcol_expectedqty',
+          i
+        )
+      }
+
+      if (isChildMatch) {
+        quantity = getSublistValue(poRec, 'quantityreceived', i)
+
+        isClosed = getSublistValue(poRec, 'isclosed', i)
+        isJunk = getSublistValue(poRec, 'custcol_junk_sku_created', i)
+        isUpc = getSublistValue(poRec, 'custcol_upc_created', i)
+        isMultiSku = getSublistValue(poRec, 'custcol_multi_sku_created', i)
+
+        isTraditional = !isClosed && !isJunk && !isMultiSku && !isUpc
+
+        quantityReceivedObj['closed'] += isClosed ? quantity : 0
+        quantityReceivedObj['junk'] += isJunk ? quantity : 0
+        quantityReceivedObj['multiSku'] += isMultiSku ? quantity : 0
+        quantityReceivedObj['traditional'] += isTraditional ? quantity : 0
+        quantityReceivedObj['upc'] += isUpc ? quantity : 0
+      }
+    }
+
+    quantityReceivedObj['totalReceived'] =
+      quantityReceivedObj['junk'] +
+      quantityReceivedObj['multiSku'] +
+      quantityReceivedObj['traditional'] +
+      quantityReceivedObj['upc']
+
+    totalReceived = quantityReceivedObj['totalReceived']
+    totalExpected = quantityReceivedObj['totalExpected']
+
+    quantityReceivedObj['totalRemaining'] = totalExpected - totalReceived
+
+    // custcol_ava_item:"D-5203027765"
+    // custcol_expectedqty:"10"
+    // lineuniquekey:"10495254"
+
+    log.debug('getQuantityReceived():quantityReceivedObj', quantityReceivedObj)
+
+    return quantityReceivedObj
+
+    function getSublistValue (poRec, fieldId, line) {
+      var value = poRec.getSublistValue({
+        sublistId: 'item',
+        fieldId: fieldId,
+        line: line
+      })
+
+      return value
+    }
   }
 
   // ADD CODE ABOVE

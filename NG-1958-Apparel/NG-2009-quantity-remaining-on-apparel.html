@@ -29,13 +29,18 @@
       padding: 3%;
     }
 
+    #fieldTitle {
+      margin-bottom: 1.5%;
+    }
+
     tbody {
       padding: 0%;
     }
 
     #quantity-table-container {
       border: 1px solid #dddddd;
-      padding: 1%;
+      border-radius: 10px;
+      padding: 2% 2.5%;
       width: 50%;
     }
 
@@ -57,7 +62,7 @@
     }
 
     .td-col-quantity {
-      text-align: center;
+      text-align: right;
     }
 
     .bold {
@@ -73,7 +78,7 @@
     .receive-via-children,
     .closed-lines {
       text-indent: 3%;
-      font-style: italic;
+      //font-style: italic;
     }
 
     .bottom-border {
@@ -81,56 +86,99 @@
     }
   </style>
   <body>
+    <div id="fieldTitle">INVENTORY QUANTITIES</div>
     <div id="quantity-table-container">
       <table id="quantity-table">
         <thead>
           <tr>
             <th id="th-description"></th>
-            <th id="th-quantity">Quantity</th>
+            <th id="th-quantity"></th>
           </tr>
         </thead>
         <tbody id="tb">
           <tr>
             <td class="td-col-description bold">Total Expected</td>
-            <td id="total-expected-quantity" class="td-col-quantity bold"> 20</td>
+            <td id="total-expected-quantity" class="td-col-quantity bold">
+              20
+            </td>
           </tr>
           <tr>
-            <td class="td-col-description receive-via bold " colspan="2"> Received via:</td>
+            <td class="td-col-description receive-via bold " colspan="2">
+              Received via:
+            </td>
           </tr>
           <tr>
             <td class="td-col-description receive-via-children">Junk</td>
-            <td id="junk-quantity" class="td-col-quantity receive-via-children" value="2"> 2 </td>
+            <td
+              id="junk-quantity"
+              class="td-col-quantity receive-via-children"
+              value="2"
+            >
+              2
+            </td>
           </tr>
           <tr>
-            <td class="td-col-description receive-via-children"> Original Child Item</td>
-            <td id="traditional-quantity" class="td-col-quantity receive-via-children" > 3 </td>
+            <td class="td-col-description receive-via-children">
+              Original Child Item
+            </td>
+            <td
+              id="traditional-quantity"
+              class="td-col-quantity receive-via-children"
+            >
+              3
+            </td>
           </tr>
           <tr>
             <td class="td-col-description receive-via-children">Multi-Sku</td>
-            <td id="multiSku-quantity" class="td-col-quantity receive-via-children"> 2 </td>
-          </tr>
-          <tr>
-            <td class="td-col-description receive-via-children bottom-border"> UPC Scan </td>
-            <td id="upc-quantity" class="td-col-quantity receive-via-children bottom-border"> 3</td>
-          </tr>
-          <tr>
-            <td class="td-col-description total-received bold"> Total Received
+            <td
+              id="multiSku-quantity"
+              class="td-col-quantity receive-via-children"
+            >
+              2
             </td>
-            <td id="total-received-quantity" class="td-col-quantity total-received bold">3</td>
           </tr>
           <tr>
-            <td class="td-col-description bold " colspan="2"> &nbsp </td>
+            <td class="td-col-description receive-via-children bottom-border">
+              UPC Scan
+            </td>
+            <td
+              id="upc-quantity"
+              class="td-col-quantity receive-via-children bottom-border"
+            >
+              3
+            </td>
           </tr>
           <tr>
-            <td class="td-col-description total-received bold"> Total Remaining To Be Received</td>
-            <td id="totalRemaining-quantity" class="td-col-quantity total-received bold" > 4 </td>
+            <td class="td-col-description total-received bold">
+              Total Received
+            </td>
+            <td
+              id="total-received-quantity"
+              class="td-col-quantity total-received bold"
+            >
+              3
+            </td>
           </tr>
           <tr>
-            <td class="td-col-description bold " colspan="2">&nbsp</td>
+            <td class="td-col-description bold " colspan="2"></td>
           </tr>
           <tr>
-            <td class="td-col-description closed-lines"> Closed Lines </td>
-            <td id="closed-quantity" class="td-col-quantity closed-lines"> 3 </td>
+            <td class="td-col-description total-received bold">
+              Total Remaining To Be Received
+            </td>
+            <td
+              id="totalRemaining-quantity"
+              class="td-col-quantity total-received bold"
+            >
+              4
+            </td>
+          </tr>
+          <tr>
+            <td class="td-col-description bold " colspan="2"></td>
+          </tr>
+          <tr>
+            <td class="td-col-description closed-lines">Closed Lines</td>
+            <td id="closed-quantity" class="td-col-quantity closed-lines">3</td>
           </tr>
         </tbody>
       </table>

@@ -17,7 +17,34 @@ require([
   // ADD CODE ABOVE
 })
 
+// NG-1968 debugger
 
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  'N/file'
+], function (search, record, ssLib, searchHelpers, itemHelper, file) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  //
+
+  var categoryId = 9
+  var fieldLookUp = search.lookupFields({
+    type: 'customrecord_g2_category',
+    id: categoryId,
+    columns: ['custrecord_bidpriceattribute_refs']
+  })
+
+  log.debug(fieldLookUp)
+
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
 
 // NG-2009- remaining quantity to be received
 
@@ -163,7 +190,7 @@ require([
 
   function updateItemStatus (editLine, sku) {
     var folderId
-    // var statusFileId = editLine.getScriptParameter( 'custscriptcustscript_wms_status_update')
+    // var statusFileId = editLine.getScriptParameter( 'custscript_wms_status_update')
     var statusFileId = 157509
 
     log.debug('statusFileId (START): ', statusFileId)

@@ -249,7 +249,7 @@ require([
     '29562',
     '29563',
     '29564',
-    '29565',
+    '74026',
     '29566',
     '29567',
     '29568',
@@ -631,7 +631,6 @@ function filterItemsWithZeroInventory (itemIds) {
     availableQuantity = result['available']['value']
     availableQuantity = parseInt(availableQuantity, 10)
     id = result['item']['value']
-
 
     if (availableQuantity > 0) {
       itemsWithInventory.push(result.id)

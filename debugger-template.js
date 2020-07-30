@@ -6,8 +6,9 @@ require([
   '/SuiteScripts/WMS/shared/SavedSearchLibrary',
   'SuiteScripts/LIB_SearchHelpers',
   '/SuiteScripts/WMS/shared/ItemHelper',
-  'N/file'
-], function (search, record, ssLib, searchHelpers, itemHelper, file) {
+  'N/file',
+  '/SuiteScripts/LIB_Globals.js'
+], function (search, record, ssLib, searchHelpers, itemHelper, file, globals) {
   // ADD CODE BELOW
   // ADD CODE BELOW
   // ADD CODE BELOW
@@ -17,8 +18,35 @@ require([
   // ADD CODE ABOVE
 })
 
-// NG-1968 debugger
+// NG-2079 debugger
 
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  'N/file',
+  '/SuiteScripts/LIB_Globals.js'
+], function (search, record, ssLib, searchHelpers, itemHelper, file, globals) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+    
+    var mrScriptId = 'customscript_wms_mr_update_child_item_sp'
+    var options = {}
+
+    globals.startAndMonitorMRScript(context, mrScriptId, options)
+
+
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
+
+
+
+// NG-1968 debugger
 require([
   'N/search',
   'N/record',

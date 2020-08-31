@@ -32,19 +32,63 @@ require([
   // ADD CODE BELOW
   // ADD CODE BELOW
   // ADD CODE BELOW
+
+  // var mrScriptId = 'customscript_wms_mr_update_child_item_sp'
+  // var options = {}
+
+  // globals.startAndMonitorMRScript(context, mrScriptId, options)
+
+    var itemId = 9261763
+    var itemType = 'inventoryitem'
+    var allFields = {}
+
+
+  itemValues = search.lookupFields({
+    id: itemId,
+    type: search.Type.ITEM,
+    columns: [
+      'itemid',
+      'class',
+      'custitem_g2_category_ref',
+      'custitem_g2_itemtype_ref',
+      'custitem_sales_description',
+      'custitem_g2_condition_ref',
+
+      // parent item values
+      'parent',
+      'parent.itemid',
+      'parent.custitem_g2_category_ref',
+      'parent.custitem_g2_itemtype_ref',
+      'parent.custitem_g2_sku'
+    ]
+  })
     
-    var mrScriptId = 'customscript_wms_mr_update_child_item_sp'
-    var options = {}
+    log.debug('itemValues', itemValues)
 
-    globals.startAndMonitorMRScript(context, mrScriptId, options)
+    allFields.conditionTextSearch = itemValues['custitem_g2_condition_ref'][0].text
 
+
+  // check if parent, otherwise jump up
+  var itemRec = record.load({
+    type: itemType,
+    id: itemId
+  })
+
+  var parent = itemRec.getValue({
+    fieldId: 'parent'
+  })
+
+  allFields.conditionText = itemRec.getText({
+    fieldId: 'custitem_g2_condition_ref'
+  })
+  
+    log.debug('allfields', allFields)
+  
 
   // ADD CODE ABOVE
   // ADD CODE ABOVE
   // ADD CODE ABOVE
 })
-
-
 
 // NG-1968 debugger
 require([

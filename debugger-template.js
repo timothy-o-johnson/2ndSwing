@@ -18,6 +18,176 @@ require([
   // ADD CODE ABOVE
 })
 
+// NG-2196 debugger
+
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  'N/file',
+  '/SuiteScripts/LIB_Globals.js'
+], function (search, record, ssLib, searchHelpers, itemHelper, file, globals) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+
+  var scriptContext = {}
+
+  var recObj = record.load({
+    type: 'purchaseorder',
+    id: 10460503
+  })
+
+  scriptContext.newRecord = recObj
+
+  afterSubmit(scriptContext)
+
+function afterSubmit (scriptContext) {
+  try {
+    var recObj = scriptContext.newRecord
+    var recType = recObj.type
+    var recId = recObj.id
+
+    var itemsObj = getActualTotalAndTotalDiscounts(recObj)
+
+    var actualTotal = itemsObj.actualTotal
+    var totalDiscount = itemsObj.totalDiscount
+    var totalVariance = itemsObj.summaryItemVariance
+
+    actualTotal = updateWithExpenses(actualTotal, recObj)
+
+    actualTotal += totalDiscount
+
+    log.debug('itemsObj', itemsObj)
+    log.debug('actual total after expenses & discounts', actualTotal.toFixed(2))
+
+    var idAfterSubmit = record.submitFields({
+      type: recType,
+      id: recId,
+      values: {
+        custbody_wipfli_povariance: totalVariance.toFixed(2),
+        custbody_wf_actual_amount: actualTotal.toFixed(2)
+      }
+    })
+
+    log.debug('id after submit', idAfterSubmit)
+  } catch (e) {
+    log.error('error during variance set', e)
+  }
+
+  return
+  function getActualTotalAndTotalDiscounts (recObj) {
+    var itemsObj = {
+      actualTotal: 0,
+      summaryItemVariance: 0,
+      totalDiscount: 0
+    }
+
+    var actualSubtotal,
+      expectedSubtotal,
+      lineVariance = 0
+
+    var itemLines = recObj.getLineCount({
+      sublistId: 'item'
+    })
+
+    for (var line = 0; line < itemLines; line++) {
+      var itemText = getSublistText('item', line)
+      var itemType = getSublistValue('itemtype', line)
+      var isDiscountItem = itemType === 'Discount'
+
+      // log.debug('item text', itemText)
+
+      var itemTextArray = itemText.split(':')
+      var isParent = itemTextArray.length == 1
+      // log.debug('isChild', isChild)
+
+      if (isParent || !isDiscountItem) {
+        continue
+      }
+
+      var expectedQuantity = getSublistValue('custcol_expectedqty', line)
+      var rate = getSublistValue('rate', line)
+      var actualRate = getSublistValue('custcol_wms_actual_rate', line)
+      var receivedQuantity = getSublistValue('quantityreceived', line)
+
+      itemsObj.totalDiscount += getDiscountAmount(isDiscountItem)
+
+      actualSubtotal = actualRate * receivedQuantity
+      itemsObj.actualTotal += actualSubtotal
+
+      expectedSubtotal = expectedQuantity * rate
+      lineVariance = actualSubtotal - expectedSubtotal
+
+      log.debug('getActualTotalAndTotalDiscounts(): itemsObj', itemsObj)
+
+      log.debug('line variance', lineVariance)
+
+      itemsObj.summaryItemVariance += lineVariance
+    }
+
+    return itemsObj
+
+    function getSublistValue (fieldId, line) {
+      var sublistValue = recObj.getSublistValue({
+        sublistId: 'item',
+        fieldId: fieldId,
+        line: line
+      })
+
+      return sublistValue
+    }
+
+    function getSublistText (fieldId, line) {
+      var sublistText = recObj.getSublistText({
+        sublistId: 'item',
+        fieldId: fieldId,
+        line: line
+      })
+
+      return sublistText
+    }
+
+    function getDiscountAmount (isDiscountItem) {
+      var discount = 0
+
+      if (isDiscountItem) {
+        receivedQuantity = receivedQuantity > 0 ? receivedQuantity : 1
+
+        discount = rate * receivedQuantity
+      }
+
+      return discount
+    }
+  }
+
+  function updateWithExpenses (actualTotal, recObj) {
+    var newTotal = actualTotal
+
+    var expenseLines = recObj.getLineCount({
+      sublistId: 'expense'
+    })
+
+    for (var i = 0; i < expenseLines; i++) {
+      var currAmount = recObj.getSublistValue({
+        sublistId: 'expense',
+        fieldId: 'amount',
+        line: i
+      })
+
+      newTotal += currAmount
+    }
+
+    return newTotal
+  }
+}
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
+
 // NG-2079 debugger
 
 require([
@@ -38,10 +208,9 @@ require([
 
   // globals.startAndMonitorMRScript(context, mrScriptId, options)
 
-    var itemId = 9261763
-    var itemType = 'inventoryitem'
-    var allFields = {}
-
+  var itemId = 9261763
+  var itemType = 'inventoryitem'
+  var allFields = {}
 
   itemValues = search.lookupFields({
     id: itemId,
@@ -62,11 +231,11 @@ require([
       'parent.custitem_g2_sku'
     ]
   })
-    
-    log.debug('itemValues', itemValues)
 
-    allFields.conditionTextSearch = itemValues['custitem_g2_condition_ref'][0].text
+  log.debug('itemValues', itemValues)
 
+  allFields.conditionTextSearch =
+    itemValues['custitem_g2_condition_ref'][0].text
 
   // check if parent, otherwise jump up
   var itemRec = record.load({
@@ -81,9 +250,8 @@ require([
   allFields.conditionText = itemRec.getText({
     fieldId: 'custitem_g2_condition_ref'
   })
-  
-    log.debug('allfields', allFields)
-  
+
+  log.debug('allfields', allFields)
 
   // ADD CODE ABOVE
   // ADD CODE ABOVE

@@ -5,446 +5,682 @@
     <title>Blank HTML5</title>
     <style></style>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="../../../../netsuite-workspace/WMS/FileCabinet/SuiteScripts/WMS/Receiving/SelectReceivingLine.js"></script>
+
     <script>
       $(document).ready(function () {
         var templateData = {
           bpaHeaders: [
-            { name: 'Condition', scriptid: 'customrecord_g2_condition' }
+            {
+              name: 'Shaft Material (2)',
+              scriptid: 'customrecord_g2_club_shaftmatl'
+            },
+            { name: 'Condition', scriptid: 'customrecord_g2_condition' },
+            { name: 'Dexterity (2)', scriptid: 'customrecord_g2_dexterity' },
+            { name: 'Club Length', scriptid: 'customrecord_g2_shaft_length' }
           ],
           data: [
             {
-              sku: ' D-9209356991',
-              image: '',
-              itemName: 'Puma All Womens Golf Outerwear',
-              multiSkuCreated: '',
-              parentSku: 'PUMA W OUTER',
-              parentId: '48581',
-              parentLineUniqueKey: '',
-              receivingNotes: '',
-              itemId: '9356991',
-              name: 'PUMA W OUTER : D-9209356991',
-              salesDesc: 'Puma All    ',
-              isClosed: false,
-              qtyExp: '3',
-              qtyRecv: '0',
-              qty: 3,
-              cacheKey: 'purchaseorder:10491694:inventoryitem:9356991:31046561',
-              editLine:
-                '/app/site/hosting/scriptlet.nl?script=583&deploy=1&compid=4537321_SB1&custpage_parent=48581&custpage_tranid=10491694&custpage_itemtype=2&custpage_itemtype=2&custpage_cachekey=purchaseorder:10491694:inventoryitem:9356991:31046561&custpage_custitem_g2_condition_ref=5&custpage_rate=19.99&custpage_sku= D-9209356991&custpage_item_id=9356991&custpage_po_line_items=["48581","48581","48581","48581","48581","48581","48581","48581","48581","48581","37344","37383","9356991","9357191","9357091","9357291","9357391","9356992","9357292","9357092","9357192","9357392","9357093","9357193"]&custpage_unique_line=31046561&is_apparel_item=true',
-              lineItemAdder:
-                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10491694&custpage_itemtype=2&custpage_category=24&custpage_parent=9356991&custpage_cachekey=purchaseorder:10491694:inventoryitem:9356991:31046561','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
+              backgroundColor: '',
               bpaFields: [
                 {
-                  name: 'Condition',
-                  scriptid: 'customrecord_g2_condition',
-                  value: 'New',
-                  itemValue: '5',
-                  itemText: 'New',
+                  name: 'Shaft Material (2)',
+                  scriptid: 'customrecord_g2_club_shaftmatl',
+                  value: 'Graphite',
+                  itemValue: '',
+                  itemText: '',
                   actualValue: '',
                   actualText: ''
-                }
-              ],
-              backgroundColor: '',
-              displayInWaitingToReceive: true,
-              uniqueLine: '31046561'
-            },
-            {
-              sku: ' D-9209357191',
-              image: '',
-              itemName: 'Puma All Womens Golf Outerwear',
-              multiSkuCreated: '',
-              parentSku: 'PUMA W OUTER',
-              parentId: '48581',
-              parentLineUniqueKey: '',
-              receivingNotes: '',
-              itemId: '9357191',
-              name: 'PUMA W OUTER : D-9209357191',
-              salesDesc: 'Puma All    ',
-              isClosed: false,
-              qtyExp: '3',
-              qtyRecv: '0',
-              qty: 3,
-              cacheKey: 'purchaseorder:10491694:inventoryitem:9357191:31046562',
-              editLine:
-                '/app/site/hosting/scriptlet.nl?script=583&deploy=1&compid=4537321_SB1&custpage_parent=48581&custpage_tranid=10491694&custpage_itemtype=2&custpage_itemtype=2&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357191:31046562&custpage_custitem_g2_condition_ref=5&custpage_rate=19.99&custpage_sku= D-9209357191&custpage_item_id=9357191&custpage_po_line_items=["48581","48581","48581","48581","48581","48581","48581","48581","48581","48581","37344","37383","9356991","9357191","9357091","9357291","9357391","9356992","9357292","9357092","9357192","9357392","9357093","9357193"]&custpage_unique_line=31046562&is_apparel_item=true',
-              lineItemAdder:
-                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10491694&custpage_itemtype=2&custpage_category=24&custpage_parent=9357191&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357191:31046562','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
-              bpaFields: [
-                {
-                  name: 'Condition',
-                  scriptid: 'customrecord_g2_condition',
-                  value: 'New',
-                  itemValue: '5',
-                  itemText: 'New',
-                  actualValue: '',
-                  actualText: ''
-                }
-              ],
-              backgroundColor: '',
-              displayInWaitingToReceive: true,
-              uniqueLine: '31046562'
-            },
-            {
-              sku: ' D-9209357091',
-              image: '',
-              itemName: 'Puma All Womens Golf Outerwear',
-              multiSkuCreated: '',
-              parentSku: 'PUMA W OUTER',
-              parentId: '48581',
-              parentLineUniqueKey: '',
-              receivingNotes: '',
-              itemId: '9357091',
-              name: 'PUMA W OUTER : D-9209357091',
-              salesDesc: 'Puma All    ',
-              isClosed: false,
-              qtyExp: '3',
-              qtyRecv: '0',
-              qty: 3,
-              cacheKey: 'purchaseorder:10491694:inventoryitem:9357091:31046563',
-              editLine:
-                '/app/site/hosting/scriptlet.nl?script=583&deploy=1&compid=4537321_SB1&custpage_parent=48581&custpage_tranid=10491694&custpage_itemtype=2&custpage_itemtype=2&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357091:31046563&custpage_custitem_g2_condition_ref=5&custpage_rate=19.99&custpage_sku= D-9209357091&custpage_item_id=9357091&custpage_po_line_items=["48581","48581","48581","48581","48581","48581","48581","48581","48581","48581","37344","37383","9356991","9357191","9357091","9357291","9357391","9356992","9357292","9357092","9357192","9357392","9357093","9357193"]&custpage_unique_line=31046563&is_apparel_item=true',
-              lineItemAdder:
-                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10491694&custpage_itemtype=2&custpage_category=24&custpage_parent=9357091&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357091:31046563','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
-              bpaFields: [
-                {
-                  name: 'Condition',
-                  scriptid: 'customrecord_g2_condition',
-                  value: 'New',
-                  itemValue: '5',
-                  itemText: 'New',
-                  actualValue: '',
-                  actualText: ''
-                }
-              ],
-              backgroundColor: '',
-              displayInWaitingToReceive: true,
-              uniqueLine: '31046563'
-            },
-            {
-              sku: ' D-9209357291',
-              image: '',
-              itemName: 'Puma All Womens Golf Outerwear',
-              multiSkuCreated: '',
-              parentSku: 'PUMA W OUTER',
-              parentId: '48581',
-              parentLineUniqueKey: '',
-              receivingNotes: '',
-              itemId: '9357291',
-              name: 'PUMA W OUTER : D-9209357291',
-              salesDesc: 'Puma All    ',
-              isClosed: false,
-              qtyExp: '3',
-              qtyRecv: '0',
-              qty: 3,
-              cacheKey: 'purchaseorder:10491694:inventoryitem:9357291:31046564',
-              editLine:
-                '/app/site/hosting/scriptlet.nl?script=583&deploy=1&compid=4537321_SB1&custpage_parent=48581&custpage_tranid=10491694&custpage_itemtype=2&custpage_itemtype=2&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357291:31046564&custpage_custitem_g2_condition_ref=5&custpage_rate=19.99&custpage_sku= D-9209357291&custpage_item_id=9357291&custpage_po_line_items=["48581","48581","48581","48581","48581","48581","48581","48581","48581","48581","37344","37383","9356991","9357191","9357091","9357291","9357391","9356992","9357292","9357092","9357192","9357392","9357093","9357193"]&custpage_unique_line=31046564&is_apparel_item=true',
-              lineItemAdder:
-                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10491694&custpage_itemtype=2&custpage_category=24&custpage_parent=9357291&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357291:31046564','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
-              bpaFields: [
-                {
-                  name: 'Condition',
-                  scriptid: 'customrecord_g2_condition',
-                  value: 'New',
-                  itemValue: '5',
-                  itemText: 'New',
-                  actualValue: '',
-                  actualText: ''
-                }
-              ],
-              backgroundColor: '',
-              displayInWaitingToReceive: true,
-              uniqueLine: '31046564'
-            },
-            {
-              sku: ' D-9209357391',
-              image: '',
-              itemName: 'Puma All Womens Golf Outerwear',
-              multiSkuCreated: '',
-              parentSku: 'PUMA W OUTER',
-              parentId: '48581',
-              parentLineUniqueKey: '',
-              receivingNotes: '',
-              itemId: '9357391',
-              name: 'PUMA W OUTER : D-9209357391',
-              salesDesc: 'Puma All    ',
-              isClosed: false,
-              qtyExp: '3',
-              qtyRecv: '0',
-              qty: 3,
-              cacheKey: 'purchaseorder:10491694:inventoryitem:9357391:31046565',
-              editLine:
-                '/app/site/hosting/scriptlet.nl?script=583&deploy=1&compid=4537321_SB1&custpage_parent=48581&custpage_tranid=10491694&custpage_itemtype=2&custpage_itemtype=2&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357391:31046565&custpage_custitem_g2_condition_ref=5&custpage_rate=19.99&custpage_sku= D-9209357391&custpage_item_id=9357391&custpage_po_line_items=["48581","48581","48581","48581","48581","48581","48581","48581","48581","48581","37344","37383","9356991","9357191","9357091","9357291","9357391","9356992","9357292","9357092","9357192","9357392","9357093","9357193"]&custpage_unique_line=31046565&is_apparel_item=true',
-              lineItemAdder:
-                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10491694&custpage_itemtype=2&custpage_category=24&custpage_parent=9357391&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357391:31046565','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
-              bpaFields: [
-                {
-                  name: 'Condition',
-                  scriptid: 'customrecord_g2_condition',
-                  value: 'New',
-                  itemValue: '5',
-                  itemText: 'New',
-                  actualValue: '',
-                  actualText: ''
-                }
-              ],
-              backgroundColor: '',
-              displayInWaitingToReceive: true,
-              uniqueLine: '31046565'
-            },
-            {
-              sku: ' D-9209356992',
-              image: '',
-              itemName: 'Puma All Womens Golf Outerwear',
-              multiSkuCreated: '',
-              parentSku: 'PUMA W OUTER',
-              parentId: '48581',
-              parentLineUniqueKey: '',
-              receivingNotes: '',
-              itemId: '9356992',
-              name: 'PUMA W OUTER : D-9209356992',
-              salesDesc: 'Puma All    ',
-              isClosed: false,
-              qtyExp: '3',
-              qtyRecv: '0',
-              qty: 3,
-              cacheKey: 'purchaseorder:10491694:inventoryitem:9356992:31046566',
-              editLine:
-                '/app/site/hosting/scriptlet.nl?script=583&deploy=1&compid=4537321_SB1&custpage_parent=48581&custpage_tranid=10491694&custpage_itemtype=2&custpage_itemtype=2&custpage_cachekey=purchaseorder:10491694:inventoryitem:9356992:31046566&custpage_custitem_g2_condition_ref=5&custpage_rate=19.99&custpage_sku= D-9209356992&custpage_item_id=9356992&custpage_po_line_items=["48581","48581","48581","48581","48581","48581","48581","48581","48581","48581","37344","37383","9356991","9357191","9357091","9357291","9357391","9356992","9357292","9357092","9357192","9357392","9357093","9357193"]&custpage_unique_line=31046566&is_apparel_item=true',
-              lineItemAdder:
-                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10491694&custpage_itemtype=2&custpage_category=24&custpage_parent=9356992&custpage_cachekey=purchaseorder:10491694:inventoryitem:9356992:31046566','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
-              bpaFields: [
-                {
-                  name: 'Condition',
-                  scriptid: 'customrecord_g2_condition',
-                  value: 'New',
-                  itemValue: '5',
-                  itemText: 'New',
-                  actualValue: '',
-                  actualText: ''
-                }
-              ],
-              backgroundColor: '',
-              displayInWaitingToReceive: true,
-              uniqueLine: '31046566'
-            },
-            {
-              sku: ' D-9209357292',
-              image: '',
-              itemName: 'Puma All Womens Golf Outerwear',
-              multiSkuCreated: '',
-              parentSku: 'PUMA W OUTER',
-              parentId: '48581',
-              parentLineUniqueKey: '',
-              receivingNotes: '',
-              itemId: '9357292',
-              name: 'PUMA W OUTER : D-9209357292',
-              salesDesc: 'Puma All    ',
-              isClosed: false,
-              qtyExp: '3',
-              qtyRecv: '0',
-              qty: 3,
-              cacheKey: 'purchaseorder:10491694:inventoryitem:9357292:31046567',
-              editLine:
-                '/app/site/hosting/scriptlet.nl?script=583&deploy=1&compid=4537321_SB1&custpage_parent=48581&custpage_tranid=10491694&custpage_itemtype=2&custpage_itemtype=2&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357292:31046567&custpage_custitem_g2_condition_ref=5&custpage_rate=19.99&custpage_sku= D-9209357292&custpage_item_id=9357292&custpage_po_line_items=["48581","48581","48581","48581","48581","48581","48581","48581","48581","48581","37344","37383","9356991","9357191","9357091","9357291","9357391","9356992","9357292","9357092","9357192","9357392","9357093","9357193"]&custpage_unique_line=31046567&is_apparel_item=true',
-              lineItemAdder:
-                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10491694&custpage_itemtype=2&custpage_category=24&custpage_parent=9357292&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357292:31046567','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
-              bpaFields: [
-                {
-                  name: 'Condition',
-                  scriptid: 'customrecord_g2_condition',
-                  value: 'New',
-                  itemValue: '5',
-                  itemText: 'New',
-                  actualValue: '',
-                  actualText: ''
-                }
-              ],
-              backgroundColor: '',
-              displayInWaitingToReceive: true,
-              uniqueLine: '31046567'
-            },
-            {
-              sku: ' D-9209357092',
-              image: '',
-              itemName: 'Puma All Womens Golf Outerwear',
-              multiSkuCreated: '',
-              parentSku: 'PUMA W OUTER',
-              parentId: '48581',
-              parentLineUniqueKey: '',
-              receivingNotes: '',
-              itemId: '9357092',
-              name: 'PUMA W OUTER : D-9209357092',
-              salesDesc: 'Puma All    ',
-              isClosed: false,
-              qtyExp: '3',
-              qtyRecv: '0',
-              qty: 3,
-              cacheKey: 'purchaseorder:10491694:inventoryitem:9357092:31046568',
-              editLine:
-                '/app/site/hosting/scriptlet.nl?script=583&deploy=1&compid=4537321_SB1&custpage_parent=48581&custpage_tranid=10491694&custpage_itemtype=2&custpage_itemtype=2&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357092:31046568&custpage_custitem_g2_condition_ref=5&custpage_rate=19.99&custpage_sku= D-9209357092&custpage_item_id=9357092&custpage_po_line_items=["48581","48581","48581","48581","48581","48581","48581","48581","48581","48581","37344","37383","9356991","9357191","9357091","9357291","9357391","9356992","9357292","9357092","9357192","9357392","9357093","9357193"]&custpage_unique_line=31046568&is_apparel_item=true',
-              lineItemAdder:
-                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10491694&custpage_itemtype=2&custpage_category=24&custpage_parent=9357092&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357092:31046568','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
-              bpaFields: [
-                {
-                  name: 'Condition',
-                  scriptid: 'customrecord_g2_condition',
-                  value: 'New',
-                  itemValue: '5',
-                  itemText: 'New',
-                  actualValue: '',
-                  actualText: ''
-                }
-              ],
-              backgroundColor: '',
-              displayInWaitingToReceive: true,
-              uniqueLine: '31046568'
-            },
-            {
-              sku: ' D-9209357192',
-              image: '',
-              itemName: 'Puma All Womens Golf Outerwear',
-              multiSkuCreated: '',
-              parentSku: 'PUMA W OUTER',
-              parentId: '48581',
-              parentLineUniqueKey: '',
-              receivingNotes: '',
-              itemId: '9357192',
-              name: 'PUMA W OUTER : D-9209357192',
-              salesDesc: 'Puma All    ',
-              isClosed: false,
-              qtyExp: '3',
-              qtyRecv: '0',
-              qty: 3,
-              cacheKey: 'purchaseorder:10491694:inventoryitem:9357192:31046569',
-              editLine:
-                '/app/site/hosting/scriptlet.nl?script=583&deploy=1&compid=4537321_SB1&custpage_parent=48581&custpage_tranid=10491694&custpage_itemtype=2&custpage_itemtype=2&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357192:31046569&custpage_custitem_g2_condition_ref=5&custpage_rate=19.99&custpage_sku= D-9209357192&custpage_item_id=9357192&custpage_po_line_items=["48581","48581","48581","48581","48581","48581","48581","48581","48581","48581","37344","37383","9356991","9357191","9357091","9357291","9357391","9356992","9357292","9357092","9357192","9357392","9357093","9357193"]&custpage_unique_line=31046569&is_apparel_item=true',
-              lineItemAdder:
-                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10491694&custpage_itemtype=2&custpage_category=24&custpage_parent=9357192&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357192:31046569','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
-              bpaFields: [
-                {
-                  name: 'Condition',
-                  scriptid: 'customrecord_g2_condition',
-                  value: 'New',
-                  itemValue: '5',
-                  itemText: 'New',
-                  actualValue: '',
-                  actualText: ''
-                }
-              ],
-              backgroundColor: '',
-              displayInWaitingToReceive: true,
-              uniqueLine: '31046569'
-            },
-            {
-              sku: ' D-9209357392',
-              image: '',
-              itemName: 'Puma All Womens Golf Outerwear',
-              multiSkuCreated: '',
-              parentSku: 'PUMA W OUTER',
-              parentId: '48581',
-              parentLineUniqueKey: '',
-              receivingNotes: '',
-              itemId: '9357392',
-              name: 'PUMA W OUTER : D-9209357392',
-              salesDesc: 'Puma All    ',
-              isClosed: false,
-              qtyExp: '3',
-              qtyRecv: '0',
-              qty: 3,
-              cacheKey: 'purchaseorder:10491694:inventoryitem:9357392:31046570',
-              editLine:
-                '/app/site/hosting/scriptlet.nl?script=583&deploy=1&compid=4537321_SB1&custpage_parent=48581&custpage_tranid=10491694&custpage_itemtype=2&custpage_itemtype=2&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357392:31046570&custpage_custitem_g2_condition_ref=5&custpage_rate=19.99&custpage_sku= D-9209357392&custpage_item_id=9357392&custpage_po_line_items=["48581","48581","48581","48581","48581","48581","48581","48581","48581","48581","37344","37383","9356991","9357191","9357091","9357291","9357391","9356992","9357292","9357092","9357192","9357392","9357093","9357193"]&custpage_unique_line=31046570&is_apparel_item=true',
-              lineItemAdder:
-                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10491694&custpage_itemtype=2&custpage_category=24&custpage_parent=9357392&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357392:31046570','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
-              bpaFields: [
-                {
-                  name: 'Condition',
-                  scriptid: 'customrecord_g2_condition',
-                  value: 'New',
-                  itemValue: '5',
-                  itemText: 'New',
-                  actualValue: '',
-                  actualText: ''
-                }
-              ],
-              backgroundColor: '',
-              displayInWaitingToReceive: true,
-              uniqueLine: '31046570'
-            },
-            {
-              sku: ' D-9209357093',
-              image:
-                'https://imgs.2ndswing.com/images/clean-product/small/G30%20NEW%20DVR.jpg',
-              itemName: 'Ping G30 Driver',
-              multiSkuCreated: '',
-              parentSku: 'G30 NEW DVR',
-              parentId: '37344',
-              parentLineUniqueKey: '',
-              receivingNotes: '',
-              itemId: '9357093',
-              name: 'G30 NEW DVR : D-9209357093',
-              salesDesc: 'Ping G30    ',
-              isClosed: false,
-              qtyExp: '1',
-              qtyRecv: '0',
-              qty: 1,
-              cacheKey: 'purchaseorder:10491694:inventoryitem:9357093:31046571',
-              editLine:
-                '/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cache=purchaseorder&cacheKey=purchaseorder:10491694:inventoryitem:9357093:31046571&template=customdeploy_wms_selectreceivingline',
-              lineItemAdder:
-                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10491694&custpage_itemtype=2&custpage_category=5&custpage_parent=9357093&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357093:31046571','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
-              bpaFields: [
+                },
                 {
                   name: 'Condition',
                   scriptid: 'customrecord_g2_condition',
                   value: 'Average',
-                  itemValue: '15',
-                  itemText: 'Average',
+                  itemValue: '',
+                  itemText: '',
                   actualValue: '',
                   actualText: ''
                 }
               ],
-              backgroundColor: '',
+              cacheKey: 'purchaseorder:10484354:inventoryitem:37383:31033356',
+              clubNumber2: '4',
+              clubsInIronSet2: '14',
+              conditionText: 'Average',
+              conditionValue: '15',
               displayInWaitingToReceive: true,
-              uniqueLine: '31046571'
-            },
-            {
-              sku: ' D-9209357193',
+              editLine:
+                '/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cache=purchaseorder&cacheKey=purchaseorder:10484354:inventoryitem:37383:31033356&template=customdeploy_wms_selectreceivingline',
               image:
                 'https://imgs.2ndswing.com/images/clean-product/small/G30%20NEW%20FWG.jpg',
-              itemName: 'Ping G30 Fairway Wood',
-              multiSkuCreated: '',
-              parentSku: 'G30 NEW FWG',
-              parentId: '37383',
-              parentLineUniqueKey: '',
-              receivingNotes: '',
-              itemId: '9357193',
-              name: 'G30 NEW FWG : D-9209357193',
-              salesDesc: 'Ping G30    ',
               isClosed: false,
-              qtyExp: '1',
-              qtyRecv: '0',
-              qty: 1,
-              cacheKey: 'purchaseorder:10491694:inventoryitem:9357193:31046572',
-              editLine:
-                '/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cache=purchaseorder&cacheKey=purchaseorder:10491694:inventoryitem:9357193:31046572&template=customdeploy_wms_selectreceivingline',
+              itemId: '37383',
+              itemName: 'Ping G30 Fairway Wood',
               lineItemAdder:
-                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10491694&custpage_itemtype=2&custpage_category=6&custpage_parent=9357193&custpage_cachekey=purchaseorder:10491694:inventoryitem:9357193:31046572','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
+                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10484354&custpage_itemtype=3&custpage_category=6&custpage_parent=37383&custpage_cachekey=purchaseorder:10484354:inventoryitem:37383:31033356','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
+              multiSkuCreated: '',
+              name: 'G30 NEW FWG',
+              parentLineUniqueKey: '',
+              parentSku: 'G30 NEW FWG',
+              qty: 0,
+              qtyExp: '10',
+              qtyRecv: '0',
+              rate: '45.00',
+              receivingNotes: '',
+              salesDesc: '    ',
+              shaftMaterialText: 'Graphite',
+              shaftMaterialValue: '1',
+              sku: 'G30 NEW FWG',
+              uniqueLine: '31033356'
+            },
+            {
+              backgroundColor: '',
               bpaFields: [
+                {
+                  name: 'Shaft Material (2)',
+                  scriptid: 'customrecord_g2_club_shaftmatl',
+                  value: '',
+                  itemValue: '1',
+                  itemText: 'Graphite',
+                  actualValue: '',
+                  actualText: ''
+                },
                 {
                   name: 'Condition',
                   scriptid: 'customrecord_g2_condition',
-                  value: 'Average',
-                  itemValue: '15',
-                  itemText: 'Average',
+                  value: '',
+                  itemValue: '3',
+                  itemText: 'Average 8.0',
                   actualValue: '',
                   actualText: ''
+                },
+                {
+                  name: 'Dexterity (2)',
+                  scriptid: 'customrecord_g2_dexterity',
+                  value: '',
+                  itemValue: '2',
+                  itemText: 'Right Handed'
+                },
+                {
+                  name: 'Club Length',
+                  scriptid: 'customrecord_g2_shaft_length',
+                  value: '',
+                  itemValue: '50',
+                  itemText: '43.0in',
+                  actualValue: null,
+                  actualText: null
                 }
               ],
+              cacheKey: 'purchaseorder:10484354:inventoryitem:9341605:31033357',
+              clubNumber2: '',
+              clubsInIronSet2: '',
+              conditionText: '',
+              conditionValue: '',
+              displayInWaitingToReceive: false,
+              editLine:
+                '/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cache=purchaseorder&cacheKey=purchaseorder:10484354:inventoryitem:9341605:31033357&template=customdeploy_wms_selectreceivingline',
+              image:
+                'https://imgs.2ndswing.com/images/clean-product/small/G30%20NEW%20FWG.jpg',
+              isClosed: false,
+              itemId: '9341605',
+              itemName: 'Ping G30 Fairway Wood',
+              lineItemAdder:
+                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10484354&custpage_itemtype=3&custpage_category=6&custpage_parent=9341605&custpage_cachekey=purchaseorder:10484354:inventoryitem:9341605:31033357','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
+              multiSkuCreated: '',
+              name: 'G30 NEW FWG : D-9209341605',
+              parentId: '37383',
+              parentLineUniqueKey: '31033356',
+              parentSku: 'G30 NEW FWG',
+              qty: 1,
+              qtyExp: '1',
+              qtyRecv: '1',
+              rate: '45.00',
+              receivingNotes: '',
+              salesDesc: 'Ping G30  Ping TFC 419F Stiff  Right Handed',
+              shaftMaterialText: '',
+              shaftMaterialValue: '',
+              sku: ' D-9209341605',
+              uniqueLine: '31033357'
+            },
+            {
               backgroundColor: '',
-              displayInWaitingToReceive: true,
-              uniqueLine: '31046572'
+              bpaFields: [
+                {
+                  name: 'Shaft Material (2)',
+                  scriptid: 'customrecord_g2_club_shaftmatl',
+                  value: '',
+                  itemValue: '1',
+                  itemText: 'Graphite',
+                  actualValue: '',
+                  actualText: ''
+                },
+                {
+                  name: 'Condition',
+                  scriptid: 'customrecord_g2_condition',
+                  value: '',
+                  itemValue: '1',
+                  itemText: 'Below Average 7.0',
+                  actualValue: '',
+                  actualText: ''
+                },
+                {
+                  name: 'Dexterity (2)',
+                  scriptid: 'customrecord_g2_dexterity',
+                  value: '',
+                  itemValue: '2',
+                  itemText: 'Right Handed'
+                },
+                {
+                  name: 'Club Length',
+                  scriptid: 'customrecord_g2_shaft_length',
+                  value: '',
+                  itemValue: '48',
+                  itemText: '42.5in',
+                  actualValue: null,
+                  actualText: null
+                }
+              ],
+              cacheKey: 'purchaseorder:10484354:inventoryitem:9341606:31033360',
+              clubNumber2: '',
+              clubsInIronSet2: '',
+              conditionText: '',
+              conditionValue: '',
+              displayInWaitingToReceive: false,
+              editLine:
+                '/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cache=purchaseorder&cacheKey=purchaseorder:10484354:inventoryitem:9341606:31033360&template=customdeploy_wms_selectreceivingline',
+              image:
+                'https://imgs.2ndswing.com/images/clean-product/small/G30%20NEW%20FWG.jpg',
+              isClosed: false,
+              itemId: '9341606',
+              itemName: 'Ping G30 Fairway Wood',
+              lineItemAdder:
+                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10484354&custpage_itemtype=3&custpage_category=6&custpage_parent=9341606&custpage_cachekey=purchaseorder:10484354:inventoryitem:9341606:31033360','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
+              multiSkuCreated: '',
+              name: 'G30 NEW FWG : D-9209341606',
+              parentId: '37383',
+              parentLineUniqueKey: '31033356',
+              parentSku: 'G30 NEW FWG',
+              qty: 1,
+              qtyExp: '1',
+              qtyRecv: '1',
+              rate: '45.00',
+              receivingNotes: '',
+              salesDesc: 'Ping G30  Ping TFC 80F Stiff  Right Handed',
+              shaftMaterialText: '',
+              shaftMaterialValue: '',
+              sku: ' D-9209341606',
+              uniqueLine: '31033360'
+            },
+            {
+              backgroundColor: '',
+              bpaFields: [
+                {
+                  name: 'Shaft Material (2)',
+                  scriptid: 'customrecord_g2_club_shaftmatl',
+                  value: '',
+                  itemValue: '1',
+                  itemText: 'Graphite',
+                  actualValue: '',
+                  actualText: ''
+                },
+                {
+                  name: 'Condition',
+                  scriptid: 'customrecord_g2_condition',
+                  value: '',
+                  itemValue: '2',
+                  itemText: 'Mint 9.5',
+                  actualValue: '',
+                  actualText: ''
+                },
+                {
+                  name: 'Dexterity (2)',
+                  scriptid: 'customrecord_g2_dexterity',
+                  value: '',
+                  itemValue: '2',
+                  itemText: 'Right Handed'
+                },
+                {
+                  name: 'Club Length',
+                  scriptid: 'customrecord_g2_shaft_length',
+                  value: '',
+                  itemValue: '49',
+                  itemText: '42.75in',
+                  actualValue: null,
+                  actualText: null
+                }
+              ],
+              cacheKey: 'purchaseorder:10484354:inventoryitem:9341607:31033363',
+              clubNumber2: '',
+              clubsInIronSet2: '',
+              conditionText: '',
+              conditionValue: '',
+              displayInWaitingToReceive: false,
+              editLine:
+                '/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cache=purchaseorder&cacheKey=purchaseorder:10484354:inventoryitem:9341607:31033363&template=customdeploy_wms_selectreceivingline',
+              image:
+                'https://imgs.2ndswing.com/images/clean-product/small/G30%20NEW%20FWG.jpg',
+              isClosed: false,
+              itemId: '9341607',
+              itemName: 'Ping G30 Fairway Wood',
+              lineItemAdder:
+                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10484354&custpage_itemtype=3&custpage_category=6&custpage_parent=9341607&custpage_cachekey=purchaseorder:10484354:inventoryitem:9341607:31033363','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
+              multiSkuCreated: '',
+              name: 'G30 NEW FWG : D-9209341607',
+              parentId: '37383',
+              parentLineUniqueKey: '31033356',
+              parentSku: 'G30 NEW FWG',
+              qty: 1,
+              qtyExp: '1',
+              qtyRecv: '1',
+              rate: '45.00',
+              receivingNotes: '',
+              salesDesc:
+                'Ping G30  Graphite Design Tour AD DI-7 Stiff  Right Handed',
+              shaftMaterialText: '',
+              shaftMaterialValue: '',
+              sku: ' D-9209341607',
+              uniqueLine: '31033363'
+            },
+            {
+              backgroundColor: '',
+              bpaFields: [
+                {
+                  name: 'Shaft Material (2)',
+                  scriptid: 'customrecord_g2_club_shaftmatl',
+                  value: '',
+                  itemValue: '1',
+                  itemText: 'Graphite',
+                  actualValue: '',
+                  actualText: ''
+                },
+                {
+                  name: 'Condition',
+                  scriptid: 'customrecord_g2_condition',
+                  value: '',
+                  itemValue: '4',
+                  itemText: 'Poor 6.0',
+                  actualValue: '',
+                  actualText: ''
+                },
+                {
+                  name: 'Dexterity (2)',
+                  scriptid: 'customrecord_g2_dexterity',
+                  value: '',
+                  itemValue: '1',
+                  itemText: 'Left Handed'
+                },
+                {
+                  name: 'Club Length',
+                  scriptid: 'customrecord_g2_shaft_length',
+                  value: '',
+                  itemValue: '46',
+                  itemText: '42.0in',
+                  actualValue: null,
+                  actualText: null
+                }
+              ],
+              cacheKey: 'purchaseorder:10484354:inventoryitem:9341608:31033366',
+              clubNumber2: '',
+              clubsInIronSet2: '',
+              conditionText: '',
+              conditionValue: '',
+              displayInWaitingToReceive: false,
+              editLine:
+                '/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cache=purchaseorder&cacheKey=purchaseorder:10484354:inventoryitem:9341608:31033366&template=customdeploy_wms_selectreceivingline',
+              image:
+                'https://imgs.2ndswing.com/images/clean-product/small/G30%20NEW%20FWG.jpg',
+              isClosed: false,
+              itemId: '9341608',
+              itemName: 'Ping G30 Fairway Wood',
+              lineItemAdder:
+                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10484354&custpage_itemtype=3&custpage_category=6&custpage_parent=9341608&custpage_cachekey=purchaseorder:10484354:inventoryitem:9341608:31033366','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
+              multiSkuCreated: '',
+              name: 'G30 NEW FWG : D-9209341608',
+              parentId: '37383',
+              parentLineUniqueKey: '31033356',
+              parentSku: 'G30 NEW FWG',
+              qty: 1,
+              qtyExp: '1',
+              qtyRecv: '1',
+              rate: '45.00',
+              receivingNotes: '',
+              salesDesc: 'Ping G30  Ping Tour 65 Stiff  Left Handed',
+              shaftMaterialText: '',
+              shaftMaterialValue: '',
+              sku: ' D-9209341608',
+              uniqueLine: '31033366'
+            },
+            {
+              backgroundColor: '',
+              bpaFields: [
+                {
+                  name: 'Shaft Material (2)',
+                  scriptid: 'customrecord_g2_club_shaftmatl',
+                  value: '',
+                  itemValue: '1',
+                  itemText: 'Graphite',
+                  actualValue: '',
+                  actualText: ''
+                },
+                {
+                  name: 'Condition',
+                  scriptid: 'customrecord_g2_condition',
+                  value: '',
+                  itemValue: '3',
+                  itemText: 'Average 8.0',
+                  actualValue: '',
+                  actualText: ''
+                },
+                {
+                  name: 'Dexterity (2)',
+                  scriptid: 'customrecord_g2_dexterity',
+                  value: '',
+                  itemValue: '1',
+                  itemText: 'Left Handed'
+                },
+                {
+                  name: 'Club Length',
+                  scriptid: 'customrecord_g2_shaft_length',
+                  value: '',
+                  itemValue: '49',
+                  itemText: '42.75in',
+                  actualValue: null,
+                  actualText: null
+                }
+              ],
+              cacheKey: 'purchaseorder:10484354:inventoryitem:9341609:31033369',
+              clubNumber2: '',
+              clubsInIronSet2: '',
+              conditionText: '',
+              conditionValue: '',
+              displayInWaitingToReceive: false,
+              editLine:
+                '/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cache=purchaseorder&cacheKey=purchaseorder:10484354:inventoryitem:9341609:31033369&template=customdeploy_wms_selectreceivingline',
+              image:
+                'https://imgs.2ndswing.com/images/clean-product/small/G30%20NEW%20FWG.jpg',
+              isClosed: false,
+              itemId: '9341609',
+              itemName: 'Ping G30 Fairway Wood',
+              lineItemAdder:
+                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10484354&custpage_itemtype=3&custpage_category=6&custpage_parent=9341609&custpage_cachekey=purchaseorder:10484354:inventoryitem:9341609:31033369','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
+              multiSkuCreated: '',
+              name: 'G30 NEW FWG : D-9209341609',
+              parentId: '37383',
+              parentLineUniqueKey: '31033356',
+              parentSku: 'G30 NEW FWG',
+              qty: 1,
+              qtyExp: '1',
+              qtyRecv: '1',
+              rate: '45.00',
+              receivingNotes: '',
+              salesDesc: 'Ping G30  Ping TFC 419F Stiff  Left Handed',
+              shaftMaterialText: '',
+              shaftMaterialValue: '',
+              sku: ' D-9209341609',
+              uniqueLine: '31033369'
+            },
+            {
+              backgroundColor: '',
+              bpaFields: [
+                {
+                  name: 'Shaft Material (2)',
+                  scriptid: 'customrecord_g2_club_shaftmatl',
+                  value: '',
+                  itemValue: '1',
+                  itemText: 'Graphite',
+                  actualValue: '',
+                  actualText: ''
+                },
+                {
+                  name: 'Condition',
+                  scriptid: 'customrecord_g2_condition',
+                  value: '',
+                  itemValue: '8',
+                  itemText: 'Above Average 9.0',
+                  actualValue: '',
+                  actualText: ''
+                },
+                {
+                  name: 'Dexterity (2)',
+                  scriptid: 'customrecord_g2_dexterity',
+                  value: '',
+                  itemValue: '2',
+                  itemText: 'Right Handed'
+                },
+                {
+                  name: 'Club Length',
+                  scriptid: 'customrecord_g2_shaft_length',
+                  value: '',
+                  itemValue: '50',
+                  itemText: '43.0in',
+                  actualValue: null,
+                  actualText: null
+                }
+              ],
+              cacheKey: 'purchaseorder:10484354:inventoryitem:9341610:31033372',
+              clubNumber2: '',
+              clubsInIronSet2: '',
+              conditionText: '',
+              conditionValue: '',
+              displayInWaitingToReceive: false,
+              editLine:
+                '/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cache=purchaseorder&cacheKey=purchaseorder:10484354:inventoryitem:9341610:31033372&template=customdeploy_wms_selectreceivingline',
+              image:
+                'https://imgs.2ndswing.com/images/clean-product/small/G30%20NEW%20FWG.jpg',
+              isClosed: false,
+              itemId: '9341610',
+              itemName: 'Ping G30 Fairway Wood',
+              lineItemAdder:
+                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10484354&custpage_itemtype=3&custpage_category=6&custpage_parent=9341610&custpage_cachekey=purchaseorder:10484354:inventoryitem:9341610:31033372','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
+              multiSkuCreated: '',
+              name: 'G30 NEW FWG : D-9209341610',
+              parentId: '37383',
+              parentLineUniqueKey: '31033356',
+              parentSku: 'G30 NEW FWG',
+              qty: 1,
+              qtyExp: '1',
+              qtyRecv: '1',
+              rate: '45.00',
+              receivingNotes: '',
+              salesDesc: 'Ping G30  Ping TFC 80F Regular  Right Handed',
+              shaftMaterialText: '',
+              shaftMaterialValue: '',
+              sku: ' D-9209341610',
+              uniqueLine: '31033372'
+            },
+            {
+              backgroundColor: '',
+              bpaFields: [
+                {
+                  name: 'Shaft Material (2)',
+                  scriptid: 'customrecord_g2_club_shaftmatl',
+                  value: '',
+                  itemValue: '1',
+                  itemText: 'Graphite',
+                  actualValue: '',
+                  actualText: ''
+                },
+                {
+                  name: 'Condition',
+                  scriptid: 'customrecord_g2_condition',
+                  value: '',
+                  itemValue: '1',
+                  itemText: 'Below Average 7.0',
+                  actualValue: '',
+                  actualText: ''
+                },
+                {
+                  name: 'Dexterity (2)',
+                  scriptid: 'customrecord_g2_dexterity',
+                  value: '',
+                  itemValue: '2',
+                  itemText: 'Right Handed'
+                },
+                {
+                  name: 'Club Length',
+                  scriptid: 'customrecord_g2_shaft_length',
+                  value: '',
+                  itemValue: '42',
+                  itemText: '41.0in',
+                  actualValue: null,
+                  actualText: null
+                }
+              ],
+              cacheKey: 'purchaseorder:10484354:inventoryitem:9341611:31033375',
+              clubNumber2: '',
+              clubsInIronSet2: '',
+              conditionText: '',
+              conditionValue: '',
+              displayInWaitingToReceive: false,
+              editLine:
+                '/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cache=purchaseorder&cacheKey=purchaseorder:10484354:inventoryitem:9341611:31033375&template=customdeploy_wms_selectreceivingline',
+              image:
+                'https://imgs.2ndswing.com/images/clean-product/small/G30%20NEW%20FWG.jpg',
+              isClosed: false,
+              itemId: '9341611',
+              itemName: 'Ping G30 Fairway Wood',
+              lineItemAdder:
+                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10484354&custpage_itemtype=3&custpage_category=6&custpage_parent=9341611&custpage_cachekey=purchaseorder:10484354:inventoryitem:9341611:31033375','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
+              multiSkuCreated: '',
+              name: 'G30 NEW FWG : D-9209341611',
+              parentId: '37383',
+              parentLineUniqueKey: '31033356',
+              parentSku: 'G30 NEW FWG',
+              qty: 1,
+              qtyExp: '1',
+              qtyRecv: '1',
+              rate: '45.00',
+              receivingNotes: '',
+              salesDesc: 'Ping G30  Ping Tour 80 Senior  Right Handed',
+              shaftMaterialText: '',
+              shaftMaterialValue: '',
+              sku: ' D-9209341611',
+              uniqueLine: '31033375'
+            },
+            {
+              backgroundColor: '',
+              bpaFields: [
+                {
+                  name: 'Dexterity (2)',
+                  scriptid: 'customrecord_g2_dexterity',
+                  value: '',
+                  itemValue: '2',
+                  itemText: 'Right Handed'
+                }
+              ],
+              cacheKey: 'purchaseorder:10484354:inventoryitem:9341612:31033378',
+              clubNumber2: '',
+              clubsInIronSet2: '',
+              conditionText: '',
+              conditionValue: '',
+              displayInWaitingToReceive: false,
+              editLine:
+                '/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cache=purchaseorder&cacheKey=purchaseorder:10484354:inventoryitem:9341612:31033378&template=customdeploy_wms_selectreceivingline',
+              image:
+                'https://imgs.2ndswing.com/images/clean-product/small/G30%20NEW%20FWG.jpg',
+              isClosed: false,
+              itemId: '9341612',
+              itemName: 'Ping G30 Fairway Wood',
+              lineItemAdder:
+                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10484354&custpage_itemtype=3&custpage_category=6&custpage_parent=9341612&custpage_cachekey=purchaseorder:10484354:inventoryitem:9341612:31033378','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
+              multiSkuCreated: '',
+              name: 'G30 NEW FWG : D-9209341612',
+              parentId: '37383',
+              parentLineUniqueKey: '31033356',
+              parentSku: 'G30 NEW FWG',
+              qty: 1,
+              qtyExp: '1',
+              qtyRecv: '1',
+              rate: '45.00',
+              receivingNotes: '',
+              salesDesc: 'Ping G30    Right Handed',
+              shaftMaterialText: '',
+              shaftMaterialValue: '',
+              sku: ' D-9209341612',
+              uniqueLine: '31033378'
+            },
+            {
+              backgroundColor: '',
+              bpaFields: [
+                {
+                  name: 'Dexterity (2)',
+                  scriptid: 'customrecord_g2_dexterity',
+                  value: '',
+                  itemValue: '2',
+                  itemText: 'Right Handed'
+                }
+              ],
+              cacheKey: 'purchaseorder:10484354:inventoryitem:9341613:31033381',
+              clubNumber2: '',
+              clubsInIronSet2: '',
+              conditionText: '',
+              conditionValue: '',
+              displayInWaitingToReceive: false,
+              editLine:
+                '/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cache=purchaseorder&cacheKey=purchaseorder:10484354:inventoryitem:9341613:31033381&template=customdeploy_wms_selectreceivingline',
+              image:
+                'https://imgs.2ndswing.com/images/clean-product/small/G30%20NEW%20FWG.jpg',
+              isClosed: false,
+              itemId: '9341613',
+              itemName: 'Ping G30 Fairway Wood',
+              lineItemAdder:
+                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10484354&custpage_itemtype=3&custpage_category=6&custpage_parent=9341613&custpage_cachekey=purchaseorder:10484354:inventoryitem:9341613:31033381','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
+              multiSkuCreated: '',
+              name: 'G30 NEW FWG : D-9209341613',
+              parentId: '37383',
+              parentLineUniqueKey: '31033356',
+              parentSku: 'G30 NEW FWG',
+              qty: 1,
+              qtyExp: '1',
+              qtyRecv: '1',
+              rate: '45.00',
+              receivingNotes: '',
+              salesDesc: 'Ping G30    Right Handed',
+              shaftMaterialText: '',
+              shaftMaterialValue: '',
+              sku: ' D-9209341613',
+              uniqueLine: '31033381'
+            },
+            {
+              backgroundColor: '',
+              bpaFields: [
+                {
+                  name: 'Dexterity (2)',
+                  scriptid: 'customrecord_g2_dexterity',
+                  value: '',
+                  itemValue: '2',
+                  itemText: 'Right Handed'
+                }
+              ],
+              cacheKey: 'purchaseorder:10484354:inventoryitem:9341614:31033384',
+              clubNumber2: '',
+              clubsInIronSet2: '',
+              conditionText: '',
+              conditionValue: '',
+              displayInWaitingToReceive: false,
+              editLine:
+                '/app/site/hosting/scriptlet.nl?script=39&deploy=1&compid=4537321_SB1&cache=purchaseorder&cacheKey=purchaseorder:10484354:inventoryitem:9341614:31033384&template=customdeploy_wms_selectreceivingline',
+              image:
+                'https://imgs.2ndswing.com/images/clean-product/small/G30%20NEW%20FWG.jpg',
+              isClosed: false,
+              itemId: '9341614',
+              itemName: 'Ping G30 Fairway Wood',
+              lineItemAdder:
+                "<div style='margin: 0 auto; background: white;' id='newitemadder' onclick=window.open('/app/site/hosting/scriptlet.nl?script=44&deploy=1&compid=4537321_SB1&custpage_source=opportunity&custpage_trantype=purchaseorder&custpage_tranid=10484354&custpage_itemtype=3&custpage_category=6&custpage_parent=9341614&custpage_cachekey=purchaseorder:10484354:inventoryitem:9341614:31033384','itemselectorwin','height=500px,width=1000px,position=absolute,directories=no,personalbar=no,statusbar=no,menubar=no,scrollbars=no,resizable=no,modal=yes,titlebar=no,locationbar=no,location=no')><div style='font-size: 150%;'>+</div></div>",
+              multiSkuCreated: '',
+              name: 'G30 NEW FWG : D-9209341614',
+              parentId: '37383',
+              parentLineUniqueKey: '31033356',
+              parentSku: 'G30 NEW FWG',
+              qty: 1,
+              qtyExp: '1',
+              qtyRecv: '1',
+              rate: '45.00',
+              receivingNotes: '',
+              salesDesc: 'Ping G30    Right Handed',
+              shaftMaterialText: '',
+              shaftMaterialValue: '',
+              sku: ' D-9209341614',
+              uniqueLine: '31033384'
             }
           ],
           addItem: '',
@@ -452,69 +688,200 @@
             '/app/site/hosting/scriptlet.nl?script=265&deploy=1&compid=4537321_SB1',
           attribute:
             '/app/site/hosting/scriptlet.nl?script=43&deploy=1&compid=4537321_SB1',
-          wmsNotes: ''
+          wmsNotes: 'TIM!'
         }
 
         // get item data
         var items = templateData.data
+        var parentItemsObj = getObjectOfParentObjects(items)
+        var displayColumnsObj = getDisplayColumns(items, parentItemsObj)
+
+        console.log({ parentItemsObj, displayColumnsObj })
+
+        var displayColumnsKeys = Object.keys(displayColumnsObj)
+
+        //update table Header
+        displayColumnsKeys.forEach(function (columnKey) {
+          var value = displayColumnsObj[columnKey]
+          if (value) {
+            $('#selectReceivingTableHeadRow').append(
+              '<th style="text-align: center">' + columnKey + '</th>'
+            )
+          }
+        })
+
+        // add items
+        // firstAddParent
+        var parentItemsUniqueLines = Object.keys(parentItemsObj)
+
+        // for each parent
+        parentItemsUniqueLines.forEach(function (uniqueLine) {
+          var itemsIndex = parentItemsObj[uniqueLine].itemsIndex[0]
+          var parentItem = items[itemsIndex]
+          var childItemsIndices = parentItemsObj[uniqueLine].indicesOfChildItems
+
+          // display its own data
+          displayColumnsKeys.forEach(function (columnKey) {
+            var columnToParentItemMap = {
+              Item: parentItem.itemName,
+              Condition: parentItem.conditionText,
+              'Shaft Material': parentItem.shaftMaterialText,
+              'Clubs In Iron Set (2)': parentItem.clubsInIronSet2,
+              'Club Number (2)': parentItem.clubNumber2,
+              Rate: parentItem.rate,
+              'Receiving Notes': parentItem.receivingNotes,
+              Quantity: parentItem.qtyExp
+            }
+            //console.log(columnToParentItemMap)
+
+            var value = displayColumnsObj[columnKey]
+            if (value) {
+              $('#selectReceivingTableBody').append(
+                '<th style="text-align: center">' +
+                  columnToParentItemMap[columnKey] +
+                  '</th>'
+              )
+            }
+          })
+
+          // display its children data
+          childItemsIndices.forEach(function (index) {
+            var childItem = items[index]
+            //console.log(childItem)
+            var row = ''
+
+            displayColumnsKeys.forEach(function (columnKey) {
+              var columnToChildItemMap = {
+                Item: childItem.itemName,
+                Condition: childItem.conditionText,
+                'Shaft Material': childItem.shaftMaterialText,
+                'Clubs In Iron Set (2)': childItem.clubsInIronSet2,
+                'Club Number (2)': childItem.clubNumber2,
+                Rate: childItem.rate,
+                'Receiving Notes': childItem.receivingNotes,
+                Quantity: childItem.qtyExp
+              }
+              console.log(columnToChildItemMap)
+
+              var value = displayColumnsObj[columnKey]
+
+              if (value) {
+                row +=
+                  '<td style="font-weight: normal; font-size: 16px;">' +
+                  columnToChildItemMap[columnKey] +
+                  '</td>'
+              }
+            })
+
+            $('#selectReceivingTableBody').append('<tr >' + row + '</tr>')
+          })
+          // <td>{{{lineItemAdder}}}</td>
+          console.log(parentItem)
+        })
+      })
+
+      // build header row
+
+      function getObjectOfParentObjects (items) {
         var parentItems = {}
-        var item
-        var isParent
-        var tableRowObj = {}
-        var parentLineUniqueKey
+        var isParent, item, parentDoesNotExist, parentLineUniqueKey
 
         for (var i = 0; i < items.length; i++) {
           item = items[i]
-          isParent = item.parentId
-          
+          //var pattern = /(/
+          isParent = !item.name.includes(':') //!item.parentId
+          //console.log(i + '. item name: ' + item.name)
 
           if (isParent) {
             // add header rows
-            console.log(i + 'is parent')
+            // console.log(i + ' is parent')
             parentDoesNotExist = !parentItems[item.uniqueLine]
 
-            // add to parentItems
             if (parentDoesNotExist) {
+              // add to parentItems
               parentItems[item.uniqueLine] = {
-                childItems: [],
-                itemsIndex: i,
+                indicesOfChildItems: [],
+                itemsIndex: [i],
                 uniqueLine: item.uniqueLine
               }
+            } else {
+              // just add the index
+              parentItems[item.uniqueLine]['itemsIndex'].push(i)
             }
           } else {
+            // is child item
             parentLineUniqueKey = item.parentLineUniqueKey
             parentDoesNotExist = !parentItems[parentLineUniqueKey]
 
             if (parentDoesNotExist) {
               parentItems[parentLineUniqueKey] = {
                 // add childItem to parent
-                childItems: [i],
+                indicesOfChildItems: [i],
+                itemsIndex: [],
                 // add parent unique
                 uniqueLine: parentLineUniqueKey
               }
             } else {
               // add child
-              parentItems[parentLineUniqueKey].childItems.push(i)
+              parentItems[parentLineUniqueKey]['indicesOfChildItems'].push(i)
             }
           }
         }
 
-        console.log(parentItems)
-        var item
-        var itemName
-        var condition
-        var shaftMaterial
-        var clubsInIronSet2
-        var clubNumber2
-        var rate
-        var receivingNotes
-        var quantity
+        // console.log(parentItems)
 
-        // build header row
-        $('#selectReceivingTableHeadRow').append(
-          '<th style="text-align: center">' + +'</th>'
-        )
-      })
+        return parentItems
+      }
+
+      function getDisplayColumns (items, parentItemsObj) {
+        var displayColumnsObj = {
+          Item: true,
+          Condition: true,
+          'Shaft Material': null,
+          'Clubs In Iron Set (2)': null,
+          'Club Number (2)': null,
+          Rate: true,
+          'Receiving Notes': true,
+          Quantity: true
+        }
+
+        var parentItemKeys = Object.keys(parentItemsObj)
+
+        var allColumnsSelected,
+          clubsInIronSet2,
+          clubNumber2,
+          itemsIndex,
+          parentItem,
+          shaftMaterial,
+          uniqueLine
+
+        for (var i = 0; i < parentItemKeys.length; i++) {
+          uniqueLine = parentItemKeys[i]
+          itemsIndex = parentItemsObj[uniqueLine].itemsIndex[0]
+          parentItem = items[itemsIndex]
+
+          clubNumber2 = clubNumber2 ? clubNumber2 : parentItem.clubNumber2
+          clubsInIronSet2 = clubsInIronSet2
+            ? clubsInIronSet2
+            : parentItem.clubsInIronSet2
+          shaftMaterial = shaftMaterial
+            ? shaftMaterial
+            : parentItem.shaftMaterial
+
+          allColumnsSelected = clubsInIronSet2 && clubNumber2 && shaftMaterial
+
+          if (allColumnsSelected) {
+            console.log('all columns selected, breaking now')
+            break
+          }
+        }
+
+        displayColumnsObj['Club Number (2)'] = clubNumber2
+        displayColumnsObj['Clubs In Iron Set (2)'] = clubsInIronSet2
+        displayColumnsObj['Shaft Material'] = shaftMaterial
+
+        return displayColumnsObj
+      }
     </script>
   </head>
 
@@ -530,53 +897,17 @@
       >
         <thead id="selectReceivingTableHead" style="background: Gainsboro">
           <tr id="selectReceivingTableHeadRow">
-            <th style="text-align: center">SKU</th>
+            <!-- <th style="text-align: center">SKU</th>
             <th style="text-align: center">Multi-Sku</th>
             <th style="text-align: center">Name</th>
             <th style="text-align: center">Description</th>
             <th style="text-align: center">Bin</th>
-            <th style="text-align: center">Quantity</th>
+            <th style="text-align: center">Quantity</th> -->
           </tr>
         </thead>
         <tbody id="selectReceivingTableBody">
-          {{#each data as |line|}} {{#unless line.parentId }}
-          <tr>
-            <td>{{line.parentSku}}</td>
-            <td>&nbsp;</td>
-            <td>{{line.name}}</td>
-            <td>{{line.salesDesc}}</td>
-            <td>?</td>
-            <td>Expected: {{line.qtyExp}}</td>
-          </tr>
-          {{#each ../data as |childline|}} {{#if (eq line.uniqueLine
-          childline.parentLineUniqueKey) }}
-          <tr>
-            <td style="font-weight: normal; font-size: 16px;">
-              {{childline.sku}}
-            </td>
-            <td>
-              <input
-                type="checkbox"
-                {{childline.multiSkuCreated}}
-                disabled="disabled"
-                style="transform: scale(1.5); padding: 10px;"
-              />
-            </td>
-            <td style="font-weight: normal; font-size: 16px;">
-              {{childline.name}}
-            </td>
-            <td style="font-weight: normal; font-size: 16px;">
-              {{childline.salesDesc}}
-            </td>
-            <td style="font-weight: normal; font-size: 16px;"></td>
-            <td style="font-weight: normal; font-size: 16px;">
-              Received: {{childline.qtyRecv}}
-            </td>
-          </tr>
-          {{/if}} {{/each}}
           <tr id="{{line.cacheKey}}" class="addrow">
             <td colspan="4"></td>
-            <td>{{{lineItemAdder}}}</td>
             <td>&nbsp;</td>
           </tr>
           <tr>
@@ -584,7 +915,6 @@
               <hr />
             </td>
           </tr>
-          {{/unless}} {{/each}}
         </tbody>
       </table>
     </div>

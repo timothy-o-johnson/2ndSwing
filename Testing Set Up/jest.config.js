@@ -1,7 +1,7 @@
 const SuiteCloudJestConfiguration = require('@oracle/suitecloud-unit-testing/jest-configuration/SuiteCloudJestConfiguration')
 
 module.exports = SuiteCloudJestConfiguration.build({
-  projectFolder: 'CentralizeCredit', //or your SDF project folder
+  projectFolder: 'WMS', //or your SDF project folder
   projectType: SuiteCloudJestConfiguration.ProjectType.ACP,
   customStubs: [
     {
@@ -12,6 +12,10 @@ module.exports = SuiteCloudJestConfiguration.build({
       module:
         'SuiteScripts/CentralizeCredit/FileCabinet/SuiteScripts/RL_Get_Gift_Certificates',
       path: '<rootDir>/FileCabinet/SuiteScripts/RL_Get_Gift_Certificates.js'
+    },
+    {
+      module: '/SuiteScripts/LIB_Globals.js',
+      path: '<rootDir>/customStubs/LIB_Globals.js'
     },
     {
       module: 'SuiteScripts/LIB_SearchHelpers',

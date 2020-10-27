@@ -18,6 +18,28 @@ require([
   // ADD CODE ABOVE
 })
 
+// NG-2188 debugger
+
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  'N/file',
+  '/SuiteScripts/LIB_Globals.js'
+], function (search, record, ssLib, searchHelpers, itemHelper, file, globals) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  
+    
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
+
+
 // NG-2196 debugger
 
 require([

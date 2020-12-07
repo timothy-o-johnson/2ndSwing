@@ -7,8 +7,18 @@ require([
   'SuiteScripts/LIB_SearchHelpers',
   '/SuiteScripts/WMS/shared/ItemHelper',
   'N/file',
-  '/SuiteScripts/LIB_Globals.js'
-], function (search, record, ssLib, searchHelpers, itemHelper, file, globals) {
+  '/SuiteScripts/LIB_Globals.js',
+  'N/ui/serverWidget'
+], function (
+  search,
+  record,
+  ssLib,
+  searchHelpers,
+  itemHelper,
+  file,
+  globals,
+  sw
+) {
   // ADD CODE BELOW
   // ADD CODE BELOW
   // ADD CODE BELOW
@@ -18,8 +28,90 @@ require([
   // ADD CODE ABOVE
 })
 
-// NG-2188 debugger
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  'N/file',
+  '/SuiteScripts/LIB_Globals.js',
+  'N/ui/serverWidget'
+], function (
+  search,
+  record,
+  ssLib,
+  searchHelpers,
+  itemHelper,
+  file,
+  globals,
+  sw
+) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
 
+    var openPurchaseOrdersSearchObj = ssLib.getOpenOrdersSearchObj()
+
+    var openPOsCount = openPurchaseOrdersSearchObj.runPaged().count
+
+    log.debug('openPOsCount', openPOsCount
+)
+
+    
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
+
+// NG-2230 debugger
+
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  'N/file',
+  '/SuiteScripts/LIB_Globals.js',
+  'N/ui/serverWidget'
+], function (
+  search,
+  record,
+  ssLib,
+  searchHelpers,
+  itemHelper,
+  file,
+  globals,
+  sw
+) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+
+  // check if parent, otherwise jump up
+
+  var itemId = 9261763
+  var itemType = 'inventoryitem'
+
+  var itemRec = record.load({
+    type: itemType,
+    id: itemId
+  })
+
+  var imageGallerySubTab = itemRec.addSubtab({
+    id: 'custpage_image_gallery_subtab',
+    label: 'Image Gallery'
+  })
+
+  log.debug(itemRec)
+
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
+
+// NG-2188 debugger
 require([
   'N/search',
   'N/record',
@@ -32,13 +124,10 @@ require([
   // ADD CODE BELOW
   // ADD CODE BELOW
   // ADD CODE BELOW
-  
-    
   // ADD CODE ABOVE
   // ADD CODE ABOVE
   // ADD CODE ABOVE
 })
-
 
 // NG-2196 debugger
 
@@ -66,145 +155,148 @@ require([
 
   afterSubmit(scriptContext)
 
-function afterSubmit (scriptContext) {
-  try {
-    var recObj = scriptContext.newRecord
-    var recType = recObj.type
-    var recId = recObj.id
+  function afterSubmit (scriptContext) {
+    try {
+      var recObj = scriptContext.newRecord
+      var recType = recObj.type
+      var recId = recObj.id
 
-    var itemsObj = getActualTotalAndTotalDiscounts(recObj)
+      var itemsObj = getActualTotalAndTotalDiscounts(recObj)
 
-    var actualTotal = itemsObj.actualTotal
-    var totalDiscount = itemsObj.totalDiscount
-    var totalVariance = itemsObj.summaryItemVariance
+      var actualTotal = itemsObj.actualTotal
+      var totalDiscount = itemsObj.totalDiscount
+      var totalVariance = itemsObj.summaryItemVariance
 
-    actualTotal = updateWithExpenses(actualTotal, recObj)
+      actualTotal = updateWithExpenses(actualTotal, recObj)
 
-    actualTotal += totalDiscount
+      actualTotal += totalDiscount
 
-    log.debug('itemsObj', itemsObj)
-    log.debug('actual total after expenses & discounts', actualTotal.toFixed(2))
+      log.debug('itemsObj', itemsObj)
+      log.debug(
+        'actual total after expenses & discounts',
+        actualTotal.toFixed(2)
+      )
 
-    var idAfterSubmit = record.submitFields({
-      type: recType,
-      id: recId,
-      values: {
-        custbody_wipfli_povariance: totalVariance.toFixed(2),
-        custbody_wf_actual_amount: actualTotal.toFixed(2)
-      }
-    })
-
-    log.debug('id after submit', idAfterSubmit)
-  } catch (e) {
-    log.error('error during variance set', e)
-  }
-
-  return
-  function getActualTotalAndTotalDiscounts (recObj) {
-    var itemsObj = {
-      actualTotal: 0,
-      summaryItemVariance: 0,
-      totalDiscount: 0
-    }
-
-    var actualSubtotal,
-      expectedSubtotal,
-      lineVariance = 0
-
-    var itemLines = recObj.getLineCount({
-      sublistId: 'item'
-    })
-
-    for (var line = 0; line < itemLines; line++) {
-      var itemText = getSublistText('item', line)
-      var itemType = getSublistValue('itemtype', line)
-      var isDiscountItem = itemType === 'Discount'
-
-      // log.debug('item text', itemText)
-
-      var itemTextArray = itemText.split(':')
-      var isParent = itemTextArray.length == 1
-      // log.debug('isChild', isChild)
-
-      if (isParent || !isDiscountItem) {
-        continue
-      }
-
-      var expectedQuantity = getSublistValue('custcol_expectedqty', line)
-      var rate = getSublistValue('rate', line)
-      var actualRate = getSublistValue('custcol_wms_actual_rate', line)
-      var receivedQuantity = getSublistValue('quantityreceived', line)
-
-      itemsObj.totalDiscount += getDiscountAmount(isDiscountItem)
-
-      actualSubtotal = actualRate * receivedQuantity
-      itemsObj.actualTotal += actualSubtotal
-
-      expectedSubtotal = expectedQuantity * rate
-      lineVariance = actualSubtotal - expectedSubtotal
-
-      log.debug('getActualTotalAndTotalDiscounts(): itemsObj', itemsObj)
-
-      log.debug('line variance', lineVariance)
-
-      itemsObj.summaryItemVariance += lineVariance
-    }
-
-    return itemsObj
-
-    function getSublistValue (fieldId, line) {
-      var sublistValue = recObj.getSublistValue({
-        sublistId: 'item',
-        fieldId: fieldId,
-        line: line
+      var idAfterSubmit = record.submitFields({
+        type: recType,
+        id: recId,
+        values: {
+          custbody_wipfli_povariance: totalVariance.toFixed(2),
+          custbody_wf_actual_amount: actualTotal.toFixed(2)
+        }
       })
 
-      return sublistValue
+      log.debug('id after submit', idAfterSubmit)
+    } catch (e) {
+      log.error('error during variance set', e)
     }
 
-    function getSublistText (fieldId, line) {
-      var sublistText = recObj.getSublistText({
-        sublistId: 'item',
-        fieldId: fieldId,
-        line: line
-      })
-
-      return sublistText
-    }
-
-    function getDiscountAmount (isDiscountItem) {
-      var discount = 0
-
-      if (isDiscountItem) {
-        receivedQuantity = receivedQuantity > 0 ? receivedQuantity : 1
-
-        discount = rate * receivedQuantity
+    return
+    function getActualTotalAndTotalDiscounts (recObj) {
+      var itemsObj = {
+        actualTotal: 0,
+        summaryItemVariance: 0,
+        totalDiscount: 0
       }
 
-      return discount
-    }
-  }
+      var actualSubtotal,
+        expectedSubtotal,
+        lineVariance = 0
 
-  function updateWithExpenses (actualTotal, recObj) {
-    var newTotal = actualTotal
-
-    var expenseLines = recObj.getLineCount({
-      sublistId: 'expense'
-    })
-
-    for (var i = 0; i < expenseLines; i++) {
-      var currAmount = recObj.getSublistValue({
-        sublistId: 'expense',
-        fieldId: 'amount',
-        line: i
+      var itemLines = recObj.getLineCount({
+        sublistId: 'item'
       })
 
-      newTotal += currAmount
+      for (var line = 0; line < itemLines; line++) {
+        var itemText = getSublistText('item', line)
+        var itemType = getSublistValue('itemtype', line)
+        var isDiscountItem = itemType === 'Discount'
+
+        // log.debug('item text', itemText)
+
+        var itemTextArray = itemText.split(':')
+        var isParent = itemTextArray.length == 1
+        // log.debug('isChild', isChild)
+
+        if (isParent || !isDiscountItem) {
+          continue
+        }
+
+        var expectedQuantity = getSublistValue('custcol_expectedqty', line)
+        var rate = getSublistValue('rate', line)
+        var actualRate = getSublistValue('custcol_wms_actual_rate', line)
+        var receivedQuantity = getSublistValue('quantityreceived', line)
+
+        itemsObj.totalDiscount += getDiscountAmount(isDiscountItem)
+
+        actualSubtotal = actualRate * receivedQuantity
+        itemsObj.actualTotal += actualSubtotal
+
+        expectedSubtotal = expectedQuantity * rate
+        lineVariance = actualSubtotal - expectedSubtotal
+
+        log.debug('getActualTotalAndTotalDiscounts(): itemsObj', itemsObj)
+
+        log.debug('line variance', lineVariance)
+
+        itemsObj.summaryItemVariance += lineVariance
+      }
+
+      return itemsObj
+
+      function getSublistValue (fieldId, line) {
+        var sublistValue = recObj.getSublistValue({
+          sublistId: 'item',
+          fieldId: fieldId,
+          line: line
+        })
+
+        return sublistValue
+      }
+
+      function getSublistText (fieldId, line) {
+        var sublistText = recObj.getSublistText({
+          sublistId: 'item',
+          fieldId: fieldId,
+          line: line
+        })
+
+        return sublistText
+      }
+
+      function getDiscountAmount (isDiscountItem) {
+        var discount = 0
+
+        if (isDiscountItem) {
+          receivedQuantity = receivedQuantity > 0 ? receivedQuantity : 1
+
+          discount = rate * receivedQuantity
+        }
+
+        return discount
+      }
     }
 
-    return newTotal
+    function updateWithExpenses (actualTotal, recObj) {
+      var newTotal = actualTotal
+
+      var expenseLines = recObj.getLineCount({
+        sublistId: 'expense'
+      })
+
+      for (var i = 0; i < expenseLines; i++) {
+        var currAmount = recObj.getSublistValue({
+          sublistId: 'expense',
+          fieldId: 'amount',
+          line: i
+        })
+
+        newTotal += currAmount
+      }
+
+      return newTotal
+    }
   }
-}
   // ADD CODE ABOVE
   // ADD CODE ABOVE
   // ADD CODE ABOVE

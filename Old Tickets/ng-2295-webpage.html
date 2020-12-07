@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Blank HTML5</title>
+    <style></style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="../../../../netsuite-workspace/WMS/FileCabinet/SuiteScripts/WMS/Receiving/SelectReceivingLine.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        var adjustmentReasonsObj =
+          "%7B%22adjReasonsObj%22%3A%7B%22Adjustment%20Reason%20Test%20Record%20%233%22%3A%7B%22dropDownPosition%22%3A0%2C%22memo%22%3A%22memo%20memo%2C%20have%20you%20heard%20my%20demo%3F%22%2C%22name%22%3A%22Adjustment%20Reason%20Test%20Record%20%233%22%2C%22position%22%3A%221%22%7D%2C%22Clearance%22%3A%7B%22dropDownPosition%22%3A1%2C%22memo%22%3A%22Going%20to%20Clearance.%22%2C%22name%22%3A%22Clearance%22%2C%22position%22%3A%221%22%7D%2C%22Adjustment%20Reason%20Test%20Record%20%235%22%3A%7B%22dropDownPosition%22%3A2%2C%22memo%22%3A%22beep%20beep%2C%20my%20thoughts%20are%20deep%22%2C%22name%22%3A%22Adjustment%20Reason%20Test%20Record%20%235%22%2C%22position%22%3A%222%22%7D%2C%22Ghosting%20Issue%20in%20Club%20Trader%20(Store%20Credit)%22%3A%7B%22dropDownPosition%22%3A3%2C%22memo%22%3A%22Ghosting%20Issue%20in%20Club%20Trader%22%2C%22name%22%3A%22Ghosting%20Issue%20in%20Club%20Trader%20(Store%20Credit)%22%2C%22position%22%3A%222%22%7D%2C%22Obama...%20Adjustment%20Reason%20Test%20Record%20%236%22%3A%7B%22dropDownPosition%22%3A4%2C%22memo%22%3A%22There's%20not%20a%20liberal%20America%20and%20a%20conservative%20America--%20there'%20s%20a%20United%20States%20of%20America%22%2C%22name%22%3A%22Obama...%20Adjustment%20Reason%20Test%20Record%20%236%22%2C%22position%22%3A%222%22%7D%2C%22Abraham%20Lincoln...%20Adjustment%20Reason%20Test%20Record%20%237%22%3A%7B%22dropDownPosition%22%3A5%2C%22memo%22%3A%22four%20score...%20and%20seven%20years%20ago%22%2C%22name%22%3A%22Abraham%20Lincoln...%20Adjustment%20Reason%20Test%20Record%20%237%22%2C%22position%22%3A%224%22%7D%2C%22Beware...%20Adjustment%20Reason%20Test%20Record%20%237%22%3A%7B%22dropDownPosition%22%3A6%2C%22memo%22%3A%22flip%20flop%2C%20do%20the%20wop%22%2C%22name%22%3A%22Beware...%20Adjustment%20Reason%20Test%20Record%20%237%22%2C%22position%22%3A%224%22%7D%2C%22Grant...%20Adjustment%20Reason%20Test%20Record%20%238%22%3A%7B%22dropDownPosition%22%3A7%2C%22memo%22%3A%22I%20have%20never%20advocated%20war%20except%20as%20a%20means%20of%20peace%22%2C%22name%22%3A%22Grant...%20Adjustment%20Reason%20Test%20Record%20%238%22%2C%22position%22%3A%224%22%7D%2C%22Hamilton...%20Adjustment%20Reason%20Test%20Record%20%239%22%3A%7B%22dropDownPosition%22%3A8%2C%22memo%22%3A%22Those%20who%20stand%20for%20nothing%20fall%20for%20anything.%22%2C%22name%22%3A%22Hamilton...%20Adjustment%20Reason%20Test%20Record%20%239%22%2C%22position%22%3A%224%22%7D%2C%22Roosevelt%20...%20Adjustment%20Reason%20Test%20Record%20%239%22%3A%7B%22dropDownPosition%22%3A9%2C%22memo%22%3A%22If%20you%20treat%20people%20right%2C%20they%20will%20treat%20you%20right...%2090%25%20of%20the%20time.%22%2C%22name%22%3A%22Roosevelt%20...%20Adjustment%20Reason%20Test%20Record%20%239%22%2C%22position%22%3A%224%22%7D%2C%22Adjustment%20Reason%20Test%20Record%20%233_1%22%3A%7B%22dropDownPosition%22%3A13%2C%22memo%22%3A%22memo%20memo%2C%20have%20you%20heard%20my%20demo%3F%22%2C%22name%22%3A%22Adjustment%20Reason%20Test%20Record%20%233%22%2C%22position%22%3A%2222%22%7D%2C%22Adjustment%20Reason%20Test%20Record%20%231%22%3A%7B%22dropDownPosition%22%3A11%2C%22memo%22%3A%22memo%20memo%2C%20have%20you%20heard%20my%20demo%3F%22%2C%22name%22%3A%22Adjustment%20Reason%20Test%20Record%20%231%22%2C%22position%22%3A%2222%22%7D%2C%22Adjustment%20Reason%20Test%20Record%20%232%22%3A%7B%22dropDownPosition%22%3A12%2C%22memo%22%3A%22memo%20memo%2C%20have%20you%20heard%20my%20demo%3F%22%2C%22name%22%3A%22Adjustment%20Reason%20Test%20Record%20%232%22%2C%22position%22%3A%2222%22%7D%7D%2C%22dropDownSelectionArr%22%3A%5B%22Adjustment%20Reason%20Test%20Record%20%233%22%2C%22Clearance%22%2C%22Adjustment%20Reason%20Test%20Record%20%235%22%2C%22Ghosting%20Issue%20in%20Club%20Trader%20(Store%20Credit)%22%2C%22Obama...%20Adjustment%20Reason%20Test%20Record%20%236%22%2C%22Abraham%20Lincoln...%20Adjustment%20Reason%20Test%20Record%20%237%22%2C%22Beware...%20Adjustment%20Reason%20Test%20Record%20%237%22%2C%22Grant...%20Adjustment%20Reason%20Test%20Record%20%238%22%2C%22Hamilton...%20Adjustment%20Reason%20Test%20Record%20%239%22%2C%22Roosevelt%20...%20Adjustment%20Reason%20Test%20Record%20%239%22%2C%22Adjustment%20Reason%20Test%20Record%20%233%22%2C%22Adjustment%20Reason%20Test%20Record%20%231%22%2C%22Adjustment%20Reason%20Test%20Record%20%232%22%2C%22Adjustment%20Reason%20Test%20Record%20%233%22%5D%7D"
+
+        adjustmentReasonsObj = JSON.parse(
+          decodeURIComponent(adjustmentReasonsObj)
+        )
+        console.log('adjReasonsObj', adjustmentReasonsObj)
+
+        var dropDownSelection = adjustmentReasonsObj.dropDownSelectionArr
+        var adjReasonsObj = adjustmentReasonsObj.adjReasonsObj
+
+        console.log('dropDownSelection', dropDownSelection)
+        console.log('adjReasonsObj', adjReasonsObj)
+
+        // get parent element
+        var element = document.getElementById('inpt_custbody_inventory_adj_reason7')
+        var parent = element.parentElement
+
+        // remove native NS field so we can place our list in position/alphabetical order
+        parent.removeChild(element)
+
+        // create select element named select_inventory_adj
+        var selectInventoryAdj = $('<select id="select_inventory_adj">').appendTo(parent)
+        dropDownSelection.forEach(function (selection) {
+          selectInventoryAdj.append(
+            $('<option>')
+              .attr('value', selection)
+              .text(selection)
+          )
+        })
+
+        // save adjReasonsObj to form
+        var adjReasonsObjField = $(
+          '<input id="input_adj_reasons_obj">'
+        ).appendTo('body')
+
+        $('#input_adj_reasons_obj').val(JSON.stringify(adjReasonsObj))
+        // $('#input_adj_reasons_obj').text("Hello world!")
+        $('#select_inventory_adj').change(function(e){
+            var value = $('#select_inventory_adj').val()
+
+            console.log(value)})  
+      
+      })
+      
+    </script>
+  </head>
+
+  <body>
+    <div class="uir-field-wrapper" data-field-type="select">
+      <span
+        id="custbody_inventory_adj_reason_fs_lbl_uir_label"
+        class="smallgraytextnolink uir-label "
+        ><span
+          id="custbody_inventory_adj_reason_fs_lbl"
+          class="labelSpanEdit smallgraytextnolink"
+          style=""
+          >Adjustment Reason
+        </span></span
+      ><span class="uir-field">
+        <span
+          id="custbody_inventory_adj_reason_fs"
+          data-fieldtype="select"
+          class="nldropdown"
+          style="white-space:nowrap;"
+          data-helperbutton-count="2"
+          ><div class="uir-select-input-container">
+            <input
+              name="inpt_custbody_inventory_adj_reason"
+              type="text"
+              value="Grant... Adjustment Reason Test Record #8"
+              class="dropdownInput textbox"
+              onkeydown="getDropdown(this).handleKeydown(event);"
+              onkeypress="getDropdown(this).handleKeypress(event);"
+              onfocus="getDropdown(this).handleOnFocus(event);"
+              onblur="getDropdown(this).handleOnBlur(event);"
+              aria-labelledby="custbody_inventory_adj_reason_fs_lbl"
+              autocomplete="off"
+              contenteditable="false"
+              role="combobox"
+              id="inpt_custbody_inventory_adj_reason7"
+              title="Abraham Lincoln... Adjustment Reason Test Record #7"
+              style="width: 280px;"
+            /><span class="ddarrowSpan"> </span>
+          </div>
+
+          <div
+            class="ns-dropdown"
+            data-name="custbody_inventory_adj_reason"
+            data-initialized="T"
+            data-options='[{"value":"","text":""},{"value":"-1","text":"- New -"},{"value":"9","text":"Abraham Lincoln... Adjustment Reason Test Record #7"},{"value":"1","text":"Adjustment Reason Test Record #1"},{"value":"2","text":"Adjustment Reason Test Record #2"},{"value":"5","text":"Adjustment Reason Test Record #3"},{"value":"4","text":"Adjustment Reason Test Record #3"},{"value":"3","text":"Adjustment Reason Test Record #3"},{"value":"6","text":"Adjustment Reason Test Record #5"},{"value":"8","text":"Beware... Adjustment Reason Test Record #7"},{"value":"13","text":"Clearance"},{"value":"14","text":"Ghosting Issue in Club Trader (Store Credit)"},{"value":"10","text":"Grant... Adjustment Reason Test Record #8"},{"value":"11","text":"Hamilton... Adjustment Reason Test Record #9"},{"value":"7","text":"Obama... Adjustment Reason Test Record #6"},{"value":"12","text":"Roosevelt ... Adjustment Reason Test Record #9"}]'
+            data-default-option="12"
+            data-settings='{"flags":-1073741824,"width":280,"minWidth":280,"mandatory":false}'
+            style="display: none; "
+          ></div>
+
+          <input
+            name="custbody_inventory_adj_reason"
+            type="hidden"
+            class="nldropdown"
+            value="9"
+            onchange="this.isvalid=(nlapiValidateField(null,'custbody_inventory_adj_reason'));if (!this.isvalid) return false;if(!this.noslaving) { setWindowChanged(window, true); }if (Synccustbody_inventory_adj_reason(true,null,null,null,null,null) == false) return false;if (getEventTarget(event)==this)this.focus();nlapiFieldChanged(null,'custbody_inventory_adj_reason');"
+            id="hddn_custbody_inventory_adj_reason7"/>
+
+          <input
+            type="hidden"
+            value="2"
+            id="indx_custbody_inventory_adj_reason7"/>
+
+          <span class="field_widget_helper_pos effectStatic"></span
+          ><span class="uir-field-widget"
+            ><a
+              data-helperbuttontype="new"
+              id="custbody_inventory_adj_reason_popup_new"
+              tabindex="-1"
+              class="smalltextul field_widget i_createnew"
+              title="New"
+              href='javascript:void("custbody_inventory_adj_reason_new")'
+              onclick="setSelectValue(document.forms['main_form'].elements['custbody_inventory_adj_reason'],-1); Synccustbody_inventory_adj_reason(true);return false;"
+            ></a
+            ><a
+              data-helperbuttontype="open"
+              href="#"
+              id="custbody_inventory_adj_reason_popup_link"
+              class="smalltextul field_widget i_dropdownlink i_options"
+              tabindex="-1"
+              title="Open"
+              onclick="if (getSelectValue(document.forms['main_form'].elements['custbody_inventory_adj_reason']).length>0) nlOpenWindow('/app/common/custom/custrecordentry.nl?rectype=480&amp;id='+getSelectValue(document.forms['main_form'].elements['custbody_inventory_adj_reason'])+'', '_blank',''); else alert('Please choose an entry first.');return false;"
+            ></a></span
+        ></span>
+      </span>
+    </div>
+    <input
+  name="inpt_account"
+  type="text"
+  value="1000 Petty Cash"
+  class="dropdownInput textbox"
+  onkeydown="getDropdown(this).handleKeydown(event);"
+  onkeypress="getDropdown(this).handleKeypress(event);"
+  onfocus="getDropdown(this).handleOnFocus(event);"
+  onblur="getDropdown(this).handleOnBlur(event);"
+  aria-labelledby="account_fs_lbl"
+  autocomplete="off"
+  contenteditable="false"
+  role="combobox"
+  id="inpt_account2"
+  title="1000 Petty Cash"
+  style="width: 280px; background-color: rgb(255, 255, 255);"
+  disabled=""
+/>
+
+  </body>
+</html>

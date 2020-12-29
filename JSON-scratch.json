@@ -1,0 +1,16 @@
+{
+  "message": "Cannot read property \"text\" from undefined",
+  "fileName": "/SuiteScripts/WMS/Receiving/editLineItemLoader.js",
+  "lineNumber": "99",
+  "name": "TypeError",
+  "rhinoException": "{}",
+  "stack": "\t
+  at /SuiteScripts/WMS/Receiving/editLineItemLoader.js:99 (getAllFields)\n\t
+  at /SuiteScripts/WMS/Receiving/editLineItemLoader.js:48 (cacheTransactionItemLoader)\n\t
+  at /SuiteScripts/WMS/Receiving/EditLine.js:895 (getOrigCache)\n\t
+  at /SuiteScripts/WMS/Receiving/EditLine.js:191 (onRequest)\n\t
+  at INVOCATION_WRAPPER$sys:31\n\t
+  at INVOCATION_WRAPPER$sys:17\n\t
+  at INVOCATION_WRAPPER$sys:38\n\t
+  at INVOCATION_WRAPPER$sys:1\n"
+}

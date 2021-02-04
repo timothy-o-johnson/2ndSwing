@@ -1,42 +1,41 @@
-{
-  "type": "error.SuiteScriptError",
-  "name": "UNEXPECTED_ERROR",
-  "message": null,
-  "stack": [
-    "create(N/searchPaging)",
-    "getItemInfo(/SuiteScripts/PreparedNotes/SL_PrepNotes2.js:175)",
-    "configureHTMLTemplate(/SuiteScripts/PreparedNotes/SL_PrepNotes2.js:86)",
-    "onRequest(/SuiteScripts/PreparedNotes/SL_PrepNotes2.js:43)"
-  ],
-  "cause": {
-    "type": "internal error",
-    "code": "UNEXPECTED_ERROR",
-    "details": null,
-    "userEvent": null,
-    "stackTrace": [
-      "create(N/searchPaging)",
-      "getItemInfo(/SuiteScripts/PreparedNotes/SL_PrepNotes2.js:175)",
-      "configureHTMLTemplate(/SuiteScripts/PreparedNotes/SL_PrepNotes2.js:86)",
-      "onRequest(/SuiteScripts/PreparedNotes/SL_PrepNotes2.js:43)"
-    ],
-    "notifyOff": false
+[
+  {
+    "custcol_select_item": "T",
+    "itemId": undefined,
+    "itemName": undefined,
+    "lineuniquekey": "30976369"
   },
-  "id": "f6786dca-ad79-43c3-a6c7-38e439794a14-2d323032312e30312e3037",
-  "notifyOff": false,
-  "userFacing": false
-}
-
-// https://4537321-sb1.app.netsuite.com/app/site/hosting/scriptlet.nl?script=583
-deploy=1
-compid=4537321_SB1
-custpage_parent=48581
-custpage_tranid=10627754
-custpage_itemtype=2
-custpage_itemtype=2
-custpage_cachekey=purchaseorder:10627754:inventoryitem:9556698:31251633
-custpage_custitem_g2_condition_ref=undefined
-custpage_rate=5.60
-custpage_sku=%20D-D209556698
-custpage_item_id=9556698
-custpage_unique_line=31251633
-is_apparel_item=true
+  {
+    "custcol_select_item": "T",
+    "itemId": undefined,
+    "itemName": undefined,
+    "lineuniquekey": "31299227"
+  },
+  {
+    "custcol_select_item": "T",
+    "itemId": undefined,
+    "itemName": undefined,
+    "lineuniquekey": "31299238"
+  }
+]
+,
+[
+  {
+    "custcol_select_item": "T",
+    "itemId": "4810003",
+    "itemName": "Callaway Mavrik Max Driver",
+    "lineuniquekey": "30976369"
+  },
+  {
+    "custcol_select_item": "T",
+    "itemId": "9578277",
+    "itemName": "Callaway Mavrik Max Driver",
+    "lineuniquekey": "31299227"
+  },
+  {
+    "custcol_select_item": "T",
+    "itemId": "9578380",
+    "itemName": "Callaway Mavrik Pro Iron Set",
+    "lineuniquekey": "31299238"
+  }
+]

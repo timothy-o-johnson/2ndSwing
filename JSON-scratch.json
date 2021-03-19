@@ -1,41 +1,7 @@
-[
-  {
-    "custcol_select_item": "T",
-    "itemId": undefined,
-    "itemName": undefined,
-    "lineuniquekey": "30976369"
-  },
-  {
-    "custcol_select_item": "T",
-    "itemId": undefined,
-    "itemName": undefined,
-    "lineuniquekey": "31299227"
-  },
-  {
-    "custcol_select_item": "T",
-    "itemId": undefined,
-    "itemName": undefined,
-    "lineuniquekey": "31299238"
-  }
-]
-,
-[
-  {
-    "custcol_select_item": "T",
-    "itemId": "4810003",
-    "itemName": "Callaway Mavrik Max Driver",
-    "lineuniquekey": "30976369"
-  },
-  {
-    "custcol_select_item": "T",
-    "itemId": "9578277",
-    "itemName": "Callaway Mavrik Max Driver",
-    "lineuniquekey": "31299227"
-  },
-  {
-    "custcol_select_item": "T",
-    "itemId": "9578380",
-    "itemName": "Callaway Mavrik Pro Iron Set",
-    "lineuniquekey": "31299238"
-  }
-]
+{
+  "text": "Please select which charitable organization to make your donation",
+  "sort": 1,
+  "help": "",
+  "disabled": false,
+  "radio": false
+}

@@ -1,7 +1,19 @@
 {
-  "text": "Please select which charitable organization to make your donation",
-  "sort": 1,
-  "help": "",
-  "disabled": false,
-  "radio": false
+  "type": "error.SuiteScriptError",
+  "name": "SSS_MISSING_REQD_ARGUMENT",
+  "message": "file.load: Missing a required argument: id",
+  "stack": [
+    "Error",
+    " at Object.getFileContents (/SuiteScripts/LIB_Globals.js:95:8)",
+    " at getFields (/SuiteScripts/WMS/shared/UE_PO_Update_Open_PO_field.js:140:32)",
+    " at determineIfValidItemReceipt (/SuiteScripts/WMS/shared/UE_PO_Update_Open_PO_field.js:41:20)",
+    " at Object.afterSubmit (/SuiteScripts/WMS/shared/UE_PO_Update_Open_PO_field.js:27:38)"
+  ],
+  "cause": {
+    "name": "SSS_MISSING_REQD_ARGUMENT",
+    "message": "file.load: Missing a required argument: id"
+  },
+  "id": "",
+  "notifyOff": false,
+  "userFacing": true
 }

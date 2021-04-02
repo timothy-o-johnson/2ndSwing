@@ -28,6 +28,64 @@ require([
   // ADD CODE ABOVE
 })
 
+// NG-2507 debugger
+
+require([
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  'N/file',
+  '/SuiteScripts/LIB_Globals.js',
+  'N/ui/serverWidget'
+], function (
+  search,
+  record,
+  ssLib,
+  searchHelpers,
+  itemHelper,
+  file,
+  globals,
+  sw
+) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  //
+
+  var transactionSearchObj = search.create({
+  type: 'transaction',
+  filters: [
+    ['name', 'anyof', '455322'],
+    'AND',
+    [
+      ['item.internalidnumber', 'equalto', '1217846'],
+      'OR',
+      ['item.internalidnumber', 'equalto', '1217847']
+    ],
+    'AND',
+    'NOT',
+    ['type', 'anyof', 'Journal']
+  ],
+  columns: [
+    search.createColumn({ name: 'type', label: 'Type' }),
+  ]
+  })
+  
+var searchResultCount = transactionSearchObj.runPaged().count
+log.debug('transactionSearchObj result count', searchResultCount)
+transactionSearchObj.run().each(function (result) {
+  // .run().each has a limit of 4,000 results
+  return true
+})
+
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
+
+
 require([
   'N/search',
   'N/record',

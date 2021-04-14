@@ -1,0 +1,724 @@
+<customlist scriptid="customlist_firstte_accounts_list">
+  <description>accounts list for First Tee Home widget</description>
+  <isinactive>F</isinactive>
+  <ismatrixoption>F</ismatrixoption>
+  <isordered>T</isordered>
+  <name>First Tee Accounts List</name>
+  <customvalues>
+   <customvalue scriptid="val_52287674_4537321_sb1_635">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Aiken</value>
+    </customvalue>
+<customvalue scriptid="val_52287675_4537321_sb1_842">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Augusta</value>
+    </customvalue>
+<customvalue scriptid="val_52287676_4537321_sb1_843">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Australia</value>
+    </customvalue>
+<customvalue scriptid="val_52287677_4537321_sb1_844">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee BC</value>
+    </customvalue>
+<customvalue scriptid="val_52287678_4537321_sb1_845">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Benton Harbor</value>
+    </customvalue>
+<customvalue scriptid="val_52287679_4537321_sb1_846">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Canada</value>
+    </customvalue>
+<customvalue scriptid="val_52287680_4537321_sb1_847">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Canton</value>
+    </customvalue>
+<customvalue scriptid="val_52287681_4537321_sb1_848">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Central Arkansas</value>
+    </customvalue>
+<customvalue scriptid="val_52287682_4537321_sb1_849">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Central Carolina</value>
+    </customvalue>
+<customvalue scriptid="val_52287683_4537321_sb1_850">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Central Coast</value>
+    </customvalue>
+<customvalue scriptid="val_52287684_4537321_sb1_851">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Central Florida</value>
+    </customvalue>
+<customvalue scriptid="val_52287685_4537321_sb1_852">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Central Iowa</value>
+    </customvalue>
+<customvalue scriptid="val_52287686_4537321_sb1_853">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Central Mississippi</value>
+    </customvalue>
+<customvalue scriptid="val_52287687_4537321_sb1_854">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Central Ohio</value>
+    </customvalue>
+<customvalue scriptid="val_52287688_4537321_sb1_855">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Central Valley</value>
+    </customvalue>
+<customvalue scriptid="val_52287689_4537321_sb1_856">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Central Washington</value>
+    </customvalue>
+<customvalue scriptid="val_52287690_4537321_sb1_857">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Clearwater</value>
+    </customvalue>
+<customvalue scriptid="val_52287691_4537321_sb1_858">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Cleveland</value>
+    </customvalue>
+<customvalue scriptid="val_52287692_4537321_sb1_859">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Coachella Valley</value>
+    </customvalue>
+<customvalue scriptid="val_52287693_4537321_sb1_860">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Coastal Carolinas</value>
+    </customvalue>
+<customvalue scriptid="val_52287694_4537321_sb1_861">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Columbia</value>
+    </customvalue>
+<customvalue scriptid="val_52287695_4537321_sb1_862">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Connecticut</value>
+    </customvalue>
+<customvalue scriptid="val_52287696_4537321_sb1_863">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Contra Costa</value>
+    </customvalue>
+<customvalue scriptid="val_52287697_4537321_sb1_864">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Corning</value>
+    </customvalue>
+<customvalue scriptid="val_52287698_4537321_sb1_865">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Delaware</value>
+    </customvalue>
+<customvalue scriptid="val_52287699_4537321_sb1_866">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Denver</value>
+    </customvalue>
+<customvalue scriptid="val_52287700_4537321_sb1_867">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee East Baton Rouge Parish</value>
+    </customvalue>
+<customvalue scriptid="val_52287701_4537321_sb1_868">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Eastern Michigan</value>
+    </customvalue>
+<customvalue scriptid="val_52287702_4537321_sb1_869">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Florida Gold Coast</value>
+    </customvalue>
+<customvalue scriptid="val_52287703_4537321_sb1_870">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Foothills</value>
+    </customvalue>
+<customvalue scriptid="val_52287704_4537321_sb1_871">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Fort Worth</value>
+    </customvalue>
+<customvalue scriptid="val_52287705_4537321_sb1_872">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Four Corners</value>
+    </customvalue>
+<customvalue scriptid="val_52287706_4537321_sb1_873">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Fresno</value>
+    </customvalue>
+<customvalue scriptid="val_52287707_4537321_sb1_874">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Golden Isles</value>
+    </customvalue>
+<customvalue scriptid="val_52287708_4537321_sb1_875">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Akron</value>
+    </customvalue>
+<customvalue scriptid="val_52287709_4537321_sb1_876">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Austin</value>
+    </customvalue>
+<customvalue scriptid="val_52287710_4537321_sb1_877">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Baltimore</value>
+    </customvalue>
+<customvalue scriptid="val_52287711_4537321_sb1_878">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Charleston</value>
+    </customvalue>
+<customvalue scriptid="val_52287712_4537321_sb1_879">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Charlotte</value>
+    </customvalue>
+<customvalue scriptid="val_52287713_4537321_sb1_880">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Chicago</value>
+    </customvalue>
+<customvalue scriptid="val_52287714_4537321_sb1_881">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Cincinnati & Northern Kentucky</value>
+    </customvalue>
+<customvalue scriptid="val_52287715_4537321_sb1_882">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Dallas</value>
+    </customvalue>
+<customvalue scriptid="val_52287716_4537321_sb1_883">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Detroit</value>
+    </customvalue>
+<customvalue scriptid="val_52287717_4537321_sb1_884">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater El Paso</value>
+    </customvalue>
+<customvalue scriptid="val_52287718_4537321_sb1_885">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Houston</value>
+    </customvalue>
+<customvalue scriptid="val_52287719_4537321_sb1_886">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Kansas City</value>
+    </customvalue>
+<customvalue scriptid="val_52287720_4537321_sb1_887">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Knoxville</value>
+    </customvalue>
+<customvalue scriptid="val_52287721_4537321_sb1_888">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Lexington</value>
+    </customvalue>
+<customvalue scriptid="val_52287722_4537321_sb1_889">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater New Orleans</value>
+    </customvalue>
+<customvalue scriptid="val_52287723_4537321_sb1_890">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Pasadena</value>
+    </customvalue>
+<customvalue scriptid="val_52287724_4537321_sb1_891">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Philadelphia</value>
+    </customvalue>
+<customvalue scriptid="val_52287725_4537321_sb1_892">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Portland</value>
+    </customvalue>
+<customvalue scriptid="val_52287726_4537321_sb1_893">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Richmond</value>
+    </customvalue>
+<customvalue scriptid="val_52287727_4537321_sb1_894">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Sacramento</value>
+    </customvalue>
+<customvalue scriptid="val_52287728_4537321_sb1_895">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater San Antonio</value>
+    </customvalue>
+<customvalue scriptid="val_52287729_4537321_sb1_896">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Seattle</value>
+    </customvalue>
+<customvalue scriptid="val_52287730_4537321_sb1_897">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater St. Louis</value>
+    </customvalue>
+<customvalue scriptid="val_52287731_4537321_sb1_898">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Trenton</value>
+    </customvalue>
+<customvalue scriptid="val_52287732_4537321_sb1_899">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Tyler</value>
+    </customvalue>
+<customvalue scriptid="val_52287733_4537321_sb1_900">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Washington, DC</value>
+    </customvalue>
+<customvalue scriptid="val_52287734_4537321_sb1_901">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Wichita</value>
+    </customvalue>
+<customvalue scriptid="val_52287735_4537321_sb1_902">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Greater Wilmington</value>
+    </customvalue>
+<customvalue scriptid="val_52287736_4537321_sb1_903">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Green Valley Ranch</value>
+    </customvalue>
+<customvalue scriptid="val_52287737_4537321_sb1_904">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Gulf Coast</value>
+    </customvalue>
+<customvalue scriptid="val_52287738_4537321_sb1_905">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Hampton Roads</value>
+    </customvalue>
+<customvalue scriptid="val_52287739_4537321_sb1_906">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Hawaii</value>
+    </customvalue>
+<customvalue scriptid="val_52287740_4537321_sb1_907">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Howard County</value>
+    </customvalue>
+<customvalue scriptid="val_52287741_4537321_sb1_908">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Idaho</value>
+    </customvalue>
+<customvalue scriptid="val_52287742_4537321_sb1_909">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Indiana</value>
+    </customvalue>
+<customvalue scriptid="val_52287743_4537321_sb1_910">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Inland Empire</value>
+    </customvalue>
+<customvalue scriptid="val_52287744_4537321_sb1_911">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Inland Northwest</value>
+    </customvalue>
+<customvalue scriptid="val_52287745_4537321_sb1_912">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Japan</value>
+    </customvalue>
+<customvalue scriptid="val_52287746_4537321_sb1_913">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Jersey Shore</value>
+    </customvalue>
+<customvalue scriptid="val_52287747_4537321_sb1_914">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Korea</value>
+    </customvalue>
+<customvalue scriptid="val_52287748_4537321_sb1_915">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Lake County</value>
+    </customvalue>
+<customvalue scriptid="val_52287749_4537321_sb1_916">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Lake Erie</value>
+    </customvalue>
+<customvalue scriptid="val_52287750_4537321_sb1_917">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Lakeland</value>
+    </customvalue>
+<customvalue scriptid="val_52287751_4537321_sb1_918">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Lehigh Valley & Berks</value>
+    </customvalue>
+<customvalue scriptid="val_52287752_4537321_sb1_919">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Louisville</value>
+    </customvalue>
+<customvalue scriptid="val_52287753_4537321_sb1_920">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Manhattan</value>
+    </customvalue>
+<customvalue scriptid="val_52287754_4537321_sb1_921">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Massachusetts</value>
+    </customvalue>
+<customvalue scriptid="val_52287755_4537321_sb1_922">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Metro Atlanta</value>
+    </customvalue>
+<customvalue scriptid="val_52287756_4537321_sb1_923">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Metropolitan New York</value>
+    </customvalue>
+<customvalue scriptid="val_52287757_4537321_sb1_924">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Metropolitan Oklahoma City</value>
+    </customvalue>
+<customvalue scriptid="val_52287758_4537321_sb1_925">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Mexico</value>
+    </customvalue>
+<customvalue scriptid="val_52287759_4537321_sb1_926">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Miami</value>
+    </customvalue>
+<customvalue scriptid="val_52287760_4537321_sb1_927">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Mid-Michigan</value>
+    </customvalue>
+<customvalue scriptid="val_52287761_4537321_sb1_928">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Minnesota</value>
+    </customvalue>
+<customvalue scriptid="val_52287762_4537321_sb1_929">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Monterey County</value>
+    </customvalue>
+<customvalue scriptid="val_52287763_4537321_sb1_930">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Morocco</value>
+    </customvalue>
+<customvalue scriptid="val_52287764_4537321_sb1_931">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Naples/Collier</value>
+    </customvalue>
+<customvalue scriptid="val_52287765_4537321_sb1_932">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee New Hampshire</value>
+    </customvalue>
+<customvalue scriptid="val_52287766_4537321_sb1_933">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee North Coast</value>
+    </customvalue>
+<customvalue scriptid="val_52287767_4537321_sb1_934">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Northeast Wisconsin</value>
+    </customvalue>
+<customvalue scriptid="val_52287768_4537321_sb1_935">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Northern Michigan</value>
+    </customvalue>
+<customvalue scriptid="val_52287769_4537321_sb1_936">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Northern Nevada</value>
+    </customvalue>
+<customvalue scriptid="val_52287770_4537321_sb1_937">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee North Florida</value>
+    </customvalue>
+<customvalue scriptid="val_52287771_4537321_sb1_938">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Northwest Arkansas</value>
+    </customvalue>
+<customvalue scriptid="val_52287772_4537321_sb1_939">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Omaha</value>
+    </customvalue>
+<customvalue scriptid="val_52287773_4537321_sb1_940">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Orange County</value>
+    </customvalue>
+<customvalue scriptid="val_52287774_4537321_sb1_941">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Phoenix</value>
+    </customvalue>
+<customvalue scriptid="val_52287775_4537321_sb1_942">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Pikes Peak</value>
+    </customvalue>
+<customvalue scriptid="val_52287776_4537321_sb1_943">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Pine Mountain</value>
+    </customvalue>
+<customvalue scriptid="val_52287777_4537321_sb1_944">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Piney Woods</value>
+    </customvalue>
+<customvalue scriptid="val_52287778_4537321_sb1_945">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Pittsburgh</value>
+    </customvalue>
+<customvalue scriptid="val_52287779_4537321_sb1_946">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Prince William County</value>
+    </customvalue>
+<customvalue scriptid="val_52287780_4537321_sb1_947">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Puerto Rico</value>
+    </customvalue>
+<customvalue scriptid="val_52287781_4537321_sb1_948">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Quad Cities</value>
+    </customvalue>
+<customvalue scriptid="val_52287782_4537321_sb1_949">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Raritan Valley</value>
+    </customvalue>
+<customvalue scriptid="val_52287783_4537321_sb1_950">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Roanoke Valley</value>
+    </customvalue>
+<customvalue scriptid="val_52287784_4537321_sb1_951">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Salina</value>
+    </customvalue>
+<customvalue scriptid="val_52287785_4537321_sb1_952">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Sandhills</value>
+    </customvalue>
+<customvalue scriptid="val_52287786_4537321_sb1_953">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee San Diego</value>
+    </customvalue>
+<customvalue scriptid="val_52287787_4537321_sb1_954">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee San Francisco</value>
+    </customvalue>
+<customvalue scriptid="val_52287788_4537321_sb1_955">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee San Joaquin</value>
+    </customvalue>
+<customvalue scriptid="val_52287789_4537321_sb1_956">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Sarasota/Manatee</value>
+    </customvalue>
+<customvalue scriptid="val_52287790_4537321_sb1_957">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Shenandoah Valley</value>
+    </customvalue>
+<customvalue scriptid="val_52287791_4537321_sb1_958">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Silicon Valley</value>
+    </customvalue>
+<customvalue scriptid="val_52287792_4537321_sb1_959">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Siouxland</value>
+    </customvalue>
+<customvalue scriptid="val_52287793_4537321_sb1_960">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee South Central Wisconsin</value>
+    </customvalue>
+<customvalue scriptid="val_52287794_4537321_sb1_961">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee South Dakota</value>
+    </customvalue>
+<customvalue scriptid="val_52287795_4537321_sb1_962">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Southeastern New Mexico</value>
+    </customvalue>
+<customvalue scriptid="val_52287796_4537321_sb1_963">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Southeast Wisconsin</value>
+    </customvalue>
+<customvalue scriptid="val_52287797_4537321_sb1_964">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee South Puget Sound</value>
+    </customvalue>
+<customvalue scriptid="val_52287798_4537321_sb1_965">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee St. Petersburg</value>
+    </customvalue>
+<customvalue scriptid="val_52287799_4537321_sb1_966">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Syracuse</value>
+    </customvalue>
+<customvalue scriptid="val_52287800_4537321_sb1_967">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Tampa Bay</value>
+    </customvalue>
+<customvalue scriptid="val_52287801_4537321_sb1_968">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Tennessee</value>
+    </customvalue>
+<customvalue scriptid="val_52287802_4537321_sb1_969">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee The Lowcountry</value>
+    </customvalue>
+<customvalue scriptid="val_52287803_4537321_sb1_970">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Three Rivers Park District</value>
+    </customvalue>
+<customvalue scriptid="val_52287804_4537321_sb1_971">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Triangle</value>
+    </customvalue>
+<customvalue scriptid="val_52287805_4537321_sb1_972">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Tri-Valley</value>
+    </customvalue>
+<customvalue scriptid="val_52287806_4537321_sb1_973">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Troup County</value>
+    </customvalue>
+<customvalue scriptid="val_52287807_4537321_sb1_974">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Tucson</value>
+    </customvalue>
+<customvalue scriptid="val_52287808_4537321_sb1_975">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Tulsa</value>
+    </customvalue>
+<customvalue scriptid="val_52287809_4537321_sb1_976">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Upstate South Carolina</value>
+    </customvalue>
+<customvalue scriptid="val_52287810_4537321_sb1_977">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Utah</value>
+    </customvalue>
+<customvalue scriptid="val_52287811_4537321_sb1_978">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Virginia Blue Ridge</value>
+    </customvalue>
+<customvalue scriptid="val_52287812_4537321_sb1_979">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Virginia Peninsula</value>
+    </customvalue>
+<customvalue scriptid="val_52287813_4537321_sb1_980">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee Western New York</value>
+    </customvalue>
+<customvalue scriptid="val_52287814_4537321_sb1_981">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee West Michigan</value>
+    </customvalue>
+<customvalue scriptid="val_52287815_4537321_sb1_982">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee West Texas</value>
+    </customvalue>
+<customvalue scriptid="val_52287816_4537321_sb1_983">
+      <abbreviation>F</abbreviation>
+      <isinactive>F</isinactive>
+      <value>First Tee West Virginia</value>
+    </customvalue>
+  </customvalues>
+</customlist>

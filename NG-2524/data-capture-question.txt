@@ -1,0 +1,3 @@
+{"text": "WANT TO DONATE TO YOUR LOCAL CHAPTER?", "sort": 1, "help": "SELECT BELOW. ALL OTHER DONATIONS WILL BENEFIT THE HOME OFFICE.", "disabled": false, "radio": false }
+
+{"text": "Want to donate to your local chapter?", "sort": 1, "help": "Select below. All other donations will benefit the home office.", "disabled": false, "radio": false }

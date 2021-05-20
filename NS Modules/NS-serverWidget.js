@@ -2626,6 +2626,7 @@ define([
       )
     )
   }
+  
   function createAssistant (config, hideNavBar) {
     utilityFunctions.checkArgs(
       [config],

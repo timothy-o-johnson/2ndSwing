@@ -1,6 +1,7 @@
 // NG-xxxx debugger
 
 require([
+  'N/cache',
   'N/search',
   'N/record',
   '/SuiteScripts/WMS/shared/SavedSearchLibrary',
@@ -10,6 +11,7 @@ require([
   '/SuiteScripts/LIB_Globals.js',
   'N/ui/serverWidget'
 ], function (
+  cache,
   search,
   record,
   ssLib,
@@ -28,9 +30,87 @@ require([
   // ADD CODE ABOVE
 })
 
+// NG-2628 debugger
+require([
+  'N/cache',
+  'N/file',
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  '/SuiteScripts/LIB_Globals.js',
+  'N/ui/serverWidget'
+], function (
+  cache,
+  file,
+  search,
+  record,
+  ssLib,
+  searchHelpers,
+  itemHelper,
+  globals,
+  sw
+) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  //
+
+  var exemptItems = getExemptItemsArr()
+
+  log.debug(exemptItems)
+
+  function getExemptItemsArr () {
+  var exemptItems
+
+  // load cache (an objct)
+  var exemptItemsCache = cache.getCache({
+    name: 'EXEMPT_ITEMS'
+  })
+
+  // load value for key: 'exempt items'
+  var exemptItemsCacheJson = exemptItemsCache.get({
+    key: 'exempt_items',
+    loader: getItemsWithExemptFromPriceChangeFieldSetToTrue
+  })
+
+  exemptItems = JSON.parse(exemptItemsCacheJson)
+
+  return exemptItems
+
+  // from the documentation, the loader function is like a default dataset. if there's no key in the cache it loads this object; if there's nothing in this object then it creates the new key-value in the cache, i don't think we want anything in here.
+  function getItemsWithExemptFromPriceChangeFieldSetToTrue () {
+    var itemsExemptFromPriceChange = []
+    var itemsExemptFromPriceChangeSearchObj = search.create({
+      type: 'item',
+      filters: [['custitem_exempt_from_price_change', 'is', 'T']],
+      columns: []
+    })
+
+    var searchResults = ssLib.getFormattedSearchResults(
+      itemsExemptFromPriceChangeSearchObj
+    )
+
+    // searchResults = [{"id":"1177466"},{"id":"1177465"},{"id":"1177464"},{"id":"1177463"}]
+    searchResults.forEach(function (result) {
+      itemsExemptFromPriceChange.push(result.id)
+    })
+
+    return itemsExemptFromPriceChange
+  }
+}
+
+
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
+
 // NG-2507 debugger
 
 require([
+  'N/cache',
   'N/search',
   'N/record',
   '/SuiteScripts/WMS/shared/SavedSearchLibrary',
@@ -40,6 +120,7 @@ require([
   '/SuiteScripts/LIB_Globals.js',
   'N/ui/serverWidget'
 ], function (
+  cache,
   search,
   record,
   ssLib,
@@ -55,36 +136,33 @@ require([
   //
 
   var transactionSearchObj = search.create({
-  type: 'transaction',
-  filters: [
-    ['name', 'anyof', '455322'],
-    'AND',
-    [
-      ['item.internalidnumber', 'equalto', '1217846'],
-      'OR',
-      ['item.internalidnumber', 'equalto', '1217847']
+    type: 'transaction',
+    filters: [
+      ['name', 'anyof', '455322'],
+      'AND',
+      [
+        ['item.internalidnumber', 'equalto', '1217846'],
+        'OR',
+        ['item.internalidnumber', 'equalto', '1217847']
+      ],
+      'AND',
+      'NOT',
+      ['type', 'anyof', 'Journal']
     ],
-    'AND',
-    'NOT',
-    ['type', 'anyof', 'Journal']
-  ],
-  columns: [
-    search.createColumn({ name: 'type', label: 'Type' }),
-  ]
+    columns: [search.createColumn({ name: 'type', label: 'Type' })]
   })
-  
-var searchResultCount = transactionSearchObj.runPaged().count
-log.debug('transactionSearchObj result count', searchResultCount)
-transactionSearchObj.run().each(function (result) {
-  // .run().each has a limit of 4,000 results
-  return true
-})
+
+  var searchResultCount = transactionSearchObj.runPaged().count
+  log.debug('transactionSearchObj result count', searchResultCount)
+  transactionSearchObj.run().each(function (result) {
+    // .run().each has a limit of 4,000 results
+    return true
+  })
 
   // ADD CODE ABOVE
   // ADD CODE ABOVE
   // ADD CODE ABOVE
 })
-
 
 require([
   'N/search',
@@ -109,14 +187,12 @@ require([
   // ADD CODE BELOW
   // ADD CODE BELOW
 
-    var openPurchaseOrdersSearchObj = ssLib.getOpenOrdersSearchObj()
+  var openPurchaseOrdersSearchObj = ssLib.getOpenOrdersSearchObj()
 
-    var openPOsCount = openPurchaseOrdersSearchObj.runPaged().count
+  var openPOsCount = openPurchaseOrdersSearchObj.runPaged().count
 
-    log.debug('openPOsCount', openPOsCount
-)
+  log.debug('openPOsCount', openPOsCount)
 
-    
   // ADD CODE ABOVE
   // ADD CODE ABOVE
   // ADD CODE ABOVE

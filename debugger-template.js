@@ -62,45 +62,49 @@ require([
   log.debug(exemptItems)
 
   function getExemptItemsArr () {
-  var exemptItems
+    var exemptItems
 
-  // load cache (an objct)
-  var exemptItemsCache = cache.getCache({
-    name: 'EXEMPT_ITEMS'
-  })
-
-  // load value for key: 'exempt items'
-  var exemptItemsCacheJson = exemptItemsCache.get({
-    key: 'exempt_items',
-    loader: getItemsWithExemptFromPriceChangeFieldSetToTrue
-  })
-
-  exemptItems = JSON.parse(exemptItemsCacheJson)
-
-  return exemptItems
-
-  // from the documentation, the loader function is like a default dataset. if there's no key in the cache it loads this object; if there's nothing in this object then it creates the new key-value in the cache, i don't think we want anything in here.
-  function getItemsWithExemptFromPriceChangeFieldSetToTrue () {
-    var itemsExemptFromPriceChange = []
-    var itemsExemptFromPriceChangeSearchObj = search.create({
-      type: 'item',
-      filters: [['custitem_exempt_from_price_change', 'is', 'T']],
-      columns: []
+    // load cache (an objct)
+    var exemptItemsCache = cache.getCache({
+      name: 'EXEMPT_ITEMS'
     })
 
-    var searchResults = ssLib.getFormattedSearchResults(
-      itemsExemptFromPriceChangeSearchObj
-    )
-
-    // searchResults = [{"id":"1177466"},{"id":"1177465"},{"id":"1177464"},{"id":"1177463"}]
-    searchResults.forEach(function (result) {
-      itemsExemptFromPriceChange.push(result.id)
+    // clear cache
+    exemptItemsCache.remove({
+      key: 'exempt_items'
     })
 
-    return itemsExemptFromPriceChange
+    // load value for key: 'exempt items'
+    var exemptItemsCacheJson = exemptItemsCache.get({
+      key: 'exempt_items',
+      loader: getItemsWithExemptFromPriceChangeFieldSetToTrue
+    })
+
+    exemptItems = JSON.parse(exemptItemsCacheJson)
+
+    return exemptItems
+
+    // from the documentation, the loader function is like a default dataset. if there's no key in the cache it loads this object; if there's nothing in this object then it creates the new key-value in the cache, i don't think we want anything in here.
+    function getItemsWithExemptFromPriceChangeFieldSetToTrue () {
+      var itemsExemptFromPriceChange = []
+      var itemsExemptFromPriceChangeSearchObj = search.create({
+        type: 'item',
+        filters: [['custitem_exempt_from_price_change', 'is', 'T']],
+        columns: []
+      })
+
+      var searchResults = ssLib.getFormattedSearchResults(
+        itemsExemptFromPriceChangeSearchObj
+      )
+
+      // searchResults = [{"id":"1177466"},{"id":"1177465"},{"id":"1177464"},{"id":"1177463"}]
+      searchResults.forEach(function (result) {
+        itemsExemptFromPriceChange.push(result.id)
+      })
+
+      return itemsExemptFromPriceChange
+    }
   }
-}
-
 
   // ADD CODE ABOVE
   // ADD CODE ABOVE

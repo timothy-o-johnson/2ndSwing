@@ -30,6 +30,179 @@ require([
   // ADD CODE ABOVE
 })
 
+// NG-2618 debugger
+
+require([
+  'N/cache',
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  'N/file',
+  '/SuiteScripts/LIB_Globals.js',
+  'N/ui/serverWidget'
+], function (
+  cache,
+  search,
+  record,
+  ssLib,
+  searchHelpers,
+  itemHelper,
+  file,
+  globals,
+  sw
+) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  //
+  var allFields = {
+    fieldData: []
+  }
+
+  var catAttrs = [
+    '611',
+    '115',
+    '117',
+    '122',
+    '123',
+    '131',
+    '133',
+    '135',
+    '136',
+    '138',
+    '141',
+    '143',
+    '146',
+    '155',
+    '210',
+    '213',
+    '223',
+    '242',
+    '255',
+    '261',
+    '266',
+    '275',
+    '477',
+    '599',
+    '612',
+    '6',
+    '2',
+    '104',
+    '101',
+    '103',
+    -1075
+  ]
+
+  var fieldMetaDataSearchObj = search.create({
+    type: 'customrecord_fieldmetadata',
+    filters: [
+      search.createFilter({
+        name: 'custrecord_fmd_field',
+        operator: search.Operator.ANYOF,
+        values: catAttrs
+      }),
+      search.createFilter({
+        name: 'isinactive',
+        operator: search.Operator.IS,
+        values: false
+      })
+    ],
+    columns: [
+      search.createColumn({
+        name: 'custrecord_fmd_field' // item
+        // field
+        // name, for
+        // the form(s)?
+      }),
+      search.createColumn({
+        name: 'custrecord_fmd_fieldscriptid' // item
+        // field
+        // for edits or
+        // fall back
+      }),
+      search.createColumn({
+        name: 'custrecord_fmd_listrecscriptid' // custom
+        // record
+        // id, for the
+        // list
+        // selections
+      }),
+      search.createColumn({
+        name: 'custrecord_fmd_column' // transaction
+        // column
+        // field name (maybe
+        // for
+        // the forms?)
+      }),
+      search.createColumn({
+        name: 'custrecord_fmd_columnscriptid' // custom
+        // column
+        // field id for
+        // getting/setting
+      }),
+      search.createColumn({
+        name: 'custrecord_fmd_fieldtype'
+      }),
+      search.createColumn({
+        name: 'custrecord_fmd_readonly'
+      }),
+      search.createColumn({
+        name: 'custrecord_fmd_bidpriceattribute'
+      }),
+      search.createColumn({
+        name: 'custrecord_fmd_sellpriceattribute'
+      }),
+      search.createColumn({
+        name: 'custrecord_fmd_po_column_id'
+      }),
+      search.createColumn({
+        name: 'custrecord_fmd_po_col_scriptid'
+      }),
+      search.createColumn({
+        name: 'custrecord_fmd_price_field'
+      }),
+      //custrecord_fmd_listrec
+      search.createColumn({
+        name: 'custrecord_fmd_listrec'
+      })
+    ]
+  })
+
+  var fields = fieldMetaDataSearchObj.run().each(function (res) {
+    // keep the fmd rec id
+    var field = {
+      id: res.id
+    }
+    // these are sparse objects, but its
+    // easy to add new ones so, meh
+    // the lowercase conversion is
+    // necessary for scriptids. might be
+    // a TODO in here to consolidate the
+    // field objects.
+    for (var col = 0; col < res.columns.length; col++) {
+      field[res.columns[col].name] = {
+        id:
+          typeof res.getValue(res.columns[col]) == 'string'
+            ? res.getValue(res.columns[col]).toLowerCase()
+            : res.getValue(res.columns[col]),
+        text: res.getText(res.columns[col])
+      }
+    }
+    allFields.fieldData.push(field)
+    return true
+  })
+
+  log.debug('allFields.fieldData',allFields.fieldData )
+
+  log.debug('fields', fields)
+
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
+
 // NG-2628 debugger
 require([
   'N/cache',

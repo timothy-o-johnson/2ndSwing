@@ -1,0 +1,13 @@
+MR Update Child Item Sell Price 
+
+(develop- pre project deployment)
+79 errors
+316 debug
+396 all
+
+(develop- pre project deployment)
+79 errors
+315 debug
+394 all
+
+{"type":"error.SuiteScriptError","name":"","message":"{\"message\":\"Could not find sell price attribute by code [object Object]\"}","stack":["createError(N/error)"],"cause":"{\"message\":\"Could not find sell price attribute by code [object Object]\"}","id":"","notifyOff":false,"userFacing":true}

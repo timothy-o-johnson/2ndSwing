@@ -30,6 +30,76 @@ require([
   // ADD CODE ABOVE
 })
 
+// NG-2576 debugger
+
+require([
+  'N/cache',
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  'N/file',
+  '/SuiteScripts/LIB_Globals.js',
+  'N/ui/serverWidget'
+], function (
+  cache,
+  search,
+  record,
+  ssLib,
+  searchHelper,
+  itemHelper,
+  file,
+  globals,
+  sw
+) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  //
+
+  var customerStoreCreditObj = { giftcertcode: '3gtjv4wuq' }
+
+  upsertCustomerStoreCreditRec(customerStoreCreditObj)
+
+  function upsertCustomerStoreCreditRec (customerStoreCreditObj) {
+    const customerStoreCreditSearchObj = search.create({
+      type: 'customrecord_customer_store_credit',
+      filters: [
+        [
+          'custrecord_store_credit_cert_code',
+          'startswith',
+          customerStoreCreditObj.giftcertcode
+        ]
+      ],
+      columns: []
+    })
+
+    const customerStoreCreditRecordSearchResults = searchHelper.getFormattedSearchResults(
+      customerStoreCreditSearchObj
+    )
+
+    const customerStoreCreditRecordId = ''
+
+    if (customerStoreCreditRecordId) {
+      //load record and update
+    } else {
+      // create record and update
+    }
+
+    return recordId // for testing
+
+    // const customerStoreCreditRecord  = record.load({
+    //   type: 'customrecord_customer_store_credit',
+    //   id:
+    // })
+  }
+
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
+
 // NG-2618 debugger
 
 require([
@@ -194,7 +264,7 @@ require([
     return true
   })
 
-  log.debug('allFields.fieldData',allFields.fieldData )
+  log.debug('allFields.fieldData', allFields.fieldData)
 
   log.debug('fields', fields)
 

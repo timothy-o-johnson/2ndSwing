@@ -6,33 +6,21 @@
   "configurations": [
     {
       "type": "node",
-      "request": "launch",
-      "name": "Launch Program",
-      "program": "${workspaceFolder}/ChildItemCreation.js"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "NG-1462",
-      "program": "/Users/timjohnson/Documents/2ndSwing/NG-1462-Label-Updates/NG-1462-sandbox.js"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "NG-1545",
-      "program": "${workspaceFolder}/NG-1545- splitIntoRowsTest.js"
-    },
-    ///Users/timjohnson/Google Drive/Work/2nd Swing/2nd Swing Tickets/NG-1958/NG-1960-memo-test-item-helper-find-action.js
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "NG-1960-memo-test",
-      "program": "${workspaceFolder}/NG-1958/NG-1960-memo-test-item-helper-find-action.js"
-    },
-    {
-      "type": "node",
       "request": "attach",
       "name": "Attach",
+      "port": 9229
+    },
+    {
+      "name": "Debug Jest Tests",
+      "type": "node",
+      "request": "launch",
+      "runtimeArgs": [
+        "--inspect-brk",
+        "/Users/timjohnson/netsuite-workspace/WMS/node_modules/.bin/jest",
+        "--runInBand"
+      ],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
       "port": 9229
     }
   ]

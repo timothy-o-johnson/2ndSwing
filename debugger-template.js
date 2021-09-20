@@ -58,42 +58,16 @@ require([
   // ADD CODE BELOW
   //
 
-  var customerStoreCreditObj = { giftcertcode: '3gtjv4wuq' }
+  var transactionSearchObj = search.create({
+    type: 'transaction',
+    filters: [['giftcertificate', 'is', 'w47GPVBsd']],
+    columns: ['entity']
+  })
 
-  upsertCustomerStoreCreditRec(customerStoreCreditObj)
+  var results = ssLib.getFormattedSearchResults(transactionSearchObj)
 
-  function upsertCustomerStoreCreditRec (customerStoreCreditObj) {
-    const customerStoreCreditSearchObj = search.create({
-      type: 'customrecord_customer_store_credit',
-      filters: [
-        [
-          'custrecord_store_credit_cert_code',
-          'startswith',
-          customerStoreCreditObj.giftcertcode
-        ]
-      ],
-      columns: []
-    })
-
-    const customerStoreCreditRecordSearchResults = searchHelper.getFormattedSearchResults(
-      customerStoreCreditSearchObj
-    )
-
-    const customerStoreCreditRecordId = ''
-
-    if (customerStoreCreditRecordId) {
-      //load record and update
-    } else {
-      // create record and update
-    }
-
-    return recordId // for testing
-
-    // const customerStoreCreditRecord  = record.load({
-    //   type: 'customrecord_customer_store_credit',
-    //   id:
-    // })
-  }
+  log.debug('results', results)
+  
 
   // ADD CODE ABOVE
   // ADD CODE ABOVE

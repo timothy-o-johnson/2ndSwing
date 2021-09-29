@@ -30,6 +30,51 @@ require([
   // ADD CODE ABOVE
 })
 
+// NG-2727 debugger
+
+require([
+  'N/cache',
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  'N/file',
+  '/SuiteScripts/LIB_Globals.js',
+  'N/ui/serverWidget'
+], function (
+  cache,
+  search,
+  record,
+  ssLib,
+  searchHelpers,
+  itemHelper,
+  file,
+  globals,
+  sw
+) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+
+  var vendorbillSearchObj = search.create({
+    type: 'vendorbill',
+    filters: [
+      ['type', 'anyof', 'VendBill'],
+      'AND',
+      ['internalidnumber', 'between', '299786', '300000']
+    ],
+    columns: []
+  })
+
+ var results = searchHelpers.getFormattedSearchResults(vendorbillSearchObj)
+
+
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
+
 // NG-2576 debugger
 
 require([
@@ -67,7 +112,6 @@ require([
   var results = ssLib.getFormattedSearchResults(transactionSearchObj)
 
   log.debug('results', results)
-  
 
   // ADD CODE ABOVE
   // ADD CODE ABOVE

@@ -1,133 +1,36 @@
-{
-  "recObj": {
-    "id": "59749",
-    "type": "giftcertificate",
-    "isDynamic": false,
-    "fields": {
-      "createddate": "1/27/2021 1:16 pm",
-      "lastmodifieddate": "1/27/2021 1:16 pm",
-      "entryformquerystring": "e=T&id=59749",
-      "amountremaining": "16.20",
-      "_csrf": "Lt6Rnj4CogcLR02gR-QnS7Ewy53pMmTZpyGZxcICIksVPy8YfmmNvWfAHi5nI9i6q7wDl9ubT-wnWCP_Ol5objER3rf5-PnRUHd87ZR6ON74pueKHbtdBlIv51BoBhItnwSUhiWJ1if6o_Eht-XPPzzh_bVFxdJ60_U75yJM5I0=",
-      "_eml_nkey_": "4537321_SB1~1322963~1033~N",
-      "type": "giftcertificaterecord",
-      "giftcertcode": "MUAZZJ50B",
-      "nsapiCT": "1631113632084",
-      "internalid": "59475",
-      "originalamount": "16.20",
-      "sys_id": "4806194669813525",
-      "custitemnumber_magento_gcno": "TJXFW9SQPSEAZNML",
-      "sender": "NS-2063188",
-      "name": "Bruce Wayne",
-      "currency": "1",
-      "id": "59749",
-      "email": "tyler@2ndswing.com"
-    },
-    "context": {
-      "newRecord": {
-        "id": "59757",
-        "type": "giftcertificate",
-        "isDynamic": false,
-        "fields": {
-          "custitemnumber_pos_gcno": "",
-          "submitter": "Save",
-          "wfinstances": "",
-          "_button": "",
-          "nsapiFC": "",
-          "nsapiLI": "",
-          "wfVF": "",
-          "externalid": "",
-          "_eml_nkey_": "4537321_SB1~1322963~1033~N",
-          "type": "giftcertificaterecord",
-          "nsapiPS": "",
-          "nsapiCT": "1631214141855",
-          "nsapiRC": "",
-          "customwhence": "",
-          "sys_id": "4822571244846053",
-          "nsapiVF": "",
-          "nsapiVD": "",
-          "nsapiPI": "",
-          "nsbrowserenv": "istop=T",
-          "wfSR": "",
-          "currency": "1",
-          "nsapiLC": "",
-          "id": "59757",
-          "nsapiVL": "",
-          "email": "giftcardarchive@2ndswing.info",
-          "nsapiVI": "",
-          "nsapiPD": "",
-          "nsapiSR": "",
-          "wfPS": "",
-          "whence": "/app/accounting/transactions/giftcertificaterecord.nl?id=59757&scrollid=59757",
-          "entryformquerystring": "id=59757&e=T",
-          "_csrf": "ASy3KYOm2Ls0wRnYVFPljPDz6NUa3dvswh4dF0UkowssaqEnsjg-cj6S9GirFaxLMJ3XD6yDgbP_XIovX2NSW7BLDiwdW3JYy_spDSF5F4nUtI4sIdFBwwFnlAJ2WloHn4qBurT0r3vt8ydZKhBPC6FXyxIVRhobh6jQuIwq3r4=",
-          "expirationdate": "",
-          "message": "changes!",
-          "internalid": "59483",
-          "formdisplayview": "NONE",
-          "custitemnumber_magento_gcno": "WTBQ89HGWSSLAPSU",
-          "submitted": "T",
-          "_multibtnstate_": "",
-          "sender": "2nd Swing",
-          "name": "Bruce Wayne",
-          "wfFC": "",
-          "selectedtab": "",
-          "wfPI": ""
-        }
-      },
-      "oldRecord": {
-        "id": "59757",
-        "type": "giftcertificate",
-        "isDynamic": false,
-        "fields": {
-          "createddate": "2/2/2021 6:50 am",
-          "lastmodifieddate": "2/2/2021 6:56 am",
-          "entryformquerystring": "e=T&disabletriggers=true&id=59757",
-          "amountremaining": "242.00",
-          "_csrf": "ASy3KYOm2Ls0wRnYVFPljPDz6NUa3dvswh4dF0UkowssaqEnsjg-cj6S9GirFaxLMJ3XD6yDgbP_XIovX2NSW7BLDiwdW3JYy_spDSF5F4nUtI4sIdFBwwFnlAJ2WloHn4qBurT0r3vt8ydZKhBPC6FXyxIVRhobh6jQuIwq3r4=",
-          "_eml_nkey_": "4537321_SB1~1322963~1033~N",
-          "type": "giftcertificaterecord",
-          "giftcertcode": "9wapkmlTs",
-          "nsapiCT": "1631214153529",
-          "internalid": "59483",
-          "originalamount": "242.00",
-          "sys_id": "4822604623999743",
-          "custitemnumber_magento_gcno": "WTBQ89HGWSSLAPSU",
-          "sender": "2nd Swing",
-          "name": "Bruce Wayne",
-          "currency": "1",
-          "id": "59757",
-          "email": "giftcardarchive@2ndswing.info"
-        }
-      },
-      "UserEventType": {
-        "COPY": "copy",
-        "CREATE": "create",
-        "VIEW": "view",
-        "EDIT": "edit",
-        "XEDIT": "xedit",
-        "DELETE": "delete",
-        "DROPSHIP": "dropship",
-        "SPECIALORDER": "specialorder",
-        "ORDERITEMS": "orderitems",
-        "CANCEL": "cancel",
-        "APPROVE": "approve",
-        "REJECT": "reject",
-        "RETRACT": "retract",
-        "SAVESUBMIT": "savesubmit",
-        "PACK": "pack",
-        "SHIP": "ship",
-        "EDITFORECAST": "editforecast",
-        "REASSIGN": "reassign",
-        "MARKCOMPLETE": "markcomplete",
-        "PRINT": "print",
-        "EMAIL": "email",
-        "CHANGEPASSWORD": "changepassword",
-        "TRANSFORM": "transform",
-        "PAYBILLS": "paybills",
-        "QUICKVIEW": "quickview"
-      },
-      "type": "edit"
+[
+  {
+    "relatedInvoiceObj": {
+      "index": 0,
+      "invoiceBilledValue": 500,
+      "invoiceId": "10995288",
+      "itemSublistCount": 1,
+      "items": [{ "line": 0, "quantity": 10, "rate": 50, "value": 500 }]
+    }
+  },
+  {
+    "relatedInvoiceObj": {
+      "index": 1,
+      "invoiceBilledValue": 1000,
+      "invoiceId": "10995289",
+      "itemSublistCount": 1,
+      "items": [
+        { "line": 0, "quantity": 10, "rate": 50, "value": 500 },
+        { "line": 0, "quantity": 20, "rate": 50, "value": 1000 }
+      ]
+    }
+  },
+  {
+    "relatedInvoiceObj": {
+      "index": 2,
+      "invoiceBilledValue": 50,
+      "invoiceId": "10995290",
+      "itemSublistCount": 1,
+      "items": [
+        { "line": 0, "quantity": 10, "rate": 50, "value": 500 },
+        { "line": 0, "quantity": 20, "rate": 50, "value": 1000 },
+        { "line": 0, "quantity": 1, "rate": 50, "value": 50 }
+      ]
     }
   }
-}
+]

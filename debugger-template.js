@@ -30,6 +30,101 @@ require([
   // ADD CODE ABOVE
 })
 
+// NG-3003 debugger
+
+
+require([
+  'N/cache',
+  'N/search',
+  'N/record',
+  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
+  'SuiteScripts/LIB_SearchHelpers',
+  '/SuiteScripts/WMS/shared/ItemHelper',
+  'N/file',
+  '/SuiteScripts/LIB_Globals.js',
+  'N/ui/serverWidget'
+], function (
+  cache,
+  search,
+  record,
+  ssLib,
+  searchHelpers,
+  itemHelper,
+  file,
+  globals,
+  sw
+) {
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  // ADD CODE BELOW
+  
+  var itemSearchObj = search.create({
+  type: 'item',
+  filters: [
+    ['parent.internalidnumber', 'equalto', '1825994'],
+    'AND',
+    ['class', 'anyof', '3'],
+    'AND',
+    ['location', 'anyof', '1', '2', '3', '16', '116', '221', '14', '4'],
+    'AND',
+    ['locationquantityavailable', 'greaterthanorequalto', '1'],
+    'AND',
+    ['custitem_g2_isecommerceitem', 'is', 'T']
+  ],
+  columns: [
+    search.createColumn({
+      name: 'internalid',
+      summary: 'GROUP',
+      label: 'Internal ID'
+    }),
+    search.createColumn({
+      name: 'internalid',
+      join: 'parent',
+      summary: 'GROUP',
+      label: 'Parent Id'
+    }),
+    search.createColumn({
+      name: 'class',
+      summary: 'GROUP',
+      label: 'Class'
+    }),
+    search.createColumn({
+      name: 'custitem_g2_isecommerceitem',
+      summary: 'GROUP',
+      label: 'Is Ecommerce Item'
+    }),
+    search.createColumn({
+      name: 'location',
+      summary: 'GROUP',
+      label: 'Location'
+    }),
+    search.createColumn({
+      name: 'quantityavailable',
+      summary: 'COUNT',
+      label: 'Available'
+    }),
+    search.createColumn({
+      name: 'locationquantityavailable',
+      summary: 'GROUP',
+      label: 'Location Available'
+    }),
+    search.createColumn({
+      name: 'inventorylocation',
+      summary: 'GROUP',
+      label: 'Inventory Location'
+    })
+  ]
+  })
+  
+var searchResultCount = itemSearchObj.runPaged().count
+
+
+
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+  // ADD CODE ABOVE
+})
+
 // NG-2569 debugger
 
 require([

@@ -1,0 +1,94 @@
+Error on line 45, column 68 in template.
+Detail...
+
+   The following has evaluated to null or missing:
+==> itemInfo [in template "template" at line 45, column 70]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+- Failed at: ${itemInfo.vendorName} [in template "template" at line 45, column 68]
+----
+
+
+Error on line 91, column 77 in template.
+Detail...
+
+   The following has evaluated to null or missing:
+==> itemInfo [in template "template" at line 91, column 82]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+- Failed at: #if itemInfo.imageUrl?has_content [in template "template" at line 91, column 77]
+----
+
+
+Error on line 107, column 93 in template.
+Detail...
+
+   The following has evaluated to null or missing:
+==> itemInfo [in template "template" at line 107, column 95]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+- Failed at: ${itemInfo.itemName} [in template "template" at line 107, column 93]
+----
+
+
+Error on line 117, column 93 in template.
+Detail...
+
+   The following has evaluated to null or missing:
+==> itemInfo [in template "template" at line 117, column 95]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+- Failed at: ${itemInfo.previousPrice} [in template "template" at line 117, column 93]
+----
+
+
+Error on line 123, column 98 in template.
+Detail...
+
+   The following has evaluated to null or missing:
+==> itemInfo [in template "template" at line 123, column 100]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+- Failed at: ${itemInfo.sellItemUrl} [in template "template" at line 123, column 98]
+----
+
+
+Error on line 135, column 93 in template.
+Detail...
+
+   The following has evaluated to null or missing:
+==> itemInfo [in template "template" at line 135, column 95]
+
+----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+- Failed at: ${itemInfo.currentPrice} [in template "template" at line 135, column 93]
+----

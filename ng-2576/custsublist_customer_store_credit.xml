@@ -1,4 +1,4 @@
-<sublist scriptid="custsublist_customer_store_credit">
+<sublist scriptid="custsublist_customer_gift_certificate">
   <contact>F</contact>
   <customer>T</customer>
   <employee>F</employee>
@@ -6,7 +6,7 @@
   <job>F</job>
   <label>Store Credit</label>
   <partner>F</partner>
-  <savedsearch>[scriptid=customsearch_customer_store_credit]</savedsearch>
+  <savedsearch>[scriptid=customsearch_customer_gift_certificate]</savedsearch>
   <sublisttype>ENTITY</sublisttype>
   <tab>[scriptid=custtab_store_credit]</tab>
   <vendor>F</vendor>

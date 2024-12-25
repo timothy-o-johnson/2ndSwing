@@ -25,106 +25,29 @@ require([
   // ADD CODE BELOW
   // ADD CODE BELOW
   //
-  // ADD CODE ABOVE
-  // ADD CODE ABOVE
-  // ADD CODE ABOVE
-})
 
-// NG-3003 debugger
-
-
-require([
-  'N/cache',
-  'N/search',
-  'N/record',
-  '/SuiteScripts/WMS/shared/SavedSearchLibrary',
-  'SuiteScripts/LIB_SearchHelpers',
-  '/SuiteScripts/WMS/shared/ItemHelper',
-  'N/file',
-  '/SuiteScripts/LIB_Globals.js',
-  'N/ui/serverWidget'
-], function (
-  cache,
-  search,
-  record,
-  ssLib,
-  searchHelpers,
-  itemHelper,
-  file,
-  globals,
-  sw
-) {
-  // ADD CODE BELOW
-  // ADD CODE BELOW
-  // ADD CODE BELOW
-  
-  var itemSearchObj = search.create({
-  type: 'item',
-  filters: [
-    ['parent.internalidnumber', 'equalto', '1825994'],
-    'AND',
-    ['class', 'anyof', '3'],
-    'AND',
-    ['location', 'anyof', '1', '2', '3', '16', '116', '221', '14', '4'],
-    'AND',
-    ['locationquantityavailable', 'greaterthanorequalto', '1'],
-    'AND',
-    ['custitem_g2_isecommerceitem', 'is', 'T']
-  ],
-  columns: [
-    search.createColumn({
-      name: 'internalid',
-      summary: 'GROUP',
-      label: 'Internal ID'
-    }),
-    search.createColumn({
-      name: 'internalid',
-      join: 'parent',
-      summary: 'GROUP',
-      label: 'Parent Id'
-    }),
-    search.createColumn({
-      name: 'class',
-      summary: 'GROUP',
-      label: 'Class'
-    }),
-    search.createColumn({
-      name: 'custitem_g2_isecommerceitem',
-      summary: 'GROUP',
-      label: 'Is Ecommerce Item'
-    }),
-    search.createColumn({
-      name: 'location',
-      summary: 'GROUP',
-      label: 'Location'
-    }),
-    search.createColumn({
-      name: 'quantityavailable',
-      summary: 'COUNT',
-      label: 'Available'
-    }),
-    search.createColumn({
-      name: 'locationquantityavailable',
-      summary: 'GROUP',
-      label: 'Location Available'
-    }),
-    search.createColumn({
-      name: 'inventorylocation',
-      summary: 'GROUP',
-      label: 'Inventory Location'
-    })
-  ]
+  record.submitFields({
+    type: 'purchaseorder',
+    id: 30905263,
+    values: {
+      custbody_wms_check_number: '67696',
+      // custbody_wms_vendor_payment_date: date
+    }
   })
-  
-var searchResultCount = itemSearchObj.runPaged().count
-
-
 
   // ADD CODE ABOVE
   // ADD CODE ABOVE
   // ADD CODE ABOVE
 })
 
+triumph
+family time
+
+hump
+
+goal
+grateful
+getting out and exercsiing
 // NG-2569 debugger
 
 require([
@@ -184,180 +107,177 @@ require([
   log.debug('result', result)
 
   // test that the search doesn't return from SL
-  
-  
-  
 
-  
   function getGiftCardDetails (rec) {
-  // log.debug('getGiftCardDetails(): rec', JSON.stringify(rec))
+    // log.debug('getGiftCardDetails(): rec', JSON.stringify(rec))
 
-  var recordIds = []
-  var result = []
-  var GCIds = []
+    var recordIds = []
+    var result = []
+    var GCIds = []
 
-  log.debug(
-    'rec.type === record.Type.GIFT_CERTIFICATE',
-    rec.type === record.Type.GIFT_CERTIFICATE
-  )
+    log.debug(
+      'rec.type === record.Type.GIFT_CERTIFICATE',
+      rec.type === record.Type.GIFT_CERTIFICATE
+    )
 
-  if (rec.type === record.Type.GIFT_CERTIFICATE) {
-    recordIds = [['internalidnumber', 'equalto', rec.id + '']]
-  } else if (rec.type === record.Type.SALES_ORDER) {
-    GCIds = parseGiftCertRedemption(rec)
-    recordIds = buildMultiGiftCardSearchFilters(GCIds)
-    if (recordIds.length === 0) {
+    if (rec.type === record.Type.GIFT_CERTIFICATE) {
+      recordIds = [['internalidnumber', 'equalto', rec.id + '']]
+    } else if (rec.type === record.Type.SALES_ORDER) {
+      GCIds = parseGiftCertRedemption(rec)
+      recordIds = buildMultiGiftCardSearchFilters(GCIds)
+      if (recordIds.length === 0) {
+        return result
+      }
+    } else if (rec.type === record.Type.INVOICE) {
+      var redemption = parseGiftCertRedemption(rec)
+      var newGC = parseGiftCertItem(rec)
+      GCIds = lodash.union(redemption, newGC)
+      recordIds = buildMultiGiftCardSearchFilters(GCIds)
+      if (recordIds.length === 0) {
+        return result
+      }
+    } else {
+      log.debug('getGiftCardDetails(): no rec type matches')
       return result
     }
-  } else if (rec.type === record.Type.INVOICE) {
-    var redemption = parseGiftCertRedemption(rec)
-    var newGC = parseGiftCertItem(rec)
-    GCIds = lodash.union(redemption, newGC)
-    recordIds = buildMultiGiftCardSearchFilters(GCIds)
-    if (recordIds.length === 0) {
-      return result
+
+    var srch = search.create({
+      type: 'giftcertificate',
+      filters: recordIds,
+      columns: [
+        search.createColumn({ name: 'internalid', label: 'Internal ID' }),
+        search.createColumn({
+          name: 'sender',
+          sort: search.Sort.ASC,
+          label: 'From (Name)'
+        }),
+        search.createColumn({ name: 'name', label: 'To (Name)' }),
+        search.createColumn({ name: 'email', label: 'To (Email)' }),
+        search.createColumn({ name: 'message', label: 'Gift Message' }),
+        search.createColumn({
+          name: 'expirationdate',
+          label: 'Expiration Date'
+        }),
+        search.createColumn({ name: 'item', label: 'Item' }),
+        search.createColumn({
+          name: 'giftcertcode',
+          label: 'Gift Certificate Code'
+        }),
+        search.createColumn({
+          name: 'amountremaining',
+          label: 'Amount Available'
+        }),
+        search.createColumn({
+          name: 'amtavailbilled',
+          label: 'Amount Available (Billed)'
+        }),
+        search.createColumn({
+          name: 'custitemnumber_pos_gcno',
+          label: 'POS Code'
+        }),
+        search.createColumn({
+          name: 'custitemnumber_magento_gcno',
+          label: 'Magento Code'
+        }),
+        search.createColumn({ name: 'gcactive', label: 'Active' }),
+        search.createColumn({
+          name: 'custentity_counterpoint_id',
+          join: 'user',
+          label: 'CounterPoint ID'
+        }),
+        search.createColumn({ name: 'createddate', label: 'Date Created' }),
+        search.createColumn({
+          name: 'lastmodifieddate',
+          join: 'user',
+          label: 'Last Modified'
+        })
+      ]
+    })
+    var srchRunPaged = srch.runPaged({ pageSize: 5 })
+    var ranges = srchRunPaged.pageRanges
+    if (ranges.length > 0) {
+      for (var pNum = 0; pNum < ranges.length; pNum++) {
+        var idx = ranges[pNum].index
+        var currentPage = srch.fetch({ index: idx })
+        currentPage.data.forEach(function (giftCert) {
+          var obj = {
+            internalId: giftCert.getValue({ name: 'internalid' }),
+            type: giftCert.getText({ name: 'item' }),
+            code: giftCert.getValue({ name: 'giftcertcode' }),
+            cpCode: giftCert.getValue({ name: 'custitemnumber_pos_gcno' }),
+            magentoCode: giftCert.getValue({
+              name: 'custitemnumber_magento_gcno'
+            }),
+            cpCustomerId: giftCert.getValue({
+              name: 'custentity_counterpoint_id'
+            }),
+            balance: giftCert.getValue({ name: 'amountremaining' }),
+            billed: giftCert.getValue({ name: 'amtavailbilled' }),
+            active: giftCert.getValue({ name: 'gcactive' }),
+            createdDate: giftCert.getValue({ name: 'createddate' }),
+            lastUpdated: giftCert.getValue({ name: 'lastmodifieddate' }),
+            expires: giftCert.getValue({ name: 'expirationdate' }),
+            from: giftCert.getValue({ name: 'sender' }),
+            to: giftCert.getValue({ name: 'name' }),
+            toEmail: giftCert.getValue({ name: 'email' }),
+            message: giftCert.getValue({ name: 'message' })
+          }
+          result.push(obj)
+        })
+      }
     }
-  } else {
-    log.debug('getGiftCardDetails(): no rec type matches')
+
+    log.debug('getGiftCardDetails(): srch', JSON.stringify(srch))
+    log.debug(
+      'getGiftCardDetails(): srchRunPaged',
+      JSON.stringify(srchRunPaged)
+    )
+    log.debug('getGiftCardDetails(): result', JSON.stringify(result))
+
+    result = createGCRecord(result, rec)
+
     return result
-  }
 
-  var srch = search.create({
-    type: 'giftcertificate',
-    filters: recordIds,
-    columns: [
-      search.createColumn({ name: 'internalid', label: 'Internal ID' }),
-      search.createColumn({
-        name: 'sender',
-        sort: search.Sort.ASC,
-        label: 'From (Name)'
-      }),
-      search.createColumn({ name: 'name', label: 'To (Name)' }),
-      search.createColumn({ name: 'email', label: 'To (Email)' }),
-      search.createColumn({ name: 'message', label: 'Gift Message' }),
-      search.createColumn({
-        name: 'expirationdate',
-        label: 'Expiration Date'
-      }),
-      search.createColumn({ name: 'item', label: 'Item' }),
-      search.createColumn({
-        name: 'giftcertcode',
-        label: 'Gift Certificate Code'
-      }),
-      search.createColumn({
-        name: 'amountremaining',
-        label: 'Amount Available'
-      }),
-      search.createColumn({
-        name: 'amtavailbilled',
-        label: 'Amount Available (Billed)'
-      }),
-      search.createColumn({
-        name: 'custitemnumber_pos_gcno',
-        label: 'POS Code'
-      }),
-      search.createColumn({
-        name: 'custitemnumber_magento_gcno',
-        label: 'Magento Code'
-      }),
-      search.createColumn({ name: 'gcactive', label: 'Active' }),
-      search.createColumn({
-        name: 'custentity_counterpoint_id',
-        join: 'user',
-        label: 'CounterPoint ID'
-      }),
-      search.createColumn({ name: 'createddate', label: 'Date Created' }),
-      search.createColumn({
-        name: 'lastmodifieddate',
-        join: 'user',
-        label: 'Last Modified'
-      })
-    ]
-  })
-  var srchRunPaged = srch.runPaged({ pageSize: 5 })
-  var ranges = srchRunPaged.pageRanges
-  if (ranges.length > 0) {
-    for (var pNum = 0; pNum < ranges.length; pNum++) {
-      var idx = ranges[pNum].index
-      var currentPage = srch.fetch({ index: idx })
-      currentPage.data.forEach(function (giftCert) {
-        var obj = {
-          internalId: giftCert.getValue({ name: 'internalid' }),
-          type: giftCert.getText({ name: 'item' }),
-          code: giftCert.getValue({ name: 'giftcertcode' }),
-          cpCode: giftCert.getValue({ name: 'custitemnumber_pos_gcno' }),
-          magentoCode: giftCert.getValue({
-            name: 'custitemnumber_magento_gcno'
-          }),
-          cpCustomerId: giftCert.getValue({
-            name: 'custentity_counterpoint_id'
-          }),
-          balance: giftCert.getValue({ name: 'amountremaining' }),
-          billed: giftCert.getValue({ name: 'amtavailbilled' }),
-          active: giftCert.getValue({ name: 'gcactive' }),
-          createdDate: giftCert.getValue({ name: 'createddate' }),
-          lastUpdated: giftCert.getValue({ name: 'lastmodifieddate' }),
-          expires: giftCert.getValue({ name: 'expirationdate' }),
-          from: giftCert.getValue({ name: 'sender' }),
-          to: giftCert.getValue({ name: 'name' }),
-          toEmail: giftCert.getValue({ name: 'email' }),
-          message: giftCert.getValue({ name: 'message' })
+    function createGCRecord (result, rec) {
+      log.debug('createGCRecord(): initial result', result)
+      log.debug('createGCRecord(): typeof rec', typeof rec)
+      let tempRec = JSON.parse(JSON.stringify(rec))
+      //   rec = JSON.parse(rec)
+      log.debug('createGCRecord(): typeof tempRec ', typeof tempRec)
+      log.debug('createGCRecord(): tempRec', tempRec)
+
+      tempRec = tempRec.fields
+      log.debug('createGCRecord(): tempRec = tempRec.fields', tempRec)
+
+      var isGiftCardRec = rec.type === record.Type.GIFT_CERTIFICATE
+      if (result.length == 0 && isGiftCardRec) {
+        const giftCardDetailObj = {
+          active: true, // just created
+          balance: tempRec.amountremaining,
+          billed: tempRec.originalamount,
+          code: tempRec.giftcertcode,
+          cpCode: '', // not provided
+          cpCustomerId: null,
+          createdDate: tempRec.createddate,
+          expires: '', //not provided
+          from: tempRec.sender,
+          internalId: tempRec.internalid,
+          lastUpdated: tempRec.lastmodifieddate,
+          magentoCode: tempRec.custitemnumber_magento_gcno,
+          message: tempRec.message,
+          to: tempRec.name,
+          toEmail: tempRec.email
+          //   type: 'Store Credit Tax-Adj Gift Certificate'
         }
-        result.push(obj)
-      })
-    }
-  }
 
-  log.debug('getGiftCardDetails(): srch', JSON.stringify(srch))
-  log.debug('getGiftCardDetails(): srchRunPaged', JSON.stringify(srchRunPaged))
-  log.debug('getGiftCardDetails(): result', JSON.stringify(result))
-
-  result = createGCRecord(result, rec)
-
-  return result
-
-  function createGCRecord (result, rec) {
-    log.debug('createGCRecord(): initial result', result)
-    log.debug('createGCRecord(): typeof rec', typeof rec)
-    let tempRec = JSON.parse(JSON.stringify(rec))
-    //   rec = JSON.parse(rec)
-    log.debug('createGCRecord(): typeof tempRec ', typeof tempRec)
-    log.debug('createGCRecord(): tempRec', tempRec)
-
-    tempRec = tempRec.fields
-    log.debug('createGCRecord(): tempRec = tempRec.fields', tempRec)
-
-    var isGiftCardRec = rec.type === record.Type.GIFT_CERTIFICATE
-    if (result.length == 0 && isGiftCardRec) {
-      const giftCardDetailObj = {
-        active: true, // just created
-        balance: tempRec.amountremaining,
-        billed: tempRec.originalamount,
-        code: tempRec.giftcertcode,
-        cpCode: '', // not provided
-        cpCustomerId: null,
-        createdDate: tempRec.createddate,
-        expires: '', //not provided
-        from: tempRec.sender,
-        internalId: tempRec.internalid,
-        lastUpdated: tempRec.lastmodifieddate,
-        magentoCode: tempRec.custitemnumber_magento_gcno,
-        message: tempRec.message,
-        to: tempRec.name,
-        toEmail: tempRec.email
-        //   type: 'Store Credit Tax-Adj Gift Certificate'
+        result = [giftCardDetailObj]
       }
 
-      result = [giftCardDetailObj]
+      log.debug('createGCRecord(): final result', result)
+
+      return result
     }
-
-    log.debug('createGCRecord(): final result', result)
-
-    return result
   }
-}
-
-
 
   // ADD CODE ABOVE
   // ADD CODE ABOVE
@@ -1475,10 +1395,7 @@ require([
 
   var lineSku, prevHideInWmsValue, lineSkuStringified, lineSkuText, lineSkuValue
 
-  var originalItemSKU = params['custpage_repitemname']
-    .split(':')
-    .pop()
-    .trim()
+  var originalItemSKU = params['custpage_repitemname'].split(':').pop().trim()
 
   // Why does this return -1 ??
   var itemLine = orderRec.findSublistLineWithValue({
@@ -1712,9 +1629,8 @@ require([
       ]
     })
 
-    var searchResults = searchHelpers.getFormattedSearchResults(
-      transactionSearchObj
-    )
+    var searchResults =
+      searchHelpers.getFormattedSearchResults(transactionSearchObj)
 
     log.audit('searchResults', searchResults)
 
@@ -1995,9 +1911,8 @@ require([
     ]
   })
 
-  var searchResults = searchHelpers.getFormattedSearchResults(
-    transactionSearchObj
-  )
+  var searchResults =
+    searchHelpers.getFormattedSearchResults(transactionSearchObj)
 
   // loop through all invoice results
   searchResults.forEach(function (invoice) {

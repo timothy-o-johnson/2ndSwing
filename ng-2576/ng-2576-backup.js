@@ -24,7 +24,6 @@ require([
   // ADD CODE BELOW
   //
 
-
   var customerStoreCreditObj = {
     customerId: 162485,
     certificate: {
@@ -59,7 +58,7 @@ require([
       custrecord_customer_id: customerId,
       custrecord_gift_cert_id: cert.id,
       custrecord_original_amount: cert.originalamount,
-      custrecord_store_credit_cert_code: cert.giftcertcode,
+      custrecord_gift_cert_code: cert.giftcertcode,
       // custrecord_history: 'some history',
       custrecord_transaction_date: new Date(),
       custrecord_gift_cert_rec_link:
@@ -70,7 +69,7 @@ require([
     if (custStoreCredId) {
       //load customerCredit record and update
       id = record.submitFields({
-        type: 'customrecord_customer_store_credit',
+        type: 'customrecord_customer_gift_certificate',
         id: custStoreCredId,
         values: values,
         options: {
@@ -81,7 +80,7 @@ require([
     } else {
       // create customerCredit record and update
       objRecord = record.create({
-        type: 'customrecord_customer_store_credit'
+        type: 'customrecord_customer_gift_certificate'
       })
 
       var valuesFieldNames = Object.keys(values)
@@ -124,13 +123,9 @@ require([
       }
 
       var custStoreCreditSearchObj = search.create({
-        type: 'customrecord_customer_store_credit',
+        type: 'customrecord_customer_gift_certificate',
         filters: [
-          [
-            'custrecord_store_credit_cert_code',
-            'startswith',
-            giftCertObj.giftcertcode
-          ]
+          ['custrecord_gift_cert_code', 'startswith', giftCertObj.giftcertcode]
         ],
         columns: ['custrecord_gift_cert_id']
       })
